@@ -1,0 +1,7 @@
+{
+  "opacity": {
+    "muted": { "value": 0.72 },
+    "disabled": { "value": 0.4 },
+    "overlay": { "value": 0.64 }
+  }
+}

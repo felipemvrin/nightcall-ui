@@ -1,0 +1,136 @@
+{
+  "color": {
+    "primitive": {
+      "pink": {
+        "300": {
+          "value": "#ff4de8"
+        },
+        "400": {
+          "value": "#ff00d9"
+        },
+        "500": {
+          "value": "#d100ff"
+        }
+      },
+      "cyan": {
+        "300": {
+          "value": "#53ffff"
+        },
+        "400": {
+          "value": "#00f0ff"
+        },
+        "500": {
+          "value": "#00b8ff"
+        }
+      },
+      "violet": {
+        "400": {
+          "value": "#9b4dff"
+        },
+        "500": {
+          "value": "#6a00ff"
+        },
+        "700": {
+          "value": "#3c1a8b"
+        }
+      },
+      "amber": {
+        "400": {
+          "value": "#ffb800"
+        }
+      },
+      "mint": {
+        "400": {
+          "value": "#00ff9d"
+        }
+      },
+      "slate": {
+        "50": {
+          "value": "#f8f8ff"
+        },
+        "300": {
+          "value": "#a1a2d1"
+        },
+        "500": {
+          "value": "#3e2c5e"
+        },
+        "700": {
+          "value": "#1a1035"
+        },
+        "800": {
+          "value": "#0d0221"
+        },
+        "900": {
+          "value": "#060112"
+        }
+      }
+    },
+    "background": {
+      "canvas": {
+        "value": "{color.primitive.slate.900}"
+      },
+      "surface": {
+        "value": "{color.primitive.slate.800}"
+      },
+      "surfaceElevated": {
+        "value": "{color.primitive.slate.700}"
+      },
+      "surfaceOverlay": {
+        "value": "#14092e"
+      }
+    },
+    "border": {
+      "subtle": {
+        "value": "#2a184d"
+      },
+      "strong": {
+        "value": "#542c90"
+      },
+      "accent": {
+        "value": "{color.primitive.pink.400}"
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "{color.primitive.slate.50}"
+      },
+      "secondary": {
+        "value": "{color.primitive.slate.300}"
+      },
+      "inverse": {
+        "value": "{color.primitive.slate.900}"
+      }
+    },
+    "accent": {
+      "primary": {
+        "value": "{color.primitive.pink.400}"
+      },
+      "secondary": {
+        "value": "{color.primitive.cyan.400}"
+      },
+      "tertiary": {
+        "value": "{color.primitive.violet.500}"
+      },
+      "positive": {
+        "value": "{color.primitive.mint.400}"
+      },
+      "attention": {
+        "value": "{color.primitive.amber.400}"
+      }
+    },
+    "state": {
+      "focusRing": {
+        "value": "{color.primitive.cyan.400}"
+      },
+      "success": {
+        "value": "{color.primitive.mint.400}"
+      },
+      "warning": {
+        "value": "{color.primitive.amber.400}"
+      },
+      "danger": {
+        "value": "#ff4d8e"
+      }
+    }
+  }
+}

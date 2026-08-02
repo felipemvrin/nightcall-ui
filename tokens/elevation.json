@@ -1,0 +1,54 @@
+{
+  "elevation": {
+    "surface": {
+      "0": {
+        "value": "{color.background.canvas}"
+      },
+      "1": {
+        "value": "{color.background.surface}"
+      },
+      "2": {
+        "value": "{color.background.surfaceElevated}"
+      },
+      "3": {
+        "value": "{color.background.surfaceOverlay}"
+      }
+    },
+    "shadow": {
+      "0": {
+        "value": "{shadow.none}"
+      },
+      "1": {
+        "value": "{shadow.xs}"
+      },
+      "2": {
+        "value": "{shadow.sm}"
+      },
+      "3": {
+        "value": "{shadow.md}"
+      },
+      "4": {
+        "value": "{shadow.lg}"
+      }
+    },
+    "border": {
+      "0": {
+        "value": "transparent"
+      },
+      "1": {
+        "value": "{color.border.subtle}"
+      },
+      "2": {
+        "value": "{color.border.strong}"
+      }
+    },
+    "ring": {
+      "focus": {
+        "value": "0 0 0 2px color-mix(in srgb, {color.state.focusRing} 40%, transparent)"
+      },
+      "accent": {
+        "value": "{shadow.glow.pink}"
+      }
+    }
+  }
+}

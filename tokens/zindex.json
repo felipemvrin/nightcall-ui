@@ -1,0 +1,60 @@
+{
+  "zIndex": {
+    "base": {
+      "value": 0
+    },
+    "raised": {
+      "value": 10
+    },
+    "sticky": {
+      "value": 100
+    },
+    "dropdown": {
+      "value": 1000
+    },
+    "popover": {
+      "value": 1050
+    },
+    "overlay": {
+      "value": 1100
+    },
+    "modal": {
+      "value": 1200
+    },
+    "toast": {
+      "value": 1300
+    },
+    "tooltip": {
+      "value": 1400
+    }
+  },
+  "layer": {
+    "base": {
+      "value": "{zIndex.base}"
+    },
+    "raised": {
+      "value": "{zIndex.raised}"
+    },
+    "sticky": {
+      "value": "{zIndex.sticky}"
+    },
+    "dropdown": {
+      "value": "{zIndex.dropdown}"
+    },
+    "popover": {
+      "value": "{zIndex.popover}"
+    },
+    "overlay": {
+      "value": "{zIndex.overlay}"
+    },
+    "modal": {
+      "value": "{zIndex.modal}"
+    },
+    "toast": {
+      "value": "{zIndex.toast}"
+    },
+    "tooltip": {
+      "value": "{zIndex.tooltip}"
+    }
+  }
+}

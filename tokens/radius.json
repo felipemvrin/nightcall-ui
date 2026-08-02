@@ -1,0 +1,10 @@
+{
+  "radius": {
+    "none": { "value": "0" },
+    "sm": { "value": "0.25rem" },
+    "md": { "value": "0.5rem" },
+    "lg": { "value": "0.875rem" },
+    "xl": { "value": "1.25rem" },
+    "pill": { "value": "9999px" }
+  }
+}
