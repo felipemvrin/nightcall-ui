@@ -1,0 +1,86 @@
+{
+  "font": {
+    "family": {
+      "heading": {
+        "value": "'Michroma', sans-serif"
+      },
+      "body": {
+        "value": "'Inter', sans-serif"
+      },
+      "code": {
+        "value": "'IBM Plex Mono', monospace"
+      }
+    },
+    "weight": {
+      "regular": {
+        "value": 400
+      },
+      "medium": {
+        "value": 500
+      },
+      "semibold": {
+        "value": 600
+      },
+      "bold": {
+        "value": 700
+      }
+    },
+    "size": {
+      "xs": {
+        "value": "0.75rem"
+      },
+      "sm": {
+        "value": "0.875rem"
+      },
+      "md": {
+        "value": "1rem"
+      },
+      "lg": {
+        "value": "1.125rem"
+      },
+      "xl": {
+        "value": "1.5rem"
+      },
+      "2xl": {
+        "value": "2rem"
+      },
+      "3xl": {
+        "value": "2.5rem"
+      },
+      "4xl": {
+        "value": "3rem"
+      },
+      "5xl": {
+        "value": "4rem"
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "value": 1.05
+      },
+      "snug": {
+        "value": 1.25
+      },
+      "normal": {
+        "value": 1.5
+      },
+      "relaxed": {
+        "value": 1.7
+      }
+    },
+    "letterSpacing": {
+      "tight": {
+        "value": "-0.04em"
+      },
+      "normal": {
+        "value": "0"
+      },
+      "wide": {
+        "value": "0.06em"
+      },
+      "ultra": {
+        "value": "0.14em"
+      }
+    }
+  }
+}

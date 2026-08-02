@@ -1,0 +1,30 @@
+{
+  "shadow": {
+    "none": {
+      "value": "none"
+    },
+    "xs": {
+      "value": "0 4px 12px rgb(3 7 18 / 0.2)"
+    },
+    "sm": {
+      "value": "0 8px 24px rgb(3 7 18 / 0.25)"
+    },
+    "md": {
+      "value": "0 16px 48px rgb(3 7 18 / 0.3)"
+    },
+    "lg": {
+      "value": "0 32px 96px rgb(3 7 18 / 0.4)"
+    },
+    "xl": {
+      "value": "0 40px 120px rgb(3 7 18 / 0.45)"
+    },
+    "glow": {
+      "pink": {
+        "value": "0 0 0 1px rgb(255 0 217 / 0.35), 0 0 24px rgb(255 0 217 / 0.4)"
+      },
+      "cyan": {
+        "value": "0 0 0 1px rgb(0 240 255 / 0.35), 0 0 24px rgb(0 240 255 / 0.4)"
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+:host {
+  display: block;
+}
+
+.docs-shell {
+  min-height: 100vh;
+  padding: clamp(var(--nc-space-6), 4vw, var(--nc-space-16, 4rem));
+  max-width: var(--nc-container-2xl, 90rem);
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(var(--nc-space-6), 4vw, var(--nc-space-12));
+  align-content: center;
+}
+
+.hero {
+  max-width: 42rem;
+}
+
+.eyebrow {
+  margin: 0 0 var(--nc-space-4);
+  text-transform: uppercase;
+  letter-spacing: var(--nc-font-track-kicker, 0.14em);
+  font-size: var(--nc-font-size-caption, 0.75rem);
+  color: var(--nc-color-text-secondary, #94a3b8);
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--nc-font-heading, 'Michroma', sans-serif);
+  font-size: clamp(var(--nc-font-size-h2), 10vw, calc(var(--nc-font-size-h1) * 1.2));
+  line-height: var(--nc-font-line-tight, 1.05);
+  letter-spacing: var(--nc-font-track-display, -0.04em);
+  max-width: 10ch;
+}
+
+.lede {
+  margin: var(--nc-space-5) 0 0;
+  max-width: 56ch;
+  font-size: var(--nc-font-size-lg, 1.125rem);
+  line-height: var(--nc-font-line-normal, 1.5);
+  color: var(--nc-color-text-secondary, #94a3b8);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nc-gap-default, 0.75rem);
+  margin-top: var(--nc-space-7, 1.75rem);
+}
+
+.action {
+  border-radius: 999px;
+  padding: var(--nc-padding-block-md, 0.75rem) var(--nc-padding-inline-lg, 1.25rem);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.action:hover {
+  transform: translateY(-1px);
+}
+
+.primary {
+  background: var(--nc-color-accent, #7ee1ff);
+  color: #081018;
+  font-weight: 700;
+}
+
+.secondary {
+  background: color-mix(in srgb, var(--nc-color-surface, #12192b) 92%, transparent);
+  border-color: color-mix(in srgb, var(--nc-color-border, #2b3453) 100%, transparent);
+  color: var(--nc-color-text-primary, #edf2ff);
+}
+
+.grid {
+  display: grid;
+  gap: var(--nc-grid-gutter-md, 1rem);
+  grid-template-columns: repeat(auto-fit, minmax(var(--nc-grid-card-min, 16rem), 1fr));
+}
+
+.card {
+  padding: var(--nc-space-5);
+  border-radius: 1.25rem;
+  background: var(--nc-surface-2, #1a1035);
+  border: 1px solid var(--nc-border-elevation-1, #2a184d);
+  box-shadow: var(--nc-shadow-elevation-2, 0 8px 24px rgb(3 7 18 / 0.25));
+}
+
+.card-kicker {
+  margin: 0 0 var(--nc-space-3);
+  font-size: var(--nc-font-size-xs, 0.75rem);
+  letter-spacing: var(--nc-font-letter-spacing-wide, 0.06em);
+  text-transform: uppercase;
+  color: var(--nc-color-text-secondary, #94a3b8);
+}
+
+.card-copy {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--nc-color-text-primary, #edf2ff);
+}
+
+.badge-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--nc-space-4) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nc-space-2);
+}
+
+.badge-list li {
+  padding: var(--nc-padding-block-sm, 0.5rem) var(--nc-padding-inline-sm, 0.75rem);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--nc-color-accent, #7ee1ff) 12%, transparent);
+  color: var(--nc-color-text-primary, #edf2ff);
+  font-size: var(--nc-font-size-sm, 0.875rem);
+}

@@ -1,0 +1,83 @@
+{
+  "layout": {
+    "breakpoint": {
+      "xs": {
+        "value": "20rem"
+      },
+      "sm": {
+        "value": "36rem"
+      },
+      "md": {
+        "value": "48rem"
+      },
+      "lg": {
+        "value": "64rem"
+      },
+      "xl": {
+        "value": "80rem"
+      }
+    },
+    "container": {
+      "xs": {
+        "value": "20rem"
+      },
+      "sm": {
+        "value": "36rem"
+      },
+      "md": {
+        "value": "48rem"
+      },
+      "lg": {
+        "value": "64rem"
+      },
+      "xl": {
+        "value": "80rem"
+      },
+      "2xl": {
+        "value": "90rem"
+      }
+    },
+    "grid": {
+      "columns": {
+        "compact": {
+          "value": 4
+        },
+        "default": {
+          "value": 12
+        }
+      },
+      "gutter": {
+        "sm": {
+          "value": "{space.3}"
+        },
+        "md": {
+          "value": "{space.4}"
+        },
+        "lg": {
+          "value": "{space.6}"
+        }
+      },
+      "card": {
+        "minWidth": {
+          "value": "16rem"
+        },
+        "maxWidth": {
+          "value": "28rem"
+        }
+      }
+    },
+    "section": {
+      "spacing": {
+        "sm": {
+          "value": "{space.8}"
+        },
+        "md": {
+          "value": "{space.12}"
+        },
+        "lg": {
+          "value": "{space.16}"
+        }
+      }
+    }
+  }
+}

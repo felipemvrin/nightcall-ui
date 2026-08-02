@@ -1,0 +1,102 @@
+:root,
+[data-theme='nightcall'] {
+  --nc-color-background: var(--color-background-canvas, #060112);
+  --nc-color-surface: var(--color-background-surface, #0d0221);
+  --nc-color-surface-elevated: var(--color-background-surface-elevated, #1a1035);
+  --nc-color-surface-overlay: var(--color-background-surface-overlay, #14092e);
+
+  --nc-color-text-primary: #f8f8ff;
+  --nc-color-text-secondary: #a1a2d1;
+  --nc-color-text-inverse: #060112;
+
+  --nc-color-border: var(--color-border-subtle, #2a184d);
+  --nc-color-border-strong: var(--color-border-strong, #542c90);
+  --nc-color-focus: var(--color-state-focus-ring, #00f0ff);
+
+  --nc-color-accent: var(--color-accent-primary, #ff00d9);
+  --nc-color-accent-secondary: var(--color-accent-secondary, #00f0ff);
+  --nc-color-accent-tertiary: var(--color-accent-tertiary, #6a00ff);
+
+  --nc-color-success: var(--color-state-success, #00ff9d);
+  --nc-color-warning: var(--color-state-warning, #ffb800);
+  --nc-color-danger: var(--color-state-danger, #ff4d8e);
+
+  --nc-font-heading: var(--font-family-heading, 'Michroma', sans-serif);
+  --nc-font-body: var(--font-family-body, 'Inter', sans-serif);
+  --nc-font-code: var(--font-family-code, 'IBM Plex Mono', monospace);
+  --nc-font-size-body: var(--font-size-md, 1rem);
+  --nc-font-size-caption: var(--font-size-xs, 0.75rem);
+  --nc-font-size-h1: var(--font-size-5xl, 4rem);
+  --nc-font-size-h2: var(--font-size-4xl, 3rem);
+  --nc-font-size-h3: var(--font-size-3xl, 2.5rem);
+  --nc-font-line-normal: var(--font-line-height-normal, 1.5);
+  --nc-font-line-tight: var(--font-line-height-tight, 1.05);
+  --nc-font-track-display: var(--font-letter-spacing-tight, -0.04em);
+  --nc-font-track-kicker: var(--font-letter-spacing-ultra, 0.14em);
+
+  --nc-space-1: 0.25rem;
+  --nc-space-2: 0.5rem;
+  --nc-space-3: 0.75rem;
+  --nc-space-4: 1rem;
+  --nc-space-5: 1.25rem;
+  --nc-space-6: 1.5rem;
+  --nc-space-8: 2rem;
+  --nc-space-10: 2.5rem;
+  --nc-space-12: 3rem;
+  --nc-space-16: 4rem;
+
+  --nc-container-sm: var(--layout-container-sm, 36rem);
+  --nc-container-md: var(--layout-container-md, 48rem);
+  --nc-container-lg: var(--layout-container-lg, 64rem);
+  --nc-container-xl: var(--layout-container-xl, 80rem);
+  --nc-container-2xl: var(--layout-container-2xl, 90rem);
+
+  --nc-grid-columns: var(--layout-grid-columns-default, 12);
+  --nc-grid-gutter-sm: var(--layout-grid-gutter-sm, 0.75rem);
+  --nc-grid-gutter-md: var(--layout-grid-gutter-md, 1rem);
+  --nc-grid-gutter-lg: var(--layout-grid-gutter-lg, 1.5rem);
+  --nc-grid-card-min: var(--layout-grid-card-min-width, 16rem);
+  --nc-grid-card-max: var(--layout-grid-card-max-width, 28rem);
+
+  --nc-surface-0: var(--elevation-surface-0, #060112);
+  --nc-surface-1: var(--elevation-surface-1, #0d0221);
+  --nc-surface-2: var(--elevation-surface-2, #1a1035);
+  --nc-surface-3: var(--elevation-surface-3, #14092e);
+
+  --nc-shadow-elevation-0: var(--elevation-shadow-0, none);
+  --nc-shadow-elevation-1: var(--elevation-shadow-1, 0 4px 12px rgb(3 7 18 / 0.2));
+  --nc-shadow-elevation-2: var(--elevation-shadow-2, 0 8px 24px rgb(3 7 18 / 0.25));
+  --nc-shadow-elevation-3: var(--elevation-shadow-3, 0 16px 48px rgb(3 7 18 / 0.3));
+  --nc-shadow-elevation-4: var(--elevation-shadow-4, 0 32px 96px rgb(3 7 18 / 0.4));
+
+  --nc-border-elevation-1: var(--elevation-border-1, #2a184d);
+  --nc-border-elevation-2: var(--elevation-border-2, #542c90);
+  --nc-ring-focus: var(--elevation-ring-focus, 0 0 0 2px color-mix(in srgb, #00f0ff 40%, transparent));
+  --nc-ring-accent: var(--elevation-ring-accent, 0 0 0 1px rgb(255 0 217 / 0.35), 0 0 24px rgb(255 0 217 / 0.4));
+
+  --nc-padding-inline-sm: var(--component-padding-inline-sm, 0.75rem);
+  --nc-padding-inline-md: var(--component-padding-inline-md, 1rem);
+  --nc-padding-inline-lg: var(--component-padding-inline-lg, 1.25rem);
+  --nc-padding-block-sm: var(--component-padding-block-sm, 0.5rem);
+  --nc-padding-block-md: var(--component-padding-block-md, 0.75rem);
+  --nc-gap-default: var(--component-gap-default, 0.75rem);
+  --nc-gap-spacious: var(--component-gap-spacious, 1.25rem);
+
+  --nc-radius-sm: 0.5rem;
+  --nc-radius-md: 0.875rem;
+  --nc-radius-lg: 1.25rem;
+  --nc-shadow-sm: 0 8px 24px rgb(3 7 18 / 0.25);
+  --nc-shadow-lg: 0 32px 96px rgb(3 7 18 / 0.4);
+  --nc-motion-fast: 120ms;
+  --nc-motion-normal: 180ms;
+  --nc-opacity-muted: 0.72;
+  --nc-z-base: var(--layer-base, 0);
+  --nc-z-raised: var(--layer-raised, 10);
+  --nc-z-sticky: var(--layer-sticky, 100);
+  --nc-z-dropdown: var(--layer-dropdown, 1000);
+  --nc-z-popover: var(--layer-popover, 1050);
+  --nc-z-overlay: var(--layer-overlay, 1100);
+  --nc-z-modal: var(--layer-modal, 1200);
+  --nc-z-toast: var(--layer-toast, 1300);
+  --nc-z-tooltip: var(--layer-tooltip, 1400);
+}
