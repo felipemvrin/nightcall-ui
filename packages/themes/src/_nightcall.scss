@@ -27,13 +27,15 @@
   --nc-font-code: var(--font-family-code, 'IBM Plex Mono', monospace);
   --nc-font-size-body: var(--font-size-md, 1rem);
   --nc-font-size-caption: var(--font-size-xs, 0.75rem);
-  --nc-font-size-h1: var(--font-size-4xl, 3rem);
+  --nc-font-size-h1: 2.75rem;
   --nc-font-size-h2: var(--font-size-3xl, 2.5rem);
   --nc-font-size-h3: var(--font-size-2xl, 2rem);
   --nc-font-line-normal: var(--font-line-height-normal, 1.5);
   --nc-font-line-tight: var(--font-line-height-tight, 1.05);
   --nc-font-track-display: var(--font-letter-spacing-tight, -0.04em);
   --nc-font-track-kicker: var(--font-letter-spacing-ultra, 0.14em);
+
+  --nc-font-weight-regular: var(--font-weight-regular, 400);
 
   --nc-space-1: 0.25rem;
   --nc-space-2: 0.5rem;
@@ -72,8 +74,15 @@
 
   --nc-border-elevation-1: var(--elevation-border-1, #2a184d);
   --nc-border-elevation-2: var(--elevation-border-2, #542c90);
-  --nc-ring-focus: var(--elevation-ring-focus, 0 0 0 2px color-mix(in srgb, #00f0ff 40%, transparent));
-  --nc-ring-accent: var(--elevation-ring-accent, 0 0 0 1px rgb(255 0 217 / 0.35), 0 0 24px rgb(255 0 217 / 0.4));
+  --nc-ring-focus: var(
+    --elevation-ring-focus,
+    0 0 0 2px color-mix(in srgb, #00f0ff 40%, transparent)
+  );
+  --nc-ring-accent: var(
+    --elevation-ring-accent,
+    0 0 0 1px rgb(255 0 217 / 0.35),
+    0 0 24px rgb(255 0 217 / 0.4)
+  );
 
   --nc-padding-inline-sm: var(--component-padding-inline-sm, 0.75rem);
   --nc-padding-inline-md: var(--component-padding-inline-md, 1rem);

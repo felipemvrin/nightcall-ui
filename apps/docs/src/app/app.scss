@@ -4,7 +4,7 @@
 
 .docs-shell {
   min-height: 100vh;
-  padding: clamp(var(--nc-space-6), 4vw, var(--nc-space-16, 4rem));
+  padding: 0 clamp(var(--nc-space-6), 4vw, var(--nc-space-16, 4rem));
   max-width: var(--nc-container-2xl, 90rem);
   margin-inline: auto;
   display: grid;
@@ -24,10 +24,9 @@
 
 .hero-media {
   margin: 0;
-  border-radius: 1.25rem;
+  border-radius: 0 0 1.25rem 1.25rem;
   overflow: hidden;
   background: color-mix(in srgb, var(--nc-color-surface, #12192b) 85%, black);
-  border: 1px solid color-mix(in srgb, var(--nc-color-border, #2b3453) 100%, transparent);
   box-shadow: var(--nc-shadow-elevation-2, 0 8px 24px rgb(3 7 18 / 0.25));
 }
 
@@ -48,12 +47,13 @@
 
 h1 {
   margin: 0;
+  white-space: nowrap;
   text-transform: uppercase;
   font-family: var(--nc-font-heading, 'Michroma', sans-serif);
-  font-size: var(--nc-font-size-h1, 3rem);
+  font-size: var(--nc-font-size-h1, 2.75rem);
+  font-weight: var(--nc-font-weight-regular, 400);
   line-height: var(--nc-font-line-tight, 1.05);
   letter-spacing: var(--nc-font-track-display, -0.04em);
-  max-width: 10ch;
   color: var(--nc-color-heading, #fb15cc);
   letter-spacing: var(--nc-font-letter-spacing-wide, 0.06em);
 }
@@ -145,8 +145,23 @@ h1 {
   font-size: var(--nc-font-size-sm, 0.875rem);
 }
 
+.hero-side {
+  display: grid;
+  gap: var(--nc-space-4, 1rem);
+  align-content: start;
+}
+
+.hero-embed {
+  width: 100%;
+  border: 0;
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--nc-color-surface, #12192b) 92%, transparent);
+  box-shadow: var(--nc-shadow-elevation-1, 0 4px 12px rgb(3 7 18 / 0.2));
+}
+
 @media (min-width: 64rem) {
   .hero {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: start;
   }
 }

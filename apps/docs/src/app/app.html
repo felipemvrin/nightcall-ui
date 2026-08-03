@@ -18,9 +18,17 @@
       </div>
     </div>
 
-    <figure class="hero-media">
-      <img ngSrc="/images/head-night.jpg" width="1280" height="720" alt="Nightcall UI visual preview" priority />
-    </figure>
+    <div class="hero-side">
+      <figure class="hero-media">
+        <img ngSrc="/images/head-night.jpg" width="1280" height="720" alt="Nightcall UI visual preview" priority />
+      </figure>
+
+      <iframe class="hero-embed" data-testid="embed-iframe"
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1E8PaaPDFB8eJ0?utm_source=generator&si=2f303b022a4d45e8"
+        width="100%" height="152" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+      </iframe>
+    </div>
   </section>
 
   <section class="grid" aria-label="Workspace overview">
@@ -38,8 +46,5 @@
     }
   </section>
 
-  <iframe data-testid="embed-iframe" style="border-radius:12px"
-    src="https://open.spotify.com/embed/playlist/37i9dQZF1E8PaaPDFB8eJ0?utm_source=generator&si=16ec928d458e4612"
-    width="100%" height="352" frameBorder="0" allowfullscreen=""
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
 </main>
