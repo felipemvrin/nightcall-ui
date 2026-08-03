@@ -19,7 +19,9 @@ export const Palette: Story = {
         <section style="max-width: 80rem; margin: 0 auto; display: grid; gap: 2rem;">
           <header>
             <p style="margin: 0 0 .5rem; letter-spacing: .12em; text-transform: uppercase; font-size: .75rem; color: var(--color-text-secondary, #a1a2d1);">Nightcall UI</p>
-            <h1 style="margin: 0; font-family: var(--nc-font-heading, Michroma, sans-serif); font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1;">Color Tokens</h1>
+            <h1 style="margin: 0; font-family: var(--nc-font-heading, Michroma, sans-serif); font-size: var(--nc-font-size-h1, 3rem); line-height: 1; color: var(--nc-color-heading, #fb15cc);">
+              Color Tokens
+            </h1>
           </header>
 
           <section>

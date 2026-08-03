@@ -6,5 +6,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.eol": "\n",
   "typescript.tsdk": "node_modules/typescript/lib",
-  "angular.enable-strict-mode": true
+  "angular.enable-strict-mode": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
 }

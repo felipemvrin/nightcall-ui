@@ -99,6 +99,9 @@
       },
       "inverse": {
         "value": "{color.primitive.slate.900}"
+      },
+      "heading": {
+        "value": "#FB15CC"
       }
     },
     "accent": {

@@ -8,6 +8,7 @@
   --nc-color-text-primary: #f8f8ff;
   --nc-color-text-secondary: #a1a2d1;
   --nc-color-text-inverse: #060112;
+  --nc-color-heading: var(--color-text-heading, #fb15cc);
 
   --nc-color-border: var(--color-border-subtle, #2a184d);
   --nc-color-border-strong: var(--color-border-strong, #542c90);
@@ -26,9 +27,9 @@
   --nc-font-code: var(--font-family-code, 'IBM Plex Mono', monospace);
   --nc-font-size-body: var(--font-size-md, 1rem);
   --nc-font-size-caption: var(--font-size-xs, 0.75rem);
-  --nc-font-size-h1: var(--font-size-5xl, 4rem);
-  --nc-font-size-h2: var(--font-size-4xl, 3rem);
-  --nc-font-size-h3: var(--font-size-3xl, 2.5rem);
+  --nc-font-size-h1: var(--font-size-4xl, 3rem);
+  --nc-font-size-h2: var(--font-size-3xl, 2.5rem);
+  --nc-font-size-h3: var(--font-size-2xl, 2rem);
   --nc-font-line-normal: var(--font-line-height-normal, 1.5);
   --nc-font-line-tight: var(--font-line-height-tight, 1.05);
   --nc-font-track-display: var(--font-letter-spacing-tight, -0.04em);
