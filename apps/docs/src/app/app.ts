@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 type Section = {
@@ -8,6 +9,7 @@ type Section = {
 
 @Component({
   selector: 'nc-root',
+  imports: [NgOptimizedImage],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

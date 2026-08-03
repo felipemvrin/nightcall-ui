@@ -13,7 +13,29 @@
 }
 
 .hero {
+  display: grid;
+  gap: clamp(var(--nc-space-5), 3vw, var(--nc-space-8, 2rem));
+  align-items: center;
+}
+
+.hero-content {
   max-width: 42rem;
+}
+
+.hero-media {
+  margin: 0;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--nc-color-surface, #12192b) 85%, black);
+  border: 1px solid color-mix(in srgb, var(--nc-color-border, #2b3453) 100%, transparent);
+  box-shadow: var(--nc-shadow-elevation-2, 0 8px 24px rgb(3 7 18 / 0.25));
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .eyebrow {
@@ -26,11 +48,14 @@
 
 h1 {
   margin: 0;
+  text-transform: uppercase;
   font-family: var(--nc-font-heading, 'Michroma', sans-serif);
-  font-size: clamp(var(--nc-font-size-h2), 10vw, calc(var(--nc-font-size-h1) * 1.2));
+  font-size: var(--nc-font-size-h1, 3rem);
   line-height: var(--nc-font-line-tight, 1.05);
   letter-spacing: var(--nc-font-track-display, -0.04em);
   max-width: 10ch;
+  color: var(--nc-color-heading, #fb15cc);
+  letter-spacing: var(--nc-font-letter-spacing-wide, 0.06em);
 }
 
 .lede {
@@ -118,4 +143,10 @@ h1 {
   background: color-mix(in srgb, var(--nc-color-accent, #7ee1ff) 12%, transparent);
   color: var(--nc-color-text-primary, #edf2ff);
   font-size: var(--nc-font-size-sm, 0.875rem);
+}
+
+@media (min-width: 64rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
 }
