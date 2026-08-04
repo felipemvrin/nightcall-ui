@@ -1,26 +1,31 @@
 :root,
 [data-theme='nightcall'] {
-  --nc-color-background: var(--color-background-canvas, #060112);
-  --nc-color-surface: var(--color-background-surface, #0d0221);
-  --nc-color-surface-elevated: var(--color-background-surface-elevated, #1a1035);
-  --nc-color-surface-overlay: var(--color-background-surface-overlay, #14092e);
+  --nc-color-background: var(--color-background-canvas);
+  --nc-color-surface: var(--color-background-surface);
+  --nc-color-surface-secondary: var(--color-background-surface-elevated);
+  --nc-color-surface-elevated: var(--color-background-surface-elevated);
+  --nc-color-surface-overlay: var(--color-background-surface-overlay);
 
-  --nc-color-text-primary: #f8f8ff;
-  --nc-color-text-secondary: #a1a2d1;
-  --nc-color-text-inverse: #060112;
-  --nc-color-heading: var(--color-text-heading, #fb15cc);
+  --nc-color-text: var(--color-text-primary);
+  --nc-color-text-primary: var(--color-text-primary);
+  --nc-color-text-secondary: var(--color-text-secondary);
+  --nc-color-text-inverse: var(--color-text-inverse);
+  --nc-color-heading: var(--color-text-heading);
 
-  --nc-color-border: var(--color-border-subtle, #2a184d);
-  --nc-color-border-strong: var(--color-border-strong, #542c90);
-  --nc-color-focus: var(--color-state-focus-ring, #00f0ff);
+  --nc-color-primary: var(--color-accent-primary);
+  --nc-color-secondary: var(--color-accent-secondary);
+  --nc-color-info: var(--color-accent-tertiary);
+  --nc-color-warning: var(--color-state-warning);
 
-  --nc-color-accent: var(--color-accent-primary, #ff00d9);
-  --nc-color-accent-secondary: var(--color-accent-secondary, #00f0ff);
-  --nc-color-accent-tertiary: var(--color-accent-tertiary, #6a00ff);
+  --nc-color-border: var(--color-border-subtle);
+  --nc-color-border-strong: var(--color-border-strong);
+  --nc-color-focus: var(--color-state-focus-ring);
+  --nc-color-hover: color-mix(in srgb, var(--nc-color-primary) 86%, white);
+  --nc-color-active: color-mix(in srgb, var(--nc-color-primary) 82%, black);
+  --nc-color-disabled: color-mix(in srgb, var(--nc-color-text) 40%, transparent);
 
-  --nc-color-success: var(--color-state-success, #00ff9d);
-  --nc-color-warning: var(--color-state-warning, #ffb800);
-  --nc-color-danger: var(--color-state-danger, #ff4d8e);
+  --nc-color-success: var(--color-state-success);
+  --nc-color-danger: var(--color-state-danger);
 
   --nc-font-heading: var(--font-family-heading, 'Michroma', sans-serif);
   --nc-font-body: var(--font-family-body, 'Inter', sans-serif);
@@ -61,10 +66,10 @@
   --nc-grid-card-min: var(--layout-grid-card-min-width, 16rem);
   --nc-grid-card-max: var(--layout-grid-card-max-width, 28rem);
 
-  --nc-surface-0: var(--elevation-surface-0, #060112);
-  --nc-surface-1: var(--elevation-surface-1, #0d0221);
-  --nc-surface-2: var(--elevation-surface-2, #1a1035);
-  --nc-surface-3: var(--elevation-surface-3, #14092e);
+  --nc-surface-0: var(--elevation-surface-0);
+  --nc-surface-1: var(--elevation-surface-1);
+  --nc-surface-2: var(--elevation-surface-2);
+  --nc-surface-3: var(--elevation-surface-3);
 
   --nc-shadow-elevation-0: var(--elevation-shadow-0, none);
   --nc-shadow-elevation-1: var(--elevation-shadow-1, 0 4px 12px rgb(3 7 18 / 0.2));
@@ -72,17 +77,10 @@
   --nc-shadow-elevation-3: var(--elevation-shadow-3, 0 16px 48px rgb(3 7 18 / 0.3));
   --nc-shadow-elevation-4: var(--elevation-shadow-4, 0 32px 96px rgb(3 7 18 / 0.4));
 
-  --nc-border-elevation-1: var(--elevation-border-1, #2a184d);
-  --nc-border-elevation-2: var(--elevation-border-2, #542c90);
-  --nc-ring-focus: var(
-    --elevation-ring-focus,
-    0 0 0 2px color-mix(in srgb, #00f0ff 40%, transparent)
-  );
-  --nc-ring-accent: var(
-    --elevation-ring-accent,
-    0 0 0 1px rgb(255 0 217 / 0.35),
-    0 0 24px rgb(255 0 217 / 0.4)
-  );
+  --nc-border-elevation-1: var(--elevation-border-1);
+  --nc-border-elevation-2: var(--elevation-border-2);
+  --nc-ring-focus: var(--elevation-ring-focus);
+  --nc-ring-accent: var(--elevation-ring-accent);
 
   --nc-padding-inline-sm: var(--component-padding-inline-sm, 0.75rem);
   --nc-padding-inline-md: var(--component-padding-inline-md, 1rem);

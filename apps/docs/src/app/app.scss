@@ -26,7 +26,7 @@
   margin: 0;
   border-radius: 0 0 1.25rem 1.25rem;
   overflow: hidden;
-  background: color-mix(in srgb, var(--nc-color-surface, #12192b) 85%, black);
+  background: color-mix(in srgb, var(--nc-color-surface) 85%, black);
   box-shadow: var(--nc-shadow-elevation-2, 0 8px 24px rgb(3 7 18 / 0.25));
 }
 
@@ -42,7 +42,7 @@
   text-transform: uppercase;
   letter-spacing: var(--nc-font-track-kicker, 0.14em);
   font-size: var(--nc-font-size-caption, 0.75rem);
-  color: var(--nc-color-text-secondary, #94a3b8);
+  color: var(--nc-color-text-secondary);
 }
 
 h1 {
@@ -54,7 +54,7 @@ h1 {
   font-weight: var(--nc-font-weight-regular, 400);
   line-height: var(--nc-font-line-tight, 1.05);
   letter-spacing: var(--nc-font-track-display, -0.04em);
-  color: var(--nc-color-heading, #fb15cc);
+  color: var(--nc-color-heading);
   letter-spacing: var(--nc-font-letter-spacing-wide, 0.06em);
 }
 
@@ -63,7 +63,7 @@ h1 {
   max-width: 56ch;
   font-size: var(--nc-font-size-lg, 1.125rem);
   line-height: var(--nc-font-line-normal, 1.5);
-  color: var(--nc-color-text-secondary, #94a3b8);
+  color: var(--nc-color-text-secondary);
 }
 
 .actions {
@@ -89,15 +89,15 @@ h1 {
 }
 
 .primary {
-  background: var(--nc-color-accent, #7ee1ff);
-  color: #081018;
+  background: var(--nc-color-primary);
+  color: var(--nc-color-text-primary);
   font-weight: 700;
 }
 
 .secondary {
-  background: color-mix(in srgb, var(--nc-color-surface, #12192b) 92%, transparent);
-  border-color: color-mix(in srgb, var(--nc-color-border, #2b3453) 100%, transparent);
-  color: var(--nc-color-text-primary, #edf2ff);
+  background: color-mix(in srgb, var(--nc-color-surface) 92%, transparent);
+  border-color: color-mix(in srgb, var(--nc-color-border) 100%, transparent);
+  color: var(--nc-color-text-primary);
 }
 
 .grid {
@@ -109,8 +109,8 @@ h1 {
 .card {
   padding: var(--nc-space-5);
   border-radius: 1.25rem;
-  background: var(--nc-surface-2, #1a1035);
-  border: 1px solid var(--nc-border-elevation-1, #2a184d);
+  background: var(--nc-surface-2);
+  border: 1px solid var(--nc-border-elevation-1);
   box-shadow: var(--nc-shadow-elevation-2, 0 8px 24px rgb(3 7 18 / 0.25));
 }
 
@@ -119,13 +119,13 @@ h1 {
   font-size: var(--nc-font-size-xs, 0.75rem);
   letter-spacing: var(--nc-font-letter-spacing-wide, 0.06em);
   text-transform: uppercase;
-  color: var(--nc-color-text-secondary, #94a3b8);
+  color: var(--nc-color-text-secondary);
 }
 
 .card-copy {
   margin: 0;
   line-height: 1.65;
-  color: var(--nc-color-text-primary, #edf2ff);
+  color: var(--nc-color-text-primary);
 }
 
 .badge-list {
@@ -140,8 +140,8 @@ h1 {
 .badge-list li {
   padding: var(--nc-padding-block-sm, 0.5rem) var(--nc-padding-inline-sm, 0.75rem);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--nc-color-accent, #7ee1ff) 12%, transparent);
-  color: var(--nc-color-text-primary, #edf2ff);
+  background: color-mix(in srgb, var(--nc-color-primary) 12%, transparent);
+  color: var(--nc-color-text-primary);
   font-size: var(--nc-font-size-sm, 0.875rem);
 }
 
@@ -155,7 +155,7 @@ h1 {
   width: 100%;
   border: 0;
   border-radius: 0.75rem;
-  background: color-mix(in srgb, var(--nc-color-surface, #12192b) 92%, transparent);
+  background: color-mix(in srgb, var(--nc-color-surface) 92%, transparent);
   box-shadow: var(--nc-shadow-elevation-1, 0 4px 12px rgb(3 7 18 / 0.2));
 }
 

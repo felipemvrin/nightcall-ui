@@ -8,6 +8,13 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ['../apps/docs/public'],
+  webpackFinal: async (webpackConfig) => {
+    webpackConfig.performance = {
+      hints: false,
+    };
+
+    return webpackConfig;
+  },
 };
 
 export default config;
