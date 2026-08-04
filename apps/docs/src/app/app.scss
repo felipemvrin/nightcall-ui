@@ -4,7 +4,7 @@
 
 .docs-shell {
   min-height: 100vh;
-  padding: 0 clamp(var(--nc-space-6), 4vw, var(--nc-space-16, 4rem));
+  padding: 0 clamp(var(--nc-space-6), 4vw, var(--nc-space-16, 4rem)) 4vw;
   max-width: var(--nc-container-2xl, 90rem);
   margin-inline: auto;
   display: grid;
@@ -20,6 +20,8 @@
 
 .hero-content {
   max-width: 42rem;
+  display: grid;
+  align-content: center;
 }
 
 .hero-media {
@@ -162,6 +164,26 @@ h1 {
 @media (min-width: 64rem) {
   .hero {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    align-items: start;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "content media"
+      ". embed";
+    align-items: stretch;
+  }
+
+  .hero-content {
+    grid-area: content;
+  }
+
+  .hero-side {
+    display: contents;
+  }
+
+  .hero-media {
+    grid-area: media;
+  }
+
+  .hero-embed {
+    grid-area: embed;
   }
 }
