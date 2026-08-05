@@ -40,11 +40,10 @@
 }
 
 .eyebrow {
-  margin: 0 0 var(--nc-space-4);
+  margin: var(--nc-space-4) 0 var(--nc-space-4);
   text-transform: uppercase;
   letter-spacing: var(--nc-font-track-kicker, 0.14em);
   font-size: var(--nc-font-size-caption, 0.75rem);
-  color: var(--nc-color-text-secondary);
 }
 
 h1 {
@@ -166,8 +165,8 @@ h1 {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     grid-template-rows: auto auto;
     grid-template-areas:
-      "content media"
-      ". embed";
+      'content media'
+      '. embed';
     align-items: stretch;
   }
 

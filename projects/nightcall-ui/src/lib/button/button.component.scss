@@ -1,0 +1,214 @@
+:host {
+  --nc-button-radius: var(--radius-lg);
+  --nc-button-duration: var(--motion-duration-normal);
+  --nc-button-easing: var(--motion-easing-standard);
+  --nc-button-focus-ring: var(--elevation-ring-focus);
+  --nc-button-font-family: var(--font-family-body);
+  --nc-button-font-weight: var(--font-weight-regular);
+  --nc-button-text-transform: uppercase;
+
+  --nc-button-bg: linear-gradient(
+    135deg,
+    var(--color-accent-primary),
+    color-mix(in srgb, var(--color-accent-secondary) 88%, var(--color-accent-primary))
+  );
+  --nc-button-bg-hover: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-state-focus-ring) 58%, var(--color-accent-primary)),
+    color-mix(in srgb, var(--color-state-focus-ring) 42%, var(--color-accent-secondary))
+  );
+  --nc-button-bg-active: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent-primary) 80%, var(--color-background-canvas)),
+    color-mix(in srgb, var(--color-accent-secondary) 80%, var(--color-background-canvas))
+  );
+  --nc-button-fg: var(--color-text-primary);
+  --nc-button-border: color-mix(
+    in srgb,
+    var(--color-border-accent) 50%,
+    var(--color-border-strong)
+  );
+  --nc-button-shadow: var(--nc-shadow-neon-sm, var(--shadow-glow-pink));
+  --nc-button-shadow-hover: var(--nc-shadow-neon-md, var(--shadow-glow-cyan));
+  --nc-button-shadow-active: var(--elevation-shadow-1);
+
+  display: inline-flex;
+}
+
+:host(.nc-button-host--full-width) {
+  inline-size: 100%;
+}
+
+.nc-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--component-gap-tight);
+  min-inline-size: 10rem;
+
+  border: 1px solid var(--nc-button-border);
+  border-radius: var(--nc-button-radius);
+  padding: var(--component-padding-block-sm) var(--component-padding-inline-lg);
+
+  background: var(--nc-button-bg);
+  color: var(--nc-button-fg);
+  box-shadow: var(--nc-button-shadow), var(--elevation-shadow-2);
+
+  font-family: var(--nc-button-font-family);
+  font-weight: var(--nc-button-font-weight);
+  font-size: var(--font-size-md);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing-wide);
+  text-transform: var(--nc-button-text-transform);
+  white-space: nowrap;
+
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+
+  transition:
+    background var(--nc-button-duration) var(--nc-button-easing),
+    color var(--nc-button-duration) var(--nc-button-easing),
+    border-color var(--nc-button-duration) var(--nc-button-easing),
+    box-shadow var(--nc-button-duration) var(--nc-button-easing),
+    filter var(--nc-button-duration) var(--nc-button-easing),
+    transform var(--motion-duration-fast) var(--nc-button-easing);
+}
+
+:host(.nc-button-host--full-width) .nc-button {
+  inline-size: 100%;
+}
+
+.nc-button__label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nc-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+:host(.nc-button-host--icon-only) .nc-button {
+  min-inline-size: auto;
+  aspect-ratio: 1;
+  padding: var(--component-padding-block-sm);
+}
+
+:host([data-size='sm']) .nc-button {
+  min-inline-size: 8rem;
+  padding: var(--component-padding-block-xs) var(--component-padding-inline-md);
+  font-size: var(--font-size-sm);
+}
+
+:host([data-size='lg']) .nc-button {
+  min-inline-size: 12rem;
+  padding: var(--component-padding-block-md) var(--component-padding-inline-lg);
+  font-size: var(--font-size-lg);
+}
+
+:host([data-variant='secondary']) {
+  --nc-button-bg: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent-secondary) 84%, var(--color-background-surface)),
+    color-mix(in srgb, var(--color-accent-primary) 58%, var(--color-background-surface))
+  );
+  --nc-button-bg-hover: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-state-focus-ring) 46%, var(--color-accent-secondary)),
+    color-mix(in srgb, var(--color-state-focus-ring) 40%, var(--color-accent-primary))
+  );
+  --nc-button-bg-active: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent-secondary) 76%, var(--color-background-canvas)),
+    color-mix(in srgb, var(--color-accent-primary) 76%, var(--color-background-canvas))
+  );
+  --nc-button-border: color-mix(
+    in srgb,
+    var(--color-border-accent) 64%,
+    var(--color-border-strong)
+  );
+}
+
+:host([data-variant='outline']) {
+  --nc-button-bg: color-mix(in srgb, var(--color-background-surface) 92%, transparent);
+  --nc-button-bg-hover: color-mix(
+    in srgb,
+    var(--color-state-focus-ring) 16%,
+    var(--color-background-surface)
+  );
+  --nc-button-bg-active: color-mix(
+    in srgb,
+    var(--color-background-surface) 84%,
+    var(--color-background-canvas)
+  );
+  --nc-button-fg: var(--color-text-primary);
+  --nc-button-border: color-mix(
+    in srgb,
+    var(--color-border-strong) 60%,
+    var(--color-state-focus-ring)
+  );
+  --nc-button-shadow: var(--elevation-shadow-1);
+  --nc-button-shadow-hover: var(--nc-shadow-neon-md, var(--shadow-glow-cyan));
+  --nc-button-shadow-active: var(--elevation-shadow-0);
+}
+
+:host([data-variant='ghost']) {
+  --nc-button-bg: transparent;
+  --nc-button-bg-hover: color-mix(in srgb, var(--color-state-focus-ring) 14%, transparent);
+  --nc-button-bg-active: color-mix(in srgb, var(--color-background-surface) 68%, transparent);
+  --nc-button-fg: var(--color-text-primary);
+  --nc-button-border: color-mix(in srgb, var(--color-border-subtle) 88%, transparent);
+  --nc-button-shadow: var(--elevation-shadow-0);
+  --nc-button-shadow-hover: var(--elevation-shadow-1);
+  --nc-button-shadow-active: var(--elevation-shadow-0);
+}
+
+.nc-button:not(:disabled):hover {
+  background: var(--nc-button-bg-hover);
+  box-shadow: var(--nc-button-shadow-hover), var(--elevation-shadow-2);
+  border-color: color-mix(in srgb, var(--color-state-focus-ring) 45%, var(--nc-button-border));
+  filter: brightness(1.04);
+}
+
+.nc-button:not(:disabled):active {
+  background: var(--nc-button-bg-active);
+  box-shadow: var(--nc-button-shadow-active);
+  filter: brightness(0.96);
+  transform: translateY(1px);
+}
+
+.nc-button:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: var(--nc-button-focus-ring), var(--nc-button-shadow-hover), var(--elevation-shadow-2);
+}
+
+.nc-button:disabled {
+  opacity: var(--opacity-disabled);
+  box-shadow: var(--elevation-shadow-0);
+  filter: none;
+  cursor: not-allowed;
+}
+
+.nc-button--loading {
+  pointer-events: none;
+}
+
+.nc-button__spinner {
+  inline-size: 1em;
+  block-size: 1em;
+  border-radius: var(--radius-pill);
+  border: 2px solid color-mix(in srgb, currentColor 35%, transparent);
+  border-top-color: currentColor;
+  animation: nc-button-spin var(--motion-duration-slow) linear infinite;
+}
+
+@keyframes nc-button-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}

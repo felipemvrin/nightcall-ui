@@ -76,6 +76,9 @@
   --nc-shadow-elevation-2: var(--elevation-shadow-2, 0 8px 24px rgb(3 7 18 / 0.25));
   --nc-shadow-elevation-3: var(--elevation-shadow-3, 0 16px 48px rgb(3 7 18 / 0.3));
   --nc-shadow-elevation-4: var(--elevation-shadow-4, 0 32px 96px rgb(3 7 18 / 0.4));
+  --nc-shadow-neon-sm: var(--shadow-glow-pink);
+  --nc-shadow-neon-md: var(--shadow-glow-cyan);
+  --nc-shadow-neon-lg: var(--shadow-glow-cyan), var(--elevation-shadow-3);
 
   --nc-border-elevation-1: var(--elevation-border-1);
   --nc-border-elevation-2: var(--elevation-border-2);
