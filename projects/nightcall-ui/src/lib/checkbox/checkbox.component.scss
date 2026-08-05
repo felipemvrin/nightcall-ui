@@ -1,0 +1,120 @@
+@use '../styles/form-control' as form;
+
+:host {
+  --nc-checkbox-duration: var(--motion-duration-fast);
+  --nc-checkbox-easing: var(--motion-easing-standard);
+  --nc-checkbox-size: 1.25rem;
+
+  display: grid;
+  gap: var(--component-gap-tight);
+}
+
+.nc-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--component-gap-tight);
+  cursor: pointer;
+}
+
+.nc-checkbox__native {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.nc-checkbox__control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--nc-checkbox-size);
+  block-size: var(--nc-checkbox-size);
+
+  border: 1px solid color-mix(in srgb, var(--color-border-strong) 65%, var(--color-border-subtle));
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-background-surface) 94%, transparent),
+    color-mix(in srgb, var(--color-background-surface-elevated) 32%, transparent)
+  );
+  box-shadow: var(--elevation-shadow-1);
+
+  color: var(--color-text-primary);
+  font-family: var(--font-family-button, 'Rajdhani', sans-serif);
+  font-size: var(--font-size-sm);
+  line-height: 1;
+
+  transition:
+    border-color var(--nc-checkbox-duration) var(--nc-checkbox-easing),
+    box-shadow var(--nc-checkbox-duration) var(--nc-checkbox-easing),
+    background var(--nc-checkbox-duration) var(--nc-checkbox-easing),
+    transform var(--nc-checkbox-duration) var(--nc-checkbox-easing);
+}
+
+.nc-checkbox__label {
+  font-family: var(--font-family-button, 'Rajdhani', sans-serif);
+  font-size: var(--font-size-md);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing-normal);
+  color: var(--color-text-primary);
+}
+
+.nc-checkbox__mark--indeterminate {
+  inline-size: 0.625rem;
+  block-size: 2px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-state-focus-ring) 78%, var(--color-accent-primary));
+}
+
+.nc-checkbox__mark--checked {
+  color: color-mix(in srgb, var(--color-state-focus-ring) 70%, var(--color-accent-secondary));
+  text-shadow: var(--shadow-glow-cyan);
+  font-weight: var(--font-weight-bold);
+  transform: translateY(-1px);
+}
+
+.nc-checkbox__native:is(:checked, :indeterminate) + .nc-checkbox__control {
+  border-color: color-mix(in srgb, var(--color-state-focus-ring) 56%, var(--color-border-strong));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent-primary) 36%, var(--color-background-surface)),
+    color-mix(in srgb, var(--color-accent-secondary) 24%, var(--color-background-surface-elevated))
+  );
+  box-shadow: var(--nc-shadow-neon-sm, var(--shadow-glow-pink));
+}
+
+.nc-checkbox__support {
+  @include form.nc-form-helper;
+  margin-inline-start: calc(var(--nc-checkbox-size) + var(--component-gap-tight));
+}
+
+.nc-checkbox:hover .nc-checkbox__control {
+  border-color: color-mix(in srgb, var(--color-state-focus-ring) 45%, var(--color-border-strong));
+  box-shadow: var(--nc-shadow-neon-sm, var(--shadow-glow-pink));
+  transform: translateY(-1px);
+}
+
+.nc-checkbox__native:focus-visible + .nc-checkbox__control {
+  @include form.nc-control-shell-focus;
+}
+
+:host(.nc-checkbox-host--error) .nc-checkbox__control {
+  @include form.nc-control-shell-error;
+}
+
+:host(.nc-checkbox-host--error) .nc-checkbox__support {
+  color: var(--color-state-danger);
+}
+
+:host(.nc-checkbox-host--disabled) {
+  opacity: var(--opacity-disabled);
+}
+
+:host(.nc-checkbox-host--disabled) .nc-checkbox {
+  cursor: not-allowed;
+}

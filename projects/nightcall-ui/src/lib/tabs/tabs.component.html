@@ -1,0 +1,15 @@
+<div class="nc-tabs" role="tablist" aria-label="Tabs">
+    @for (item of items(); track item.id; let index = $index) {
+    <button #tabButton class="nc-tabs__tab" type="button" role="tab" [id]="'nc-tab-' + item.id"
+        [attr.aria-controls]="'nc-tab-panel-' + item.id" [attr.aria-selected]="isActive(item.id)"
+        [attr.tabindex]="isActive(item.id) ? 0 : -1" [disabled]="!!item.disabled"
+        [class.nc-tabs__tab--active]="isActive(item.id)" (click)="onActivate(item.id)"
+        (keydown)="onKeydown($event, index)">
+        @if (item.icon) {
+        <span class="nc-tabs__icon" aria-hidden="true">{{ item.icon }}</span>
+        }
+
+        <span class="nc-tabs__label">{{ item.label }}</span>
+    </button>
+    }
+</div>
