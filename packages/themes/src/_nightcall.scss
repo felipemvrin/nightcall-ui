@@ -30,6 +30,7 @@
   --nc-font-heading: var(--font-family-heading, 'Michroma', sans-serif);
   --nc-font-body: var(--font-family-body, 'Inter', sans-serif);
   --nc-font-code: var(--font-family-code, 'IBM Plex Mono', monospace);
+  --nc-font-button: var(--font-family-button, var(--nc-font-heading));
   --nc-font-size-body: var(--font-size-md, 1rem);
   --nc-font-size-caption: var(--font-size-xs, 0.75rem);
   --nc-font-size-h1: 2.75rem;
@@ -41,6 +42,7 @@
   --nc-font-track-kicker: var(--font-letter-spacing-ultra, 0.14em);
 
   --nc-font-weight-regular: var(--font-weight-regular, 400);
+  --nc-font-weight-button: var(--font-weight-medium, 500);
 
   --nc-space-1: 0.25rem;
   --nc-space-2: 0.5rem;
@@ -93,9 +95,9 @@
   --nc-gap-default: var(--component-gap-default, 0.75rem);
   --nc-gap-spacious: var(--component-gap-spacious, 1.25rem);
 
-  --nc-radius-sm: 0.5rem;
-  --nc-radius-md: 0.875rem;
-  --nc-radius-lg: 1.25rem;
+  --nc-radius-sm: var(--radius-sm, 6px);
+  --nc-radius-md: var(--radius-md, 0.5rem);
+  --nc-radius-lg: var(--radius-lg, 0.875rem);
   --nc-shadow-sm: 0 8px 24px rgb(3 7 18 / 0.25);
   --nc-shadow-lg: 0 32px 96px rgb(3 7 18 / 0.4);
   --nc-motion-fast: 120ms;

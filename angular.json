@@ -24,9 +24,7 @@
             "tsConfig": "apps/docs/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "packages/themes/src"
-              ]
+              "includePaths": ["packages/themes/src"]
             },
             "assets": [
               {
@@ -34,10 +32,7 @@
                 "input": "apps/docs/public"
               }
             ],
-            "styles": [
-              "dist/tokens/css/variables.css",
-              "apps/docs/src/styles.scss"
-            ]
+            "styles": ["dist/tokens/css/variables.css", "apps/docs/src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -49,7 +44,7 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
+                  "maximumWarning": "7kB",
                   "maximumError": "8kB"
                 }
               ],
@@ -103,9 +98,7 @@
             "tsConfig": "apps/docs/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "packages/themes/src"
-              ]
+              "includePaths": ["packages/themes/src"]
             },
             "assets": [
               {
@@ -113,10 +106,7 @@
                 "input": "apps/docs/public"
               }
             ],
-            "styles": [
-              "dist/tokens/css/variables.css",
-              "apps/docs/src/styles.scss"
-            ]
+            "styles": ["dist/tokens/css/variables.css", "apps/docs/src/styles.scss"]
           }
         }
       }

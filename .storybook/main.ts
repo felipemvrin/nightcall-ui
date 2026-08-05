@@ -3,6 +3,10 @@ import type { StorybookConfig } from '@storybook/angular';
 const config: StorybookConfig = {
   stories: ['../apps/docs/src/**/*.stories.@(ts|mdx)'],
   addons: ['@storybook/addon-a11y', 'storybook/viewport'],
+  previewHead: (head) => `${head}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Michroma:wght@400;500;600;700&family=Oxanium:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />`,
   framework: {
     name: '@storybook/angular',
     options: {},

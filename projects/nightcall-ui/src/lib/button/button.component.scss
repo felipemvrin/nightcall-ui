@@ -1,10 +1,10 @@
 :host {
-  --nc-button-radius: var(--radius-lg);
+  --nc-button-radius: var(--radius-sm, 6px);
   --nc-button-duration: var(--motion-duration-normal);
   --nc-button-easing: var(--motion-easing-standard);
   --nc-button-focus-ring: var(--elevation-ring-focus);
-  --nc-button-font-family: var(--font-family-body);
-  --nc-button-font-weight: var(--font-weight-regular);
+  --nc-button-font-family: var(--nc-font-button, var(--font-family-button, 'Rajdhani', sans-serif));
+  --nc-button-font-weight: var(--nc-font-weight-button, var(--font-weight-medium, 500));
   --nc-button-text-transform: uppercase;
 
   --nc-button-bg: linear-gradient(

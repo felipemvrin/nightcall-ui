@@ -69,7 +69,7 @@ Retro-futuristic action button for dark surfaces in Nightcall UI. It is token-dr
 - Radius: --radius-lg, --radius-pill.
 - Shadow: --shadow-glow-pink, --shadow-glow-cyan, --elevation-shadow-*.
 - Motion: --motion-duration-fast, --motion-duration-normal, --motion-duration-slow, --motion-easing-standard.
-- Typography: --font-family-body, --font-size-*, --font-weight-semibold, --font-letter-spacing-wide.
+- Typography: button family via --font-family-button (Rajdhani), plus --font-size-* and --font-letter-spacing-wide.
 
 # Best Practices
 - Use Primary for one key action per section.
@@ -311,7 +311,7 @@ export const DesignTokens: Story = {
           <p style="${docsBodyStyle}"><strong style="color: var(--color-text-primary);">Radius:</strong> --radius-lg, --radius-pill.</p>
           <p style="${docsBodyStyle}"><strong style="color: var(--color-text-primary);">Shadow:</strong> --shadow-glow-pink, --shadow-glow-cyan, --elevation-shadow-1, --elevation-shadow-2.</p>
           <p style="${docsBodyStyle}"><strong style="color: var(--color-text-primary);">Motion:</strong> --motion-duration-fast, --motion-duration-normal, --motion-duration-slow, --motion-easing-standard.</p>
-          <p style="${docsBodyStyle}"><strong style="color: var(--color-text-primary);">Typography:</strong> --font-family-body, --font-size-sm, --font-size-md, --font-size-lg, --font-weight-semibold.</p>
+          <p style="${docsBodyStyle}"><strong style="color: var(--color-text-primary);">Typography:</strong> button family via --font-family-button (Rajdhani), plus --font-size-sm, --font-size-md, --font-size-lg and --font-letter-spacing-wide.</p>
         </div>
       </section>
     `,
