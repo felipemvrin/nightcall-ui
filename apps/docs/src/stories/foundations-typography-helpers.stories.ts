@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
 const meta: Meta = {
-  title: 'Foundations/Typography Helpers',
+  title: 'Foundations/Typography',
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
@@ -52,18 +52,6 @@ export const Overview: Story = {
             </div>
           </section>
 
-          <section>
-            <h2 style="margin: 0 0 1rem; font-size: 1.125rem; color: var(--nc-color-text-secondary);">Recommended sections</h2>
-            <ul style="margin: 0; padding-left: 1.25rem; display: grid; gap: .5rem; color: var(--nc-color-text-secondary);">
-              <li>Foundations/Color Tokens</li>
-              <li>Foundations/Typography Helpers</li>
-              <li>Foundations/Spacing</li>
-              <li>Foundations/Elevation</li>
-              <li>Foundations/Motion</li>
-              <li>Foundations/Layout Grid</li>
-              <li>Foundations/Accessibility</li>
-            </ul>
-          </section>
         </section>
       </main>
     `,

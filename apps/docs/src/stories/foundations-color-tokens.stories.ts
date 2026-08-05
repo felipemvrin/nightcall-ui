@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
 const meta: Meta = {
-  title: 'Foundations/Color Tokens',
+  title: 'Foundations/Colors',
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
