@@ -1,5 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { NcButtonComponent } from '@nightcall-ui/components';
 
 type Section = {
   title: string;
@@ -9,7 +10,7 @@ type Section = {
 
 @Component({
   selector: 'nc-root',
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, NcButtonComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
@@ -33,4 +34,12 @@ export class App {
       items: ['Storybook 9', 'Style Dictionary', 'Vitest', 'Playwright'],
     },
   ];
+
+  protected openStorybook(): void {
+    window.open('http://localhost:6006', '_blank', 'noopener,noreferrer');
+  }
+
+  protected openAngularDocs(): void {
+    window.open('https://angular.dev', '_blank', 'noopener,noreferrer');
+  }
 }

@@ -160,6 +160,10 @@ h1 {
   box-shadow: var(--nc-shadow-elevation-1, 0 4px 12px rgb(3 7 18 / 0.2));
 }
 
+.mb-4 {
+  margin-block-end: var(--nc-space-4, 1rem);
+}
+
 @media (min-width: 64rem) {
   .hero {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
