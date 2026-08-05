@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve docs",
-    "build": "ng build docs && ng build nightcall-ui",
-    "watch": "ng build docs --watch --configuration development",
+    "start": "ng serve web",
+    "build": "ng build web && ng build nightcall-ui",
+    "watch": "ng build web --watch --configuration development",
     "test": "vitest run --passWithNoTests",
     "lint": "eslint .",
     "storybook": "npm run tokens && ng run docs:storybook",

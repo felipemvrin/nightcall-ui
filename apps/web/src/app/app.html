@@ -1,0 +1,21 @@
+<main class="shell">
+  <section class="hero">
+    <p class="eyebrow">Design system • Angular • Storybook</p>
+    <h1>{{ title() }}</h1>
+    <p class="lead">{{ subtitle() }}</p>
+
+    <div class="actions">
+      <nc-button variant="primary" (click)="openDocs()">Explore docs</nc-button>
+      <nc-button variant="outline" (click)="openStorybook()">Open Storybook</nc-button>
+    </div>
+  </section>
+
+  <section class="features" aria-label="Value propositions">
+    @for (feature of features; track feature.title) {
+    <article class="card">
+      <h2>{{ feature.title }}</h2>
+      <p>{{ feature.description }}</p>
+    </article>
+    }
+  </section>
+</main>

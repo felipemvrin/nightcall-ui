@@ -8,12 +8,8 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "paths": {
-      "@nightcall-ui/components": [
-        "./projects/nightcall-ui/src/public-api.ts"
-      ],
-      "nightcall-ui": [
-        "./projects/nightcall-ui/src/public-api.ts"
-      ]
+      "@nightcall-ui/components": ["./projects/nightcall-ui/src/public-api.ts"],
+      "nightcall-ui": ["./projects/nightcall-ui/src/public-api.ts"]
     },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
@@ -37,6 +33,12 @@
   ],
   "files": [],
   "references": [
+    {
+      "path": "./apps/web/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/web/tsconfig.spec.json"
+    },
     {
       "path": "./apps/docs/tsconfig.app.json"
     },
