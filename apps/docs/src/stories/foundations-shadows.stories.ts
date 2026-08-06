@@ -1,4 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/angular';
+import {
+  storyAutoGrid,
+  storyFullscreenMain,
+  storyFullscreenSection,
+  storyHeadingFoundation,
+  storySurfaceCard,
+  storyTextMuted,
+} from './shared/story-styles';
 
 const meta: Meta = {
   title: 'Foundations/Shadows',
@@ -12,14 +20,15 @@ type Story = StoryObj;
 export const ElevationAndGlow: Story = {
   render: () => ({
     template: `
-      <main style="min-height:100vh; background: var(--color-background-canvas); padding: var(--space-8); color: var(--color-text-primary);">
-        <section style="max-width:72rem; margin:0 auto; display:grid; gap: var(--space-4);">
-          <h1 style="margin:0; font-family: var(--font-family-heading); color: var(--color-text-heading);">Shadows</h1>
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--space-3);">
-            <article style="padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-background-surface); box-shadow: var(--elevation-shadow-1);">Elevation 1</article>
-            <article style="padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-background-surface); box-shadow: var(--elevation-shadow-2);">Elevation 2</article>
-            <article style="padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-background-surface); box-shadow: var(--shadow-glow-pink);">Glow Pink</article>
-            <article style="padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-background-surface); box-shadow: var(--shadow-glow-cyan);">Glow Cyan</article>
+      <main style="${storyFullscreenMain()}">
+        <section style="${storyFullscreenSection()}">
+          <h1 style="${storyHeadingFoundation}">Shadows</h1>
+          <p style="${storyTextMuted}">Use elevation shadows to communicate hierarchy. Reserve neon glow for emphasis and focus, not for structural surfaces.</p>
+          <div style="${storyAutoGrid('14rem')}">
+            <article style="${storySurfaceCard} box-shadow: var(--elevation-shadow-1);">Elevation 1</article>
+            <article style="${storySurfaceCard} box-shadow: var(--elevation-shadow-2);">Elevation 2</article>
+            <article style="${storySurfaceCard} box-shadow: var(--shadow-glow-pink);">Glow Pink</article>
+            <article style="${storySurfaceCard} box-shadow: var(--shadow-glow-cyan);">Glow Cyan</article>
           </div>
         </section>
       </main>
