@@ -3,7 +3,7 @@
 :host {
   --nc-checkbox-duration: var(--motion-duration-fast);
   --nc-checkbox-easing: var(--motion-easing-standard);
-  --nc-checkbox-size: 1.25rem;
+  --nc-checkbox-size: var(--nc-control-check-size, 1.25rem);
 
   display: grid;
   gap: var(--component-gap-tight);
@@ -36,7 +36,7 @@
   block-size: var(--nc-checkbox-size);
 
   border: 1px solid color-mix(in srgb, var(--color-border-strong) 65%, var(--color-border-subtle));
-  border-radius: var(--radius-sm);
+  border-radius: var(--nc-radius-sm);
   background: linear-gradient(
     135deg,
     color-mix(in srgb, var(--color-background-surface) 94%, transparent),
@@ -45,7 +45,7 @@
   box-shadow: var(--elevation-shadow-1);
 
   color: var(--color-text-primary);
-  font-family: var(--font-family-button, 'Rajdhani', sans-serif);
+  font-family: var(--nc-font-button);
   font-size: var(--font-size-sm);
   line-height: 1;
 
@@ -57,7 +57,7 @@
 }
 
 .nc-checkbox__label {
-  font-family: var(--font-family-button, 'Rajdhani', sans-serif);
+  font-family: var(--nc-font-button);
   font-size: var(--font-size-md);
   line-height: var(--font-line-height-normal);
   letter-spacing: var(--font-letter-spacing-normal);
@@ -85,7 +85,7 @@
     color-mix(in srgb, var(--color-accent-primary) 36%, var(--color-background-surface)),
     color-mix(in srgb, var(--color-accent-secondary) 24%, var(--color-background-surface-elevated))
   );
-  box-shadow: var(--nc-shadow-neon-sm, var(--shadow-glow-pink));
+  box-shadow: var(--nc-shadow-neon-sm);
 }
 
 .nc-checkbox__support {
@@ -95,7 +95,7 @@
 
 .nc-checkbox:hover .nc-checkbox__control {
   border-color: color-mix(in srgb, var(--color-state-focus-ring) 45%, var(--color-border-strong));
-  box-shadow: var(--nc-shadow-neon-sm, var(--shadow-glow-pink));
+  box-shadow: var(--nc-shadow-neon-sm);
   transform: translateY(-1px);
 }
 

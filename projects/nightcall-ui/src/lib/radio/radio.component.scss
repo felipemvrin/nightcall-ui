@@ -45,8 +45,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  inline-size: 1.25rem;
-  block-size: 1.25rem;
+  inline-size: var(--nc-control-check-size, 1.25rem);
+  block-size: var(--nc-control-check-size, 1.25rem);
   border-radius: var(--radius-pill);
   border: 1px solid color-mix(in srgb, var(--color-border-strong) 65%, var(--color-border-subtle));
   background: linear-gradient(
@@ -76,7 +76,7 @@
     color-mix(in srgb, var(--color-accent-primary) 34%, var(--color-background-surface)),
     color-mix(in srgb, var(--color-accent-secondary) 22%, var(--color-background-surface-elevated))
   );
-  box-shadow: var(--nc-shadow-neon-sm, var(--shadow-glow-pink));
+  box-shadow: var(--nc-shadow-neon-sm);
 }
 
 .nc-radio__native:checked + .nc-radio__control .nc-radio__dot {
@@ -94,7 +94,7 @@
 }
 
 .nc-radio__text {
-  font-family: var(--font-family-button, 'Rajdhani', sans-serif);
+  font-family: var(--nc-font-button);
   font-size: var(--font-size-md);
   line-height: var(--font-line-height-normal);
   color: var(--color-text-primary);

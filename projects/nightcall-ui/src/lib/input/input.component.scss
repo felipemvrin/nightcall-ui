@@ -49,7 +49,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: color-mix(in srgb, var(--color-state-focus-ring) 76%, var(--color-text-secondary));
+  color: var(--nc-field-slot-color);
   transition: color var(--motion-duration-fast) var(--motion-easing-standard);
 }
 
@@ -86,7 +86,7 @@
 }
 
 :host(:focus-within) .nc-input__slot {
-  color: color-mix(in srgb, var(--color-state-focus-ring) 85%, var(--color-text-primary));
+  color: var(--nc-field-slot-color-focus);
 }
 
 .nc-input__control:active {

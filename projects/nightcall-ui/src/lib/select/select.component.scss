@@ -2,6 +2,7 @@
 
 :host {
   @include form.nc-form-host;
+  --nc-select-chevron-focus-scale: var(--nc-control-focus-scale, 1.04);
 }
 
 :host([data-variant='filled']) {
@@ -36,8 +37,8 @@
   background: transparent;
   color: inherit;
 
-  font-family: var(--font-family-button, 'Rajdhani', sans-serif);
-  font-weight: var(--font-weight-medium);
+  font-family: var(--nc-field-font-family);
+  font-weight: var(--nc-field-font-weight);
   font-size: var(--font-size-md);
   line-height: var(--font-line-height-normal);
   letter-spacing: var(--font-letter-spacing-normal);
@@ -48,7 +49,7 @@
   inset-inline-end: var(--component-padding-inline-md);
   inset-block-start: 50%;
   transform: translateY(-50%);
-  color: color-mix(in srgb, var(--color-state-focus-ring) 76%, var(--color-text-secondary));
+  color: var(--nc-field-slot-color);
   pointer-events: none;
   font-size: var(--font-size-lg);
   line-height: 1;
@@ -86,8 +87,8 @@
 }
 
 :host(:focus-within) .nc-select__chevron {
-  color: color-mix(in srgb, var(--color-state-focus-ring) 86%, var(--color-text-primary));
-  transform: translateY(-50%) scale(1.04);
+  color: var(--nc-field-slot-color-focus);
+  transform: translateY(-50%) scale(var(--nc-select-chevron-focus-scale));
 }
 
 .nc-select__control:active {

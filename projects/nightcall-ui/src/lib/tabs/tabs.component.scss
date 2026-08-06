@@ -50,7 +50,7 @@
   color: var(--color-text-secondary);
   background: transparent;
 
-  font-family: var(--font-family-button, 'Rajdhani', sans-serif);
+  font-family: var(--nc-font-button);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-md);
   line-height: var(--font-line-height-normal);
@@ -95,7 +95,7 @@
   color: var(--color-text-primary);
   border-color: color-mix(in srgb, var(--color-border-accent) 45%, var(--color-state-focus-ring));
   background: var(--nc-tabs-active-bg);
-  box-shadow: var(--nc-shadow-neon-sm, var(--shadow-glow-pink));
+  box-shadow: var(--nc-shadow-neon-sm);
 }
 
 .nc-tabs__tab--active::after {
@@ -105,7 +105,7 @@
 .nc-tabs__tab:focus-visible {
   outline: 2px solid transparent;
   outline-offset: 2px;
-  box-shadow: var(--elevation-ring-focus), var(--nc-shadow-neon-md, var(--shadow-glow-cyan));
+  box-shadow: var(--elevation-ring-focus), var(--nc-shadow-neon-md);
 }
 
 .nc-tabs__tab:disabled {
@@ -116,4 +116,17 @@
 .nc-tabs__icon {
   font-size: var(--font-size-sm);
   line-height: 1;
+}
+
+:host(.nc-tabs-host--scrollable) .nc-tabs::-webkit-scrollbar {
+  block-size: 0.375rem;
+}
+
+:host(.nc-tabs-host--scrollable) .nc-tabs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:host(.nc-tabs-host--scrollable) .nc-tabs::-webkit-scrollbar-thumb {
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-state-focus-ring) 55%, transparent);
 }

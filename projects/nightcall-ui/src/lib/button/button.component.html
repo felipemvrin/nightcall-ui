@@ -1,5 +1,5 @@
 <button class="nc-button" [class.nc-button--loading]="loading()" [disabled]="isDisabled()" [type]="type()"
-    [attr.aria-busy]="loading() ? 'true' : null" [attr.aria-label]="iconOnly() ? ariaLabel() : null">
+    [attr.aria-busy]="loading() ? 'true' : null" [attr.aria-label]="resolvedAriaLabel()">
     <span class="nc-button__icon" aria-hidden="true">
         <ng-content select="[ncButtonIconStart]" />
     </span>

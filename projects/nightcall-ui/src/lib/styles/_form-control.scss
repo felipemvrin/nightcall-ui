@@ -1,10 +1,21 @@
 @mixin nc-form-host {
-  --nc-field-radius: var(--radius-sm, 6px);
+  --nc-field-radius: var(--nc-radius-sm);
+  --nc-field-min-block-size: var(--nc-control-min-block-size, 2.75rem);
   --nc-field-duration: var(--motion-duration-normal);
   --nc-field-easing: var(--motion-easing-standard);
   --nc-field-focus-ring: var(--elevation-ring-focus);
-  --nc-field-font-family: var(--font-family-button, 'Rajdhani', sans-serif);
-  --nc-field-font-weight: var(--font-weight-medium, 500);
+  --nc-field-font-family: var(--nc-font-button);
+  --nc-field-font-weight: var(--nc-font-weight-button);
+  --nc-field-slot-color: color-mix(
+    in srgb,
+    var(--color-state-focus-ring) 76%,
+    var(--color-text-secondary)
+  );
+  --nc-field-slot-color-focus: color-mix(
+    in srgb,
+    var(--color-state-focus-ring) 85%,
+    var(--color-text-primary)
+  );
 
   --nc-field-bg: linear-gradient(
     135deg,
@@ -67,7 +78,7 @@
   align-items: center;
   gap: var(--component-gap-tight);
   inline-size: 100%;
-  min-block-size: 2.75rem;
+  min-block-size: var(--nc-field-min-block-size);
   padding: var(--component-padding-block-sm) var(--component-padding-inline-md);
 
   border: 1px solid var(--nc-field-border);

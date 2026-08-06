@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--component-gap-tight);
-  font-family: var(--font-family-button, 'Rajdhani', sans-serif);
+  font-family: var(--nc-font-button);
   font-size: var(--font-size-sm);
   line-height: var(--font-line-height-normal);
   letter-spacing: var(--font-letter-spacing-wide);
@@ -52,9 +52,10 @@
   position: relative;
   display: block;
   block-size: 100%;
+  min-inline-size: 2px;
   border-radius: inherit;
   background: var(--nc-progress-bar-bg);
-  box-shadow: var(--nc-shadow-neon-sm, var(--shadow-glow-pink));
+  box-shadow: var(--nc-shadow-neon-sm);
   transition: inline-size var(--motion-duration-normal) var(--motion-easing-standard);
 }
 
@@ -117,5 +118,13 @@
 
   to {
     transform: translateX(140%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-progress__bar,
+  .nc-progress__bar::after {
+    animation: none !important;
+    transition-duration: 0ms;
   }
 }

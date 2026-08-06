@@ -27,5 +27,14 @@ export class NcButtonComponent {
   readonly iconOnly = input(false);
   readonly ariaLabel = input<string | null>(null);
 
+  protected readonly resolvedAriaLabel = computed(() => {
+    if (!this.iconOnly()) {
+      return null;
+    }
+
+    const label = this.ariaLabel()?.trim();
+    return label?.length ? label : 'Button';
+  });
+
   protected readonly isDisabled = computed(() => this.disabled() || this.loading());
 }
