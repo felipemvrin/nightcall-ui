@@ -9,6 +9,7 @@
     "noImplicitReturns": true,
     "paths": {
       "@nightcall-ui/components": ["./projects/nightcall-ui/src/public-api.ts"],
+      "@nightcall-ui/icons": ["./packages/icons/src/public-api.ts"],
       "nightcall-ui": ["./projects/nightcall-ui/src/public-api.ts"]
     },
     "noFallthroughCasesInSwitch": true,

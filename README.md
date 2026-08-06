@@ -28,7 +28,7 @@ Nightcall UI is an Angular 20 design system workspace focused on clarity, consis
 - `projects/nightcall-ui` - publishable Angular components package
 - `packages/tokens` - token documentation and build inputs
 - `packages/themes` - shared theme primitives and CSS custom properties
-- `packages/icons` - icon pipeline placeholder
+- `packages/icons` - shared Nightcall icon package for Angular consumers and Storybook patterns
 - `.storybook` - Storybook 9 configuration
 - `docs` - repository documentation
 - `examples` - usage examples
