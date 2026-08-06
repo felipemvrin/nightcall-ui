@@ -110,6 +110,11 @@
               {
                 "glob": "**/*",
                 "input": "apps/docs/public"
+              },
+              {
+                "glob": "kavinsky-song.mp3",
+                "input": "apps/web/src/app",
+                "output": "/"
               }
             ],
             "styles": ["dist/tokens/css/variables.css", "apps/docs/src/styles.scss"]
@@ -184,6 +189,11 @@
               {
                 "glob": "**/*",
                 "input": "apps/docs/public"
+              },
+              {
+                "glob": "kavinsky-song.mp3",
+                "input": "apps/web/src/app",
+                "output": "/"
               }
             ],
             "styles": ["dist/tokens/css/variables.css", "apps/docs/src/styles.scss"]

@@ -10,6 +10,7 @@
     "paths": {
       "@nightcall-ui/components": ["./projects/nightcall-ui/src/public-api.ts"],
       "@nightcall-ui/icons": ["./packages/icons/src/public-api.ts"],
+      "@nightcall-ui/patterns": ["./libs/patterns/src/public-api.ts"],
       "nightcall-ui": ["./projects/nightcall-ui/src/public-api.ts"]
     },
     "noFallthroughCasesInSwitch": true,
@@ -29,6 +30,7 @@
   },
   "include": [
     ".storybook/preview.ts",
+    "apps/docs/src/**/*.d.ts",
     "apps/docs/src/**/*.stories.ts",
     "apps/docs/src/**/*.stories.mdx"
   ],

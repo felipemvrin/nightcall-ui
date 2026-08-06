@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { NcButtonComponent } from '@nightcall-ui/components';
+import { NcMusicPlayerPatternComponent } from '@nightcall-ui/patterns';
 
 type Feature = {
   title: string;
@@ -8,7 +9,7 @@ type Feature = {
 
 @Component({
   selector: 'nc-root',
-  imports: [NcButtonComponent],
+  imports: [NcButtonComponent, NcMusicPlayerPatternComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

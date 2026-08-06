@@ -1,0 +1,71 @@
+<section class="nc-music-player__shell" aria-label="Music player pattern">
+    <p class="nc-music-player__eyebrow">{{ eyebrow() }}</p>
+
+    <div class="nc-music-player__layout">
+        <div class="nc-music-player__artwork" role="img" [attr.aria-label]="artworkLabel()">
+            <div class="nc-music-player__artwork-glow" aria-hidden="true"></div>
+            <div class="nc-music-player__artwork-grid" aria-hidden="true"></div>
+            <div class="nc-music-player__artwork-copy">
+                <span class="nc-music-player__artwork-title">{{ trackTitle() }}</span>
+                <span class="nc-music-player__artwork-artist">{{ artistName() }}</span>
+            </div>
+        </div>
+
+        <div class="nc-music-player__content">
+            <header class="nc-music-player__header">
+                <div class="nc-music-player__meta">
+                    <h2 class="nc-music-player__title">{{ trackTitle() }}</h2>
+                    <p class="nc-music-player__artist">{{ artistName() }}</p>
+                </div>
+
+                <span class="nc-music-player__state" [class.nc-music-player__state--active]="isPlaying()">
+                    {{ isPlaying() ? 'Now Playing' : 'Ready' }}
+                </span>
+            </header>
+
+            <div class="nc-music-player__timeline">
+                <label class="nc-music-player__sr-only" [attr.for]="scrubberId">Seek playback position</label>
+
+                <div class="nc-music-player__scrubber">
+                    <nc-progress-bar label="Playback progress" [value]="progressValue()" [max]="duration() || 1"
+                        [animated]="isPlaying()" [showPercentage]="false"></nc-progress-bar>
+
+                    <input class="nc-music-player__scrubber-input" [id]="scrubberId" type="range" min="0"
+                        [max]="duration() || 0" [value]="currentTime()" step="0.1" [disabled]="!isReady()"
+                        aria-label="Seek playback position" (input)="onScrubInput($event)"
+                        (change)="onScrubCommit($event)" />
+                </div>
+
+                <div class="nc-music-player__times" aria-label="Track time information">
+                    <span>{{ currentTimeLabel() }}</span>
+                    <span>{{ durationLabel() }}</span>
+                </div>
+            </div>
+
+            <div class="nc-music-player__controls" role="group" aria-label="Playback controls">
+                <nc-button variant="primary" (click)="togglePlayback()">
+                    <span ncButtonIconStart>
+                        <nc-icon class="nc-music-player__icon" [name]="isPlaying() ? 'pause' : 'play'"></nc-icon>
+                    </span>
+                    {{ isPlaying() ? 'Pause' : 'Play' }}
+                </nc-button>
+
+                <nc-button variant="outline" (click)="stopPlayback()">
+                    <span ncButtonIconStart>
+                        <nc-icon class="nc-music-player__icon" name="stop"></nc-icon>
+                    </span>
+                    Stop
+                </nc-button>
+
+                <nc-button variant="ghost" (click)="toggleMute()">
+                    <span ncButtonIconStart>
+                        <nc-icon class="nc-music-player__icon" [name]="isMuted() ? 'volume-muted' : 'volume'"></nc-icon>
+                    </span>
+                    {{ isMuted() ? 'Unmute' : 'Mute' }}
+                </nc-button>
+            </div>
+        </div>
+    </div>
+
+    <p class="nc-music-player__assistive" aria-live="polite">{{ statusMessage() }}</p>
+</section>
