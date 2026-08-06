@@ -4,6 +4,17 @@ import {
   type NcButtonSize,
   type NcButtonVariant,
 } from '@nightcall-ui/components';
+import {
+  srOnlyStyle,
+  storyHeading,
+  storyInlineWrap,
+  storyListSm,
+  storyPanel,
+  storyStack,
+  storyStrong,
+  storyTextMuted,
+  storyTextMutedSm,
+} from './shared/story-styles';
 
 type IconPosition = 'none' | 'start' | 'end';
 
@@ -115,18 +126,16 @@ export default meta;
 
 type Story = StoryObj<ButtonStoryArgs>;
 
-const docsPanelStyle =
-  'display: grid; gap: var(--space-3); width: min(56rem, 92vw); padding: var(--space-5); border-radius: var(--radius-lg); border: 1px solid var(--color-border-subtle); background: color-mix(in srgb, var(--color-background-surface) 92%, transparent);';
+const docsPanelStyle = storyPanel('min(56rem, 92vw)');
 
-const docsTitleStyle =
-  'margin: 0; font-family: var(--font-family-heading); font-size: var(--font-size-xl); line-height: var(--font-line-height-snug); color: var(--color-text-primary);';
+const docsTitleStyle = `${storyHeading} font-size: var(--font-size-xl); line-height: var(--font-line-height-snug);`;
 
 const docsBodyStyle =
-  'margin: 0; font: var(--font-weight-regular) var(--font-size-md)/var(--font-line-height-normal) var(--font-family-body); color: var(--color-text-secondary);';
+  'margin: 0; color: var(--color-text-secondary); font: var(--font-weight-regular) var(--font-size-md)/var(--font-line-height-normal) var(--font-family-body);';
 
 function buildButtonTemplate(width = 'auto'): string {
   return `
-    <div style="width: ${width}; display: grid; gap: var(--space-3);">
+    <div style="${storyStack(width)}">
       <nc-button
         [variant]="variant"
         [size]="size"
@@ -149,7 +158,7 @@ function buildButtonTemplate(width = 'auto'): string {
         }
 
         @if (iconOnly) {
-          <span style="position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;">{{ label }}</span>
+          <span style="${srOnlyStyle}">{{ label }}</span>
         }
       </nc-button>
     </div>
@@ -168,7 +177,7 @@ export const Overview: Story = {
         <p style="${docsBodyStyle}">
           Nightcall Button is the main action control for dark UI surfaces, designed with neon depth and semantic tokens for scalable theming.
         </p>
-        <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+        <div style="${storyInlineWrap}">
           <nc-button variant="primary">Primary Action</nc-button>
           <nc-button variant="outline">Secondary Action</nc-button>
         </div>
@@ -181,7 +190,7 @@ export const Playground: Story = {
   name: 'Playground',
   render: (args) => ({
     props: args,
-    template: buildButtonTemplate('min(24rem, 90vw)'),
+    template: buildButtonTemplate('min(24rem, 92vw)'),
   }),
 };
 
@@ -192,8 +201,8 @@ export const Variants: Story = {
   },
   render: () => ({
     template: `
-      <div style="display: grid; gap: var(--space-4); width: min(52rem, 92vw);">
-        <div style="display: flex; flex-wrap: wrap; gap: var(--space-3);">
+      <div style="${storyStack('min(52rem, 92vw)', 'var(--space-4)')}">
+        <div style="${storyInlineWrap}">
           <nc-button variant="primary">Primary</nc-button>
           <nc-button variant="secondary">Secondary</nc-button>
           <nc-button variant="outline">Outline</nc-button>
@@ -211,7 +220,7 @@ export const Sizes: Story = {
   },
   render: () => ({
     template: `
-      <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center;">
+      <div style="${storyInlineWrap}">
         <nc-button size="sm">Small</nc-button>
         <nc-button size="md">Medium</nc-button>
         <nc-button size="lg">Large</nc-button>
@@ -233,13 +242,13 @@ export const States: Story = {
   },
   render: () => ({
     template: `
-      <div style="display: grid; gap: var(--space-4); width: min(56rem, 92vw);">
-        <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center;">
+      <div style="${storyStack('min(56rem, 92vw)', 'var(--space-4)')}">
+        <div style="${storyInlineWrap}">
           <nc-button variant="primary">Default</nc-button>
           <nc-button variant="primary" [loading]="true">Loading</nc-button>
           <nc-button variant="primary" [disabled]="true">Disabled</nc-button>
         </div>
-        <p style="margin: 0; font: var(--font-weight-regular) var(--font-size-sm)/var(--font-line-height-normal) var(--font-family-body); color: var(--color-text-secondary);">
+        <p style="${storyTextMutedSm}">
           Focus test: click inside the canvas and press Tab until a button is focused.
         </p>
       </div>
@@ -254,7 +263,7 @@ export const Icons: Story = {
   },
   render: () => ({
     template: `
-      <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center;">
+      <div style="${storyInlineWrap}">
         <nc-button>
           <span ncButtonIconStart>${iconTemplate}</span>
           Leading Icon
@@ -267,7 +276,7 @@ export const Icons: Story = {
 
         <nc-button variant="outline" [iconOnly]="true" ariaLabel="Open details">
           <span ncButtonIconStart>${iconTemplate}</span>
-          <span style="position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;">Open details</span>
+          <span style="${srOnlyStyle}">Open details</span>
         </nc-button>
       </div>
     `,
@@ -286,7 +295,7 @@ export const Accessibility: Story = {
         <p style="${docsBodyStyle}">
           The component uses native button semantics and keyboard behavior. Focus visibility uses a dedicated tokenized ring and does not rely only on glow.
         </p>
-        <ul style="margin: 0; padding-inline-start: var(--space-5); color: var(--color-text-secondary); font-family: var(--font-family-body); font-size: var(--font-size-sm); line-height: var(--font-line-height-normal);">
+        <ul style="${storyListSm}">
           <li>Tab moves focus to the button.</li>
           <li>Enter and Space trigger the action.</li>
           <li>Disabled state uses the native disabled attribute.</li>
@@ -306,12 +315,12 @@ export const DesignTokens: Story = {
     template: `
       <section style="${docsPanelStyle}">
         <h2 style="${docsTitleStyle}">Design Tokens</h2>
-        <div style="display: grid; gap: var(--space-2);">
-          <p style="${docsBodyStyle}"><strong style="color: var(--color-text-primary);">Color:</strong> --color-accent-primary, --color-accent-secondary, --color-state-focus-ring, --color-text-primary.</p>
-          <p style="${docsBodyStyle}"><strong style="color: var(--color-text-primary);">Radius:</strong> --radius-lg, --radius-pill.</p>
-          <p style="${docsBodyStyle}"><strong style="color: var(--color-text-primary);">Shadow:</strong> --shadow-glow-pink, --shadow-glow-cyan, --elevation-shadow-1, --elevation-shadow-2.</p>
-          <p style="${docsBodyStyle}"><strong style="color: var(--color-text-primary);">Motion:</strong> --motion-duration-fast, --motion-duration-normal, --motion-duration-slow, --motion-easing-standard.</p>
-          <p style="${docsBodyStyle}"><strong style="color: var(--color-text-primary);">Typography:</strong> button family via --font-family-button (Rajdhani), plus --font-size-sm, --font-size-md, --font-size-lg and --font-letter-spacing-wide.</p>
+        <div style="${storyStack('100%', 'var(--space-2)')}">
+          <p style="${docsBodyStyle}"><strong style="${storyStrong}">Color:</strong> --color-accent-primary, --color-accent-secondary, --color-state-focus-ring, --color-text-primary.</p>
+          <p style="${docsBodyStyle}"><strong style="${storyStrong}">Radius:</strong> --radius-lg, --radius-pill.</p>
+          <p style="${docsBodyStyle}"><strong style="${storyStrong}">Shadow:</strong> --shadow-glow-pink, --shadow-glow-cyan, --elevation-shadow-1, --elevation-shadow-2.</p>
+          <p style="${docsBodyStyle}"><strong style="${storyStrong}">Motion:</strong> --motion-duration-fast, --motion-duration-normal, --motion-duration-slow, --motion-easing-standard.</p>
+          <p style="${docsBodyStyle}"><strong style="${storyStrong}">Typography:</strong> button family via --font-family-button (Rajdhani), plus --font-size-sm, --font-size-md, --font-size-lg and --font-letter-spacing-wide.</p>
         </div>
       </section>
     `,
@@ -327,7 +336,7 @@ export const BestPractices: Story = {
     template: `
       <section style="${docsPanelStyle}">
         <h2 style="${docsTitleStyle}">Best Practices</h2>
-        <ul style="margin: 0; padding-inline-start: var(--space-5); color: var(--color-text-secondary); font-family: var(--font-family-body); font-size: var(--font-size-sm); line-height: var(--font-line-height-normal);">
+        <ul style="${storyListSm}">
           <li>Use Primary for the single most important action in a section.</li>
           <li>Use Outline or Ghost for supporting actions.</li>
           <li>Keep labels short and specific.</li>

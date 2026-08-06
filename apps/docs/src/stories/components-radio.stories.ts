@@ -1,5 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { NcRadioGroupComponent } from '@nightcall-ui/components';
+import {
+  storyDoDont,
+  storyList,
+  storyStack,
+  storyStrong,
+  storyTextMuted,
+} from './shared/story-styles';
 
 type RadioStoryArgs = {
   label: string;
@@ -68,7 +75,9 @@ export const Variants: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template:
-      '<p style="margin:0; color: var(--color-text-secondary); font-family: var(--font-family-body);">Radio uses a single variant for instant recognizability and consistent group semantics.</p>',
+      '<p style="' +
+      storyTextMuted +
+      '">Radio uses a single variant for instant recognizability and consistent group semantics.</p>',
   }),
 };
 
@@ -76,7 +85,9 @@ export const Sizes: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template:
-      '<p style="margin:0; color: var(--color-text-secondary); font-family: var(--font-family-body);">Radio keeps one ergonomic size to align with Checkbox and Input controls.</p>',
+      '<p style="' +
+      storyTextMuted +
+      '">Radio keeps one ergonomic size to align with Checkbox and Input controls.</p>',
   }),
 };
 
@@ -85,7 +96,7 @@ export const States: Story = {
   render: () => ({
     props: { options },
     template: `
-      <div style="display:grid; gap: var(--space-3); width:min(36rem,92vw);">
+      <div style="${storyStack('min(36rem,92vw)')}">
         <nc-radio-group label="Default" [options]="options" value="classic"></nc-radio-group>
         <nc-radio-group label="Validation" [options]="options" [error]="true" helperText="Select one required mode"></nc-radio-group>
         <nc-radio-group label="Disabled" [options]="options" [disabled]="true" value="modern"></nc-radio-group>
@@ -98,7 +109,7 @@ export const Accessibility: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template: `
-      <ul style="margin:0; padding-inline-start: var(--space-5); color: var(--color-text-secondary); font-family: var(--font-family-body); width:min(36rem,92vw);">
+      <ul style="${storyList} width:min(36rem,92vw);">
         <li>Uses fieldset and legend for group context.</li>
         <li>Native radio keyboard behavior is preserved.</li>
         <li>Error state exposed with aria-invalid on the group.</li>
@@ -111,7 +122,9 @@ export const DesignTokens: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template:
-      '<p style="margin:0; color: var(--color-text-secondary); font-family: var(--font-family-body); width:min(36rem,92vw);">Consumes focus-ring, accent, border, glow-shadow and Rajdhani typography tokens.</p>',
+      '<p style="' +
+      storyTextMuted +
+      ' width:min(36rem,92vw);">Consumes focus-ring, accent, border, glow-shadow and Rajdhani typography tokens.</p>',
   }),
 };
 
@@ -119,9 +132,9 @@ export const BestPractices: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template: `
-      <div style="display:grid; gap: var(--space-2); width:min(36rem,92vw); color: var(--color-text-secondary); font-family: var(--font-family-body);">
-        <p style="margin:0;"><strong style="color:var(--color-text-primary);">Do:</strong> use radios for exclusive choices only.</p>
-        <p style="margin:0;"><strong style="color:var(--color-text-primary);">Don't:</strong> mix independent toggles in a radio group.</p>
+      <div style="${storyDoDont} width:min(36rem,92vw);">
+        <p style="margin:0;"><strong style="${storyStrong}">Do:</strong> use radios for exclusive choices only.</p>
+        <p style="margin:0;"><strong style="${storyStrong}">Don't:</strong> mix independent toggles in a radio group.</p>
       </div>
     `,
   }),

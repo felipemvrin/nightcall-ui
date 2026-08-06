@@ -1,5 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { NcCheckboxComponent } from '@nightcall-ui/components';
+import {
+  storyDoDont,
+  storyList,
+  storyStack,
+  storyStrong,
+  storyTextMuted,
+} from './shared/story-styles';
 
 type CheckboxStoryArgs = {
   label: string;
@@ -65,7 +72,9 @@ export const Variants: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template:
-      '<p style="margin:0; color: var(--color-text-secondary); font-family: var(--font-family-body);">Checkbox has a single visual variant to protect recognition and accessibility.</p>',
+      '<p style="' +
+      storyTextMuted +
+      '">Checkbox has a single visual variant to protect recognition and accessibility.</p>',
   }),
 };
 
@@ -73,7 +82,9 @@ export const Sizes: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template:
-      '<p style="margin:0; color: var(--color-text-secondary); font-family: var(--font-family-body);">One canonical size keeps touch targets consistent in forms.</p>',
+      '<p style="' +
+      storyTextMuted +
+      '">One canonical size keeps touch targets consistent in forms.</p>',
   }),
 };
 
@@ -81,7 +92,7 @@ export const States: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template: `
-      <div style="display:grid; gap: var(--space-3);">
+      <div style="${storyStack('100%')}">
         <nc-checkbox label="Unchecked"></nc-checkbox>
         <nc-checkbox label="Checked" [checked]="true"></nc-checkbox>
         <nc-checkbox label="Indeterminate" [indeterminate]="true"></nc-checkbox>
@@ -96,7 +107,7 @@ export const Accessibility: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template: `
-      <ul style="margin:0; padding-inline-start: var(--space-5); color: var(--color-text-secondary); font-family: var(--font-family-body); width:min(36rem,92vw);">
+      <ul style="${storyList} width:min(36rem,92vw);">
         <li>Native checkbox element is preserved for assistive tech.</li>
         <li>Supports keyboard toggle with Space.</li>
         <li>Error state uses aria-invalid.</li>
@@ -109,7 +120,9 @@ export const DesignTokens: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template:
-      '<p style="margin:0; color: var(--color-text-secondary); font-family: var(--font-family-body); width:min(36rem,92vw);">Consumes border, accent, focus-ring, glow-shadow and Rajdhani typography tokens.</p>',
+      '<p style="' +
+      storyTextMuted +
+      ' width:min(36rem,92vw);">Consumes border, accent, focus-ring, glow-shadow and Rajdhani typography tokens.</p>',
   }),
 };
 
@@ -117,9 +130,9 @@ export const BestPractices: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template: `
-      <div style="display:grid; gap: var(--space-2); width:min(36rem,92vw); color: var(--color-text-secondary); font-family: var(--font-family-body);">
-        <p style="margin:0;"><strong style="color:var(--color-text-primary);">Do:</strong> pair each checkbox with a clear action label.</p>
-        <p style="margin:0;"><strong style="color:var(--color-text-primary);">Don't:</strong> use checkbox for mutually-exclusive selections.</p>
+      <div style="${storyDoDont} width:min(36rem,92vw);">
+        <p style="margin:0;"><strong style="${storyStrong}">Do:</strong> pair each checkbox with a clear action label.</p>
+        <p style="margin:0;"><strong style="${storyStrong}">Don't:</strong> use checkbox for mutually-exclusive selections.</p>
       </div>
     `,
   }),

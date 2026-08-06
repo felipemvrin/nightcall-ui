@@ -5,6 +5,13 @@ import {
   type NcSelectState,
   type NcSelectVariant,
 } from '@nightcall-ui/components';
+import {
+  storyDoDont,
+  storyList,
+  storyStack,
+  storyStrong,
+  storyTextMuted,
+} from './shared/story-styles';
 
 type SelectStoryArgs = {
   variant: NcSelectVariant;
@@ -58,7 +65,7 @@ export const Overview: Story = {
     props: { options },
     template: `
       <div style="display:grid; gap: var(--space-3); width:min(36rem,92vw);">
-        <p style="margin:0; color: var(--color-text-secondary); font-family: var(--font-family-body);">Select offers native semantics with Nightcall visual treatment and grouped options support.</p>
+        <p style="${storyTextMuted}">Select offers native semantics with Nightcall visual treatment and grouped options support.</p>
         <nc-select label="Genre" helperText="Native select for keyboard and screen readers" [options]="options"></nc-select>
       </div>
     `,
@@ -69,7 +76,7 @@ export const Playground: Story = {
   render: (args) => ({
     props: { ...args, options },
     template: `
-      <div style="width:min(36rem,92vw);">
+      <div style="${storyStack('min(36rem,92vw)')}">
         <nc-select
           [variant]="variant"
           [state]="state"
@@ -92,7 +99,7 @@ export const Variants: Story = {
   render: () => ({
     props: { options },
     template: `
-      <div style="display:grid; gap: var(--space-3); width:min(36rem,92vw);">
+      <div style="${storyStack('min(36rem,92vw)')}">
         <nc-select variant="default" label="Default" [options]="options"></nc-select>
         <nc-select variant="filled" label="Filled" [options]="options"></nc-select>
         <nc-select variant="outline" label="Outline" [options]="options"></nc-select>
@@ -105,7 +112,9 @@ export const Sizes: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template:
-      '<p style="margin:0; color: var(--color-text-secondary); font-family: var(--font-family-body);">Select uses a single height to align with Input and preserve predictable form rhythm.</p>',
+      '<p style="' +
+      storyTextMuted +
+      '">Select uses a single height to align with Input and preserve predictable form rhythm.</p>',
   }),
 };
 
@@ -132,7 +141,7 @@ export const States: Story = {
       ],
     },
     template: `
-      <div style="display:grid; gap: var(--space-3); width:min(36rem,92vw);">
+      <div style="${storyStack('min(36rem,92vw)')}">
         <nc-select label="Default" [options]="options"></nc-select>
         <nc-select label="Success" state="success" validationMessage="Selection confirmed" [options]="options"></nc-select>
         <nc-select label="Error" state="error" validationMessage="Please choose one option" [options]="options"></nc-select>
@@ -147,7 +156,7 @@ export const Accessibility: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template: `
-      <ul style="margin:0; padding-inline-start: var(--space-5); color: var(--color-text-secondary); font-family: var(--font-family-body); width:min(36rem,92vw);">
+      <ul style="${storyList} width:min(36rem,92vw);">
         <li>Uses native select and option/optgroup semantics.</li>
         <li>Keyboard navigation follows browser behavior.</li>
         <li>Error state sets aria-invalid and support text is linked via aria-describedby.</li>
@@ -160,7 +169,9 @@ export const DesignTokens: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template:
-      '<p style="margin:0; color: var(--color-text-secondary); font-family: var(--font-family-body); width:min(36rem,92vw);">Select consumes the same form-control token layer as Input: color, spacing, radius, motion, shadows and Rajdhani typography.</p>',
+      '<p style="' +
+      storyTextMuted +
+      ' width:min(36rem,92vw);">Select consumes the same form-control token layer as Input: color, spacing, radius, motion, shadows and Rajdhani typography.</p>',
   }),
 };
 
@@ -168,9 +179,9 @@ export const BestPractices: Story = {
   parameters: { controls: { disable: true } },
   render: () => ({
     template: `
-      <div style="display:grid; gap: var(--space-2); width:min(36rem,92vw); color: var(--color-text-secondary); font-family: var(--font-family-body);">
-        <p style="margin:0;"><strong style="color:var(--color-text-primary);">Do:</strong> keep option labels short and group long lists.</p>
-        <p style="margin:0;"><strong style="color:var(--color-text-primary);">Don't:</strong> use disabled placeholder as a permanent selected value.</p>
+      <div style="${storyDoDont} width:min(36rem,92vw);">
+        <p style="margin:0;"><strong style="${storyStrong}">Do:</strong> keep option labels short and group long lists.</p>
+        <p style="margin:0;"><strong style="${storyStrong}">Don't:</strong> use disabled placeholder as a permanent selected value.</p>
       </div>
     `,
   }),

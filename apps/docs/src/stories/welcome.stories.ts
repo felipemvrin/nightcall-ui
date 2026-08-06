@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
+import { storyFullscreenSection, storyTextMuted } from './shared/story-styles';
 
 const meta: Meta = {
   title: 'Welcome',
@@ -15,13 +16,13 @@ type Story = StoryObj;
 export const Overview: Story = {
   render: () => ({
     template: `
-      <main style="min-height: 100vh; padding: 3rem; display: grid; place-items: center; background: var(--nc-color-background); color: var(--nc-color-text-primary); font-family: var(--nc-font-body, Inter, sans-serif);">
-        <section style="max-width: 56rem; width: 100%;">
-          <p style="margin: 0 0 1rem; text-transform: uppercase; letter-spacing: .24em; font-size: .75rem; color: var(--nc-color-text-secondary);">Nightcall UI</p>
-          <h1 style="margin: 0; font-family: var(--nc-font-heading, Michroma, sans-serif); font-size: var(--nc-font-size-h1, 2.75rem); line-height: .95; letter-spacing: -.05em; color: var(--nc-color-heading);">
+      <main style="min-height: 100vh; padding: clamp(var(--space-8), 5vw, var(--space-12)); display: grid; place-items: center; background: var(--nc-color-background); color: var(--nc-color-text-primary); font-family: var(--nc-font-body);">
+        <section style="${storyFullscreenSection('var(--layout-container-lg)', 'var(--space-4)')} width: 100%;">
+          <p style="margin: 0 0 var(--space-4); text-transform: uppercase; letter-spacing: var(--font-letter-spacing-ultra); font-size: var(--font-size-xs); color: var(--nc-color-text-secondary);">Nightcall UI</p>
+          <h1 style="margin: 0; font-family: var(--nc-font-heading); font-size: var(--nc-font-size-h1); line-height: var(--font-line-height-tight); letter-spacing: var(--font-letter-spacing-tight); color: var(--nc-color-heading);">
             Welcome to the design system workspace.
           </h1>
-          <p style="margin: 1.25rem 0 0; max-width: 52ch; font-size: 1.05rem; line-height: 1.7; color: var(--nc-color-text-secondary);">
+          <p style="${storyTextMuted} margin: var(--space-5) 0 0; max-width: 52ch; font-size: var(--font-size-lg); line-height: var(--font-line-height-relaxed); color: var(--nc-color-text-secondary);">
             This workspace is ready for real component work: tokens, themes, documentation, accessibility checks, and responsive previews are all connected.
           </p>
         </section>

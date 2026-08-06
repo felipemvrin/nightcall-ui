@@ -7,9 +7,9 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: var(--nc-font-body, 'Inter', system-ui, sans-serif);
-  background: #020617;
-  color: #f8fafc;
+  font-family: var(--nc-font-body, system-ui, sans-serif);
+  background: var(--nc-color-background);
+  color: var(--nc-color-text-primary);
 }
 
 * {
