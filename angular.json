@@ -32,11 +32,6 @@
                 "input": "apps/web/public"
               },
               {
-                "glob": "nc-favicon.ico",
-                "input": "apps/docs/public",
-                "output": "/"
-              },
-              {
                 "glob": "**/*",
                 "input": "apps/shared-assets",
                 "output": "/assets"
@@ -95,11 +90,6 @@
               {
                 "glob": "**/*",
                 "input": "apps/web/public"
-              },
-              {
-                "glob": "nc-favicon.ico",
-                "input": "apps/docs/public",
-                "output": "/"
               },
               {
                 "glob": "**/*",
