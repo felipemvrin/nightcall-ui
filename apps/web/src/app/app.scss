@@ -31,12 +31,15 @@
 
 .brand {
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .brand-logo {
   display: block;
   width: min(100%, 35.625rem);
   height: auto;
+  margin-inline: auto;
 }
 
 .lead {

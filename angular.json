@@ -32,6 +32,11 @@
                 "input": "apps/web/public"
               },
               {
+                "glob": "nc-favicon.ico",
+                "input": "apps/docs/public",
+                "output": "/"
+              },
+              {
                 "glob": "**/*",
                 "input": "apps/shared-assets",
                 "output": "/assets"
@@ -86,6 +91,22 @@
             "stylePreprocessorOptions": {
               "includePaths": ["packages/themes/src"]
             },
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "apps/web/public"
+              },
+              {
+                "glob": "nc-favicon.ico",
+                "input": "apps/docs/public",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "apps/shared-assets",
+                "output": "/assets"
+              }
+            ],
             "styles": ["dist/tokens/css/variables.css", "apps/web/src/styles.scss"]
           }
         }
