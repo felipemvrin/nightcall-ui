@@ -48,6 +48,7 @@
     "@playwright/test": "^1.62.1",
     "@storybook/addon-a11y": "^9.1.20",
     "@storybook/angular": "^9.1.20",
+    "@tailwindcss/postcss": "^4.3.3",
     "@testing-library/angular": "^18.1.1",
     "@types/howler": "^2.2.13",
     "@types/jasmine": "~5.1.0",
@@ -66,9 +67,11 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "lint-staged": "^17.3.0",
     "ng-packagr": "^20.3.0",
+    "postcss": "^8.5.26",
     "prettier": "^3.9.6",
     "storybook": "^9.1.20",
     "style-dictionary": "^5.5.0",
+    "tailwindcss": "^4.3.3",
     "typescript": "~5.9.2",
     "vitest": "^3.2.7"
   }

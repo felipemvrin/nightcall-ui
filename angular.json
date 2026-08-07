@@ -37,7 +37,11 @@
                 "output": "/assets"
               }
             ],
-            "styles": ["dist/tokens/css/variables.css", "apps/web/src/styles.scss"]
+            "styles": [
+              "dist/tokens/css/variables.css",
+              "apps/web/src/tailwind.css",
+              "apps/web/src/styles.scss"
+            ]
           },
           "configurations": {
             "production": {
@@ -97,7 +101,11 @@
                 "output": "/assets"
               }
             ],
-            "styles": ["dist/tokens/css/variables.css", "apps/web/src/styles.scss"]
+            "styles": [
+              "dist/tokens/css/variables.css",
+              "apps/web/src/tailwind.css",
+              "apps/web/src/styles.scss"
+            ]
           }
         }
       }
