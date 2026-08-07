@@ -29,9 +29,14 @@
   color: #94a3b8;
 }
 
-h1 {
+.brand {
   margin: 0;
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
+}
+
+.brand-logo {
+  display: block;
+  width: min(100%, 35.625rem);
+  height: auto;
 }
 
 .lead {

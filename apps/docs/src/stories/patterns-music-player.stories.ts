@@ -53,7 +53,7 @@ Use this Pattern when you want to document or prototype a complete media interac
   args: {
     trackTitle: 'Nightcall',
     artistName: 'Kavinsky',
-    audioSrc: '/app/kavinsky-song.mp3',
+    audioSrc: '/assets/audio/kavinsky-song.mp3',
     playbackState: 'pause',
     muted: false,
     progress: 12,
@@ -87,7 +87,7 @@ export const Overview: Story = {
     props: {
       trackTitle: 'Nightcall',
       artistName: 'Kavinsky',
-      audioSrc: '/app/kavinsky-song.mp3',
+      audioSrc: '/assets/audio/kavinsky-song.mp3',
       playbackState: 'pause',
       muted: false,
       progress: 12,

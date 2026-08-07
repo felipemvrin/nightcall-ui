@@ -29,7 +29,12 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "apps/web/src"
+                "input": "apps/web/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "apps/shared-assets",
+                "output": "/assets"
               }
             ],
             "styles": ["dist/tokens/css/variables.css", "apps/web/src/styles.scss"]
@@ -112,9 +117,9 @@
                 "input": "apps/docs/public"
               },
               {
-                "glob": "kavinsky-song.mp3",
-                "input": "apps/web/src/app",
-                "output": "/"
+                "glob": "**/*",
+                "input": "apps/shared-assets",
+                "output": "/assets"
               }
             ],
             "styles": ["dist/tokens/css/variables.css", "apps/docs/src/styles.scss"]
@@ -191,9 +196,9 @@
                 "input": "apps/docs/public"
               },
               {
-                "glob": "kavinsky-song.mp3",
-                "input": "apps/web/src/app",
-                "output": "/"
+                "glob": "**/*",
+                "input": "apps/shared-assets",
+                "output": "/assets"
               }
             ],
             "styles": ["dist/tokens/css/variables.css", "apps/docs/src/styles.scss"]

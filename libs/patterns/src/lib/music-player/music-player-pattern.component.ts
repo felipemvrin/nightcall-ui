@@ -21,7 +21,7 @@ let nextScrubberId = 0;
 export class NcMusicPlayerPatternComponent implements OnInit, OnDestroy {
   readonly trackTitle = input('Nightcall');
   readonly artistName = input('Kavinsky');
-  readonly audioSrc = input('/app/kavinsky-song.mp3');
+  readonly audioSrc = input('/assets/audio/kavinsky-song.mp3');
   readonly playbackState = input<'play' | 'pause'>('pause');
   readonly muted = input(false);
   readonly progress = input(0);
