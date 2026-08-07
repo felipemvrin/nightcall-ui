@@ -1,6 +1,14 @@
 # Nightcall UI
 
-Nightcall UI is an Angular 20 design system workspace focused on clarity, consistency, and long-term maintainability. It includes the foundations needed to build and document a public components package: design tokens, shared themes, Storybook docs, and a publishable Angular library.
+Nightcall UI is an Angular 20 design system workspace for building consistent, accessible, and scalable interfaces. The repository brings together a publishable component library, shared design tokens and themes, Storybook documentation, and example apps so teams can explore, test, and consume the system from one place.
+
+## What is included
+
+- A publishable Angular library under `projects/nightcall-ui`
+- Shared foundations for colors, typography, motion, shadows, icons, and textures
+- Reusable UI patterns for the web app and Storybook
+- Documentation and demo experiences for designers and developers
+- Automated validation with Vitest, Playwright, ESLint, and Storybook builds
 
 ## Stack
 
@@ -22,34 +30,34 @@ Nightcall UI is an Angular 20 design system workspace focused on clarity, consis
 - GitHub Actions
 - ng-packagr
 
-## Folder Structure
+## Quick start
 
-- `apps/docs` - Angular documentation and demo application
-- `projects/nightcall-ui` - publishable Angular components package
-- `libs/patterns` - shared UI patterns consumed by the web app and Storybook
-- `packages/tokens` - token documentation and build inputs
-- `packages/themes` - shared theme primitives and CSS custom properties
-- `packages/icons` - shared Nightcall icon package for Angular consumers and Storybook patterns
-- `.storybook` - Storybook 9 configuration
-- `docs` - repository documentation
-- `examples` - usage examples
-- `scripts` - workspace utilities
+1. Install dependencies with `npm install`
+2. Generate tokens with `npm run tokens`
+3. Start the docs app with `npm run start`
+4. Start Storybook with `npm run storybook`
 
-## Getting Started
+## Useful scripts
 
-1. Install dependencies with `npm install`.
-2. Generate tokens with `npm run tokens`.
-3. Start the docs app with `npm run start`.
-4. Start Storybook with `npm run storybook`.
+- `npm run start` – run the docs app
+- `npm run build` – build the docs app and the component library
+- `npm run test` – run Vitest
+- `npm run lint` – run ESLint
+- `npm run storybook` – start Storybook
+- `npm run build-storybook` – build the Storybook site
+- `npm run tokens` – generate token outputs
+- `npm run e2e` – run Playwright end-to-end tests
+- `npm run format` – format the workspace with Prettier
+- `npm run prepare` – install Husky hooks
 
-## Scripts
+## Repository structure
 
-- `npm run start` - run the docs app
-- `npm run build` - build the docs app and the components package
-- `npm run test` - run Vitest
-- `npm run lint` - run ESLint
-- `npm run storybook` - start Storybook 9
-- `npm run build-storybook` - build the Storybook static site
-- `npm run tokens` - generate CSS, SCSS, and JSON token outputs
-- `npm run format` - format the workspace with Prettier
-- `npm run prepare` - install Husky hooks
+- `apps/docs` – Angular documentation and demo app
+- `apps/web` – web experience using the shared system
+- `projects/nightcall-ui` – publishable Angular package
+- `libs/patterns` – shared UI patterns
+- `packages/tokens` – token sources and generated outputs
+- `packages/themes` – shared theme primitives
+- `packages/icons` – shared icon package
+- `docs` – additional documentation
+- `examples` – usage examples
