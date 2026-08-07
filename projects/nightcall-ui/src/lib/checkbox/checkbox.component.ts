@@ -2,6 +2,10 @@ import { ChangeDetectionStrategy, Component, computed, input, output } from '@an
 
 let nextCheckboxId = 0;
 
+function generateCheckboxId(): string {
+  return `nc-checkbox-${++nextCheckboxId}`;
+}
+
 @Component({
   selector: 'nc-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -24,15 +28,12 @@ export class NcCheckboxComponent {
 
   readonly checkedChange = output<boolean>();
 
-  protected readonly checkboxId = computed(() => this.id() ?? `nc-checkbox-${nextCheckboxId}`);
+  private readonly _autoId = generateCheckboxId();
+  protected readonly checkboxId = computed(() => this.id() ?? this._autoId);
 
   protected readonly supportId = computed(() =>
     this.helperText() ? `${this.checkboxId()}-support` : null,
   );
-
-  constructor() {
-    nextCheckboxId += 1;
-  }
 
   protected onToggle(event: Event): void {
     const target = event.target as HTMLInputElement;

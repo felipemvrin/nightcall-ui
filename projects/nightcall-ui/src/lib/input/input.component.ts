@@ -5,6 +5,10 @@ export type NcInputState = 'default' | 'error' | 'success';
 
 let nextInputId = 0;
 
+function generateInputId(): string {
+  return `nc-input-${++nextInputId}`;
+}
+
 @Component({
   selector: 'nc-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,7 +38,8 @@ export class NcInputComponent {
 
   readonly valueChange = output<string>();
 
-  protected readonly inputId = computed(() => this.id() ?? `nc-input-${nextInputId}`);
+  private readonly _autoId = generateInputId();
+  protected readonly inputId = computed(() => this.id() ?? this._autoId);
 
   protected readonly describedById = computed(() => {
     if (!this.supportingText()) {
@@ -57,10 +62,6 @@ export class NcInputComponent {
   });
 
   protected readonly isInvalid = computed(() => this.state() === 'error');
-
-  constructor() {
-    nextInputId += 1;
-  }
 
   protected onInput(event: Event): void {
     const element = event.target as HTMLInputElement;

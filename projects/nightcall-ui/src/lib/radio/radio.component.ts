@@ -8,6 +8,10 @@ export type NcRadioOption = {
 
 let nextRadioGroupId = 0;
 
+function generateRadioGroupId(): string {
+  return `nc-radio-${++nextRadioGroupId}`;
+}
+
 @Component({
   selector: 'nc-radio-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -30,14 +34,11 @@ export class NcRadioGroupComponent {
 
   readonly valueChange = output<string>();
 
-  protected readonly groupName = computed(() => this.name() ?? `nc-radio-${nextRadioGroupId}`);
+  private readonly _autoGroupId = generateRadioGroupId();
+  protected readonly groupName = computed(() => this.name() ?? this._autoGroupId);
   protected readonly supportId = computed(() =>
     this.helperText() ? `${this.groupName()}-support` : null,
   );
-
-  constructor() {
-    nextRadioGroupId += 1;
-  }
 
   protected onChange(event: Event): void {
     const target = event.target as HTMLInputElement;

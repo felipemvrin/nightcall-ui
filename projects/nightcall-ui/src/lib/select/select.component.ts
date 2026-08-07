@@ -16,6 +16,10 @@ export type NcSelectGroup = {
 
 let nextSelectId = 0;
 
+function generateSelectId(): string {
+  return `nc-select-${++nextSelectId}`;
+}
+
 @Component({
   selector: 'nc-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -44,7 +48,8 @@ export class NcSelectComponent {
 
   readonly valueChange = output<string>();
 
-  protected readonly selectId = computed(() => this.id() ?? `nc-select-${nextSelectId}`);
+  private readonly _autoId = generateSelectId();
+  protected readonly selectId = computed(() => this.id() ?? this._autoId);
 
   protected readonly supportId = computed(() => {
     if (!this.supportingText()) {
@@ -65,10 +70,6 @@ export class NcSelectComponent {
   protected readonly hasGroups = computed(() => this.groups().length > 0);
 
   protected readonly isInvalid = computed(() => this.state() === 'error');
-
-  constructor() {
-    nextSelectId += 1;
-  }
 
   protected onChange(event: Event): void {
     const element = event.target as HTMLSelectElement;
