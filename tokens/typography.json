@@ -2,10 +2,13 @@
   "font": {
     "family": {
       "heading": {
-        "value": "'Michroma', sans-serif"
+        "value": "'Oxanium', sans-serif"
       },
       "body": {
         "value": "'Inter', sans-serif"
+      },
+      "button": {
+        "value": "'Rajdhani', sans-serif"
       },
       "code": {
         "value": "'IBM Plex Mono', monospace"

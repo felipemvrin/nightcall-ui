@@ -1,34 +1,59 @@
 <main class="docs-shell">
   <section class="hero">
-    <p class="eyebrow">Angular Design System</p>
-    <h1>{{ title() }}</h1>
-    <p class="lede">
-      Production-ready infrastructure for a scalable open source Angular design system.
-      Tokens, themes, Storybook, testing, and packaging are wired before the first component.
-    </p>
+    <div class="hero-content">
+      <h2 class="eyebrow u-font-oxanium u-font-regular u-text-warning">Nightcall UI</h2>
+      <h1>{{ title() }}</h1>
+      <p class="lede">
+        This documentation surface is dedicated to the design system: foundations, reusable components,
+        and the Storybook reference for implementation and review.
+      </p>
 
-    <div class="actions">
-      <a class="action primary" href="http://localhost:6006" target="_blank" rel="noreferrer">
-        Open Storybook
-      </a>
-      <a class="action secondary" href="https://angular.dev" target="_blank" rel="noreferrer">
-        Angular Docs
-      </a>
+      <div class="actions">
+        <nc-button variant="primary" (click)="openStorybook()">
+          Open Storybook
+        </nc-button>
+
+        <nc-button variant="outline" (click)="openAngularDocs()">
+          Angular Docs
+        </nc-button>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <figure class="hero-media">
+        <img ngSrc="/images/head-night.jpg" width="1280" height="720" alt="Nightcall UI visual preview" priority />
+      </figure>
     </div>
   </section>
 
-  <section class="grid" aria-label="Workspace overview">
+  <section class="grid" aria-label="Storybook-first navigation">
     @for (section of sections; track section.title) {
-      <article class="card">
-        <p class="card-kicker">{{ section.title }}</p>
-        <p class="card-copy">{{ section.description }}</p>
+    <article class="card" [class.is-active]="selectedSection().title === section.title">
+      <p class="card-kicker">{{ section.title }}</p>
+      <p class="card-copy">{{ section.description }}</p>
 
-        <ul class="badge-list">
-          @for (item of section.items; track item) {
-            <li>{{ item }}</li>
-          }
-        </ul>
-      </article>
+      <ul class="badge-list">
+        @for (item of section.items; track item) {
+        <li>{{ item }}</li>
+        }
+      </ul>
+
+      <button class="section-link" type="button" (click)="selectSection(section)">
+        View section
+      </button>
+    </article>
     }
+  </section>
+
+  <section class="detail-panel" aria-live="polite">
+    <p class="detail-kicker">Selected section</p>
+    <h3>{{ selectedSection().title }}</h3>
+    <p>{{ selectedSection().description }}</p>
+
+    <ul class="detail-list">
+      @for (item of selectedSection().items; track item) {
+      <li>{{ item }}</li>
+      }
+    </ul>
   </section>
 </main>

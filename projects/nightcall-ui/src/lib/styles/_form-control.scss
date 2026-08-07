@@ -1,0 +1,149 @@
+@mixin nc-form-host {
+  --nc-field-radius: var(--nc-radius-sm);
+  --nc-field-min-block-size: var(--nc-control-min-block-size, 2.75rem);
+  --nc-field-duration: var(--motion-duration-normal);
+  --nc-field-easing: var(--motion-easing-standard);
+  --nc-field-focus-ring: var(--elevation-ring-focus);
+  --nc-field-font-family: var(--nc-font-button);
+  --nc-field-font-weight: var(--nc-font-weight-button);
+  --nc-field-slot-color: color-mix(
+    in srgb,
+    var(--color-state-focus-ring) 76%,
+    var(--color-text-secondary)
+  );
+  --nc-field-slot-color-focus: color-mix(
+    in srgb,
+    var(--color-state-focus-ring) 85%,
+    var(--color-text-primary)
+  );
+
+  --nc-field-bg: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-background-surface) 94%, transparent),
+    color-mix(in srgb, var(--color-background-surface-elevated) 32%, transparent)
+  );
+  --nc-field-bg-hover: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-background-surface) 90%, transparent),
+    color-mix(in srgb, var(--color-state-focus-ring) 10%, var(--color-background-surface-elevated))
+  );
+  --nc-field-bg-focus: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-background-surface) 88%, transparent),
+    color-mix(in srgb, var(--color-state-focus-ring) 14%, var(--color-background-surface-elevated))
+  );
+  --nc-field-bg-active: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-background-surface) 82%, var(--color-background-canvas)),
+    color-mix(in srgb, var(--color-background-surface-elevated) 45%, var(--color-background-canvas))
+  );
+  --nc-field-border: color-mix(in srgb, var(--color-border-subtle) 72%, var(--color-border-strong));
+  --nc-field-fg: var(--color-text-primary);
+  --nc-field-placeholder: color-mix(in srgb, var(--color-text-secondary) 72%, transparent);
+  --nc-field-shadow: var(--elevation-shadow-1);
+  --nc-field-shadow-hover: var(--nc-shadow-neon-sm, var(--shadow-glow-pink));
+  --nc-field-shadow-focus: var(--nc-shadow-neon-md, var(--shadow-glow-cyan));
+  --nc-field-label: var(--color-text-secondary);
+  --nc-field-helper: var(--color-text-secondary);
+
+  --nc-field-error: var(--color-state-danger);
+  --nc-field-success: var(--color-state-success);
+
+  display: grid;
+  gap: var(--component-gap-tight);
+}
+
+@mixin nc-form-label {
+  margin: 0;
+  color: var(--nc-field-label);
+  font-family: var(--nc-field-font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  line-height: var(--font-line-height-snug);
+  letter-spacing: var(--font-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+@mixin nc-form-helper {
+  margin: 0;
+  color: var(--nc-field-helper);
+  font-family: var(--nc-field-font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-sm);
+  line-height: var(--font-line-height-normal);
+}
+
+@mixin nc-control-shell {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--component-gap-tight);
+  inline-size: 100%;
+  min-block-size: var(--nc-field-min-block-size);
+  padding: var(--component-padding-block-sm) var(--component-padding-inline-md);
+
+  border: 1px solid var(--nc-field-border);
+  border-radius: var(--nc-field-radius);
+  background: var(--nc-field-bg);
+  color: var(--nc-field-fg);
+  box-shadow: var(--nc-field-shadow);
+
+  transition:
+    border-color var(--nc-field-duration) var(--nc-field-easing),
+    box-shadow var(--nc-field-duration) var(--nc-field-easing),
+    background var(--nc-field-duration) var(--nc-field-easing),
+    color var(--nc-field-duration) var(--nc-field-easing);
+}
+
+@mixin nc-control-shell-hover {
+  background: var(--nc-field-bg-hover);
+  border-color: color-mix(in srgb, var(--color-state-focus-ring) 42%, var(--nc-field-border));
+  box-shadow: var(--nc-field-shadow-hover);
+  filter: brightness(1.02);
+}
+
+@mixin nc-control-shell-focus {
+  outline: 2px solid transparent;
+  outline-offset: 1px;
+  background: var(--nc-field-bg-focus);
+  border-color: color-mix(in srgb, var(--color-state-focus-ring) 55%, var(--nc-field-border));
+  box-shadow: var(--nc-field-focus-ring), var(--nc-field-shadow-focus);
+}
+
+@mixin nc-control-shell-active {
+  background: var(--nc-field-bg-active);
+  border-color: color-mix(in srgb, var(--color-state-focus-ring) 35%, var(--nc-field-border));
+  box-shadow: var(--elevation-shadow-1);
+  filter: brightness(0.97);
+}
+
+@mixin nc-control-shell-disabled {
+  opacity: var(--opacity-disabled);
+  background: color-mix(in srgb, var(--color-background-surface) 88%, transparent);
+  box-shadow: var(--elevation-shadow-0);
+  filter: none;
+  cursor: not-allowed;
+}
+
+@mixin nc-control-shell-error {
+  border-color: color-mix(in srgb, var(--nc-field-error) 78%, var(--nc-field-border));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--nc-field-error) 12%, var(--color-background-surface)),
+    color-mix(in srgb, var(--color-background-surface-elevated) 40%, transparent)
+  );
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--nc-field-error) 25%, transparent),
+    var(--elevation-shadow-1);
+}
+
+@mixin nc-control-shell-success {
+  border-color: color-mix(in srgb, var(--nc-field-success) 76%, var(--nc-field-border));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--nc-field-success) 10%, var(--color-background-surface)),
+    color-mix(in srgb, var(--color-background-surface-elevated) 40%, transparent)
+  );
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--nc-field-success) 25%, transparent),
+    var(--elevation-shadow-1);
+}

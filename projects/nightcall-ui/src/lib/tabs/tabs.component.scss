@@ -1,0 +1,132 @@
+:host {
+  --nc-tabs-shell-bg: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-background-surface) 94%, transparent),
+    color-mix(in srgb, var(--color-background-surface-elevated) 42%, transparent)
+  );
+  --nc-tabs-active-bg: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent-primary) 30%, var(--color-background-surface)),
+    color-mix(in srgb, var(--color-accent-secondary) 24%, var(--color-background-surface-elevated))
+  );
+
+  display: block;
+}
+
+.nc-tabs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  inline-size: 100%;
+  padding: var(--space-1);
+
+  border: 1px solid color-mix(in srgb, var(--color-border-subtle) 82%, var(--color-border-strong));
+  border-radius: var(--radius-md);
+  background: var(--nc-tabs-shell-bg);
+  box-shadow:
+    var(--elevation-shadow-1),
+    inset 0 0 0 1px color-mix(in srgb, var(--color-border-subtle) 28%, transparent);
+}
+
+:host(.nc-tabs-host--scrollable) .nc-tabs {
+  overflow-x: auto;
+  scrollbar-color: color-mix(in srgb, var(--color-state-focus-ring) 65%, transparent) transparent;
+}
+
+.nc-tabs__tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  flex: 1 0 auto;
+  min-inline-size: 7rem;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: var(--component-padding-block-sm) var(--component-padding-inline-md);
+
+  color: var(--color-text-secondary);
+  background: transparent;
+
+  font-family: var(--nc-font-button);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-md);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing-wide);
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    color var(--motion-duration-fast) var(--motion-easing-standard),
+    border-color var(--motion-duration-fast) var(--motion-easing-standard),
+    background var(--motion-duration-fast) var(--motion-easing-standard),
+    box-shadow var(--motion-duration-normal) var(--motion-easing-standard),
+    transform var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+.nc-tabs__tab::after {
+  content: '';
+  position: absolute;
+  inset-inline: var(--space-2);
+  inset-block-end: 0;
+  block-size: 2px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-accent-secondary) 88%, transparent),
+    color-mix(in srgb, var(--color-state-focus-ring) 82%, transparent)
+  );
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--motion-duration-normal) var(--motion-easing-standard);
+}
+
+.nc-tabs__tab:hover:not(:disabled) {
+  color: var(--color-text-primary);
+  border-color: color-mix(in srgb, var(--color-state-focus-ring) 40%, var(--color-border-subtle));
+  background: color-mix(in srgb, var(--color-background-surface-elevated) 30%, transparent);
+  transform: translateY(-1px);
+}
+
+.nc-tabs__tab--active {
+  color: var(--color-text-primary);
+  border-color: color-mix(in srgb, var(--color-border-accent) 45%, var(--color-state-focus-ring));
+  background: var(--nc-tabs-active-bg);
+  box-shadow: var(--nc-shadow-neon-sm);
+}
+
+.nc-tabs__tab--active::after {
+  transform: scaleX(1);
+}
+
+.nc-tabs__tab:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: var(--elevation-ring-focus), var(--nc-shadow-neon-md);
+}
+
+.nc-tabs__tab:disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+.nc-tabs__icon {
+  font-size: var(--font-size-sm);
+  line-height: 1;
+}
+
+:host(.nc-tabs-host--scrollable) .nc-tabs::-webkit-scrollbar {
+  block-size: 0.375rem;
+}
+
+:host(.nc-tabs-host--scrollable) .nc-tabs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:host(.nc-tabs-host--scrollable) .nc-tabs::-webkit-scrollbar-thumb {
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-state-focus-ring) 55%, transparent);
+}

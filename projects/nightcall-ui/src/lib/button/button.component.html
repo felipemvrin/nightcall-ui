@@ -1,0 +1,20 @@
+<button class="nc-button" [class.nc-button--loading]="loading()" [disabled]="isDisabled()" [type]="type()"
+    [attr.aria-busy]="loading() ? 'true' : null" [attr.aria-label]="resolvedAriaLabel()">
+    <span class="nc-button__icon" aria-hidden="true">
+        <ng-content select="[ncButtonIconStart]" />
+    </span>
+
+    @if (!iconOnly()) {
+    <span class="nc-button__label">
+        <ng-content />
+    </span>
+    }
+
+    <span class="nc-button__icon" aria-hidden="true">
+        <ng-content select="[ncButtonIconEnd]" />
+    </span>
+
+    @if (loading()) {
+    <span class="nc-button__spinner" aria-hidden="true"></span>
+    }
+</button>

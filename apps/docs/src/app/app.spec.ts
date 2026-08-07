@@ -22,4 +22,18 @@ describe('App', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Nightcall UI');
   });
+
+  it('should update the detail panel when selecting a section', () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+    const buttons = compiled.querySelectorAll<HTMLButtonElement>('.section-link');
+
+    buttons[1].click();
+    fixture.detectChanges();
+
+    expect(compiled.textContent).toContain('Components');
+    expect(compiled.textContent).toContain('Reusable Angular components');
+  });
 });

@@ -1,135 +1,102 @@
 {
   "color": {
     "primitive": {
-      "pink": {
-        "300": {
-          "value": "#ff4de8"
-        },
-        "400": {
-          "value": "#ff00d9"
-        },
-        "500": {
-          "value": "#d100ff"
-        }
+      "background": {
+        "value": "#0B0E1A"
       },
-      "cyan": {
-        "300": {
-          "value": "#53ffff"
-        },
-        "400": {
-          "value": "#00f0ff"
-        },
-        "500": {
-          "value": "#00b8ff"
-        }
+      "surface": {
+        "value": "#1A1233"
       },
-      "violet": {
-        "400": {
-          "value": "#9b4dff"
-        },
-        "500": {
-          "value": "#6a00ff"
-        },
-        "700": {
-          "value": "#3c1a8b"
-        }
+      "surfaceSecondary": {
+        "value": "#3B215E"
       },
-      "amber": {
-        "400": {
-          "value": "#ffb800"
-        }
+      "primary": {
+        "value": "#6A2CFF"
       },
-      "mint": {
-        "400": {
-          "value": "#00ff9d"
-        }
+      "secondary": {
+        "value": "#FF2D95"
       },
-      "slate": {
-        "50": {
-          "value": "#f8f8ff"
-        },
-        "300": {
-          "value": "#a1a2d1"
-        },
-        "500": {
-          "value": "#3e2c5e"
-        },
-        "700": {
-          "value": "#1a1035"
-        },
-        "800": {
-          "value": "#0d0221"
-        },
-        "900": {
-          "value": "#060112"
-        }
+      "info": {
+        "value": "#00E5FF"
+      },
+      "warning": {
+        "value": "#FFB000"
+      },
+      "text": {
+        "value": "#EAEAEA"
+      },
+      "textSecondary": {
+        "value": "#C9CFDF"
       }
     },
     "background": {
       "canvas": {
-        "value": "{color.primitive.slate.900}"
+        "value": "{color.primitive.background}"
       },
       "surface": {
-        "value": "{color.primitive.slate.800}"
+        "value": "{color.primitive.surface}"
       },
       "surfaceElevated": {
-        "value": "{color.primitive.slate.700}"
+        "value": "{color.primitive.surfaceSecondary}"
       },
       "surfaceOverlay": {
-        "value": "#14092e"
+        "value": "{color.primitive.surfaceSecondary}"
       }
     },
     "border": {
       "subtle": {
-        "value": "#2a184d"
+        "value": "{color.primitive.surfaceSecondary}"
       },
       "strong": {
-        "value": "#542c90"
+        "value": "{color.primitive.primary}"
       },
       "accent": {
-        "value": "{color.primitive.pink.400}"
+        "value": "{color.primitive.secondary}"
       }
     },
     "text": {
       "primary": {
-        "value": "{color.primitive.slate.50}"
+        "value": "{color.primitive.text}"
       },
       "secondary": {
-        "value": "{color.primitive.slate.300}"
+        "value": "{color.primitive.textSecondary}"
       },
       "inverse": {
-        "value": "{color.primitive.slate.900}"
+        "value": "{color.primitive.background}"
+      },
+      "heading": {
+        "value": "{color.primitive.secondary}"
       }
     },
     "accent": {
       "primary": {
-        "value": "{color.primitive.pink.400}"
+        "value": "{color.primitive.primary}"
       },
       "secondary": {
-        "value": "{color.primitive.cyan.400}"
+        "value": "{color.primitive.secondary}"
       },
       "tertiary": {
-        "value": "{color.primitive.violet.500}"
+        "value": "{color.primitive.info}"
       },
       "positive": {
-        "value": "{color.primitive.mint.400}"
+        "value": "{color.primitive.info}"
       },
       "attention": {
-        "value": "{color.primitive.amber.400}"
+        "value": "{color.primitive.warning}"
       }
     },
     "state": {
       "focusRing": {
-        "value": "{color.primitive.cyan.400}"
+        "value": "{color.primitive.info}"
       },
       "success": {
-        "value": "{color.primitive.mint.400}"
+        "value": "{color.primitive.info}"
       },
       "warning": {
-        "value": "{color.primitive.amber.400}"
+        "value": "{color.primitive.warning}"
       },
       "danger": {
-        "value": "#ff4d8e"
+        "value": "{color.primitive.secondary}"
       }
     }
   }

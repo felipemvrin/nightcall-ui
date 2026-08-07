@@ -1,4 +1,6 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { NcButtonComponent } from '@nightcall-ui/components';
 
 type Section = {
   title: string;
@@ -8,27 +10,44 @@ type Section = {
 
 @Component({
   selector: 'nc-root',
+  imports: [NgOptimizedImage, NcButtonComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('Nightcall UI');
+  protected readonly title = signal('Design System Docs');
 
   protected readonly sections: Section[] = [
     {
-      title: 'Workspace',
-      description: 'Angular CLI application shell for the documentation and examples site.',
-      items: ['Angular 20', 'Standalone APIs', 'SCSS', 'Signals'],
+      title: 'Foundations',
+      description: 'Core design tokens, themes, and visual rules that define the system language.',
+      items: ['Colors', 'Typography', 'Spacing', 'Elevation'],
     },
     {
-      title: 'Packages',
-      description: 'A publishable components library plus token, theme, and icon packages.',
-      items: ['@nightcall-ui/components', 'packages/tokens', 'packages/themes', 'packages/icons'],
+      title: 'Components',
+      description:
+        'Reusable Angular components documented as interactive stories for implementation and review.',
+      items: ['Buttons', 'Inputs', 'Tabs', 'Selects'],
     },
     {
-      title: 'Tooling',
-      description: 'Storybook, Style Dictionary, Vitest, Playwright, ESLint, Prettier, and Husky.',
-      items: ['Storybook 9', 'Style Dictionary', 'Vitest', 'Playwright'],
+      title: 'Usage',
+      description:
+        'Guidance for adopting the system, testing patterns, and contributing safely to the library.',
+      items: ['Patterns', 'Accessibility', 'Testing', 'Contribution'],
     },
   ];
+
+  protected readonly selectedSection = signal<Section>(this.sections[0]);
+
+  protected selectSection(section: Section): void {
+    this.selectedSection.set(section);
+  }
+
+  protected openStorybook(): void {
+    window.open('http://localhost:6006', '_blank', 'noopener,noreferrer');
+  }
+
+  protected openAngularDocs(): void {
+    window.open('https://angular.dev', '_blank', 'noopener,noreferrer');
+  }
 }

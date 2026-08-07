@@ -1,0 +1,89 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.shell {
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+  display: grid;
+  gap: 2rem;
+  align-content: center;
+  justify-items: center;
+  background: linear-gradient(135deg, #050816 0%, #0f172a 100%);
+  color: #f8fafc;
+}
+
+.hero {
+  max-width: 48rem;
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.brand {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.brand-logo {
+  display: block;
+  width: min(100%, 35.625rem);
+  height: auto;
+  margin-inline: auto;
+}
+
+.lead {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.nc-player {
+  margin-top: 1.5rem;
+  inline-size: min(100%, 44rem);
+}
+
+.features {
+  width: 100%;
+  max-width: 72rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.card {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.6;
+  color: #cbd5e1;
+}

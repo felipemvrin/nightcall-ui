@@ -6,6 +6,110 @@
   },
   "newProjectRoot": "projects",
   "projects": {
+    "web": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/web",
+      "sourceRoot": "apps/web/src",
+      "prefix": "nc",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "apps/web/src/main.ts",
+            "tsConfig": "apps/web/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["packages/themes/src"]
+            },
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "apps/web/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "apps/shared-assets",
+                "output": "/assets"
+              }
+            ],
+            "styles": [
+              "dist/tokens/css/variables.css",
+              "apps/web/src/tailwind.css",
+              "apps/web/src/styles.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "7kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "web:build:production"
+            },
+            "development": {
+              "buildTarget": "web:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "apps/web/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["packages/themes/src"]
+            },
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "apps/web/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "apps/shared-assets",
+                "output": "/assets"
+              }
+            ],
+            "styles": [
+              "dist/tokens/css/variables.css",
+              "apps/web/src/tailwind.css",
+              "apps/web/src/styles.scss"
+            ]
+          }
+        }
+      }
+    },
     "docs": {
       "projectType": "application",
       "schematics": {
@@ -24,20 +128,20 @@
             "tsConfig": "apps/docs/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "packages/themes/src"
-              ]
+              "includePaths": ["packages/themes/src"]
             },
             "assets": [
               {
                 "glob": "**/*",
                 "input": "apps/docs/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "apps/shared-assets",
+                "output": "/assets"
               }
             ],
-            "styles": [
-              "dist/tokens/css/variables.css",
-              "apps/docs/src/styles.scss"
-            ]
+            "styles": ["dist/tokens/css/variables.css", "apps/docs/src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -49,7 +153,7 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
+                  "maximumWarning": "7kB",
                   "maximumError": "8kB"
                 }
               ],
@@ -103,20 +207,20 @@
             "tsConfig": "apps/docs/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "packages/themes/src"
-              ]
+              "includePaths": ["packages/themes/src"]
             },
             "assets": [
               {
                 "glob": "**/*",
                 "input": "apps/docs/public"
+              },
+              {
+                "glob": "**/*",
+                "input": "apps/shared-assets",
+                "output": "/assets"
               }
             ],
-            "styles": [
-              "dist/tokens/css/variables.css",
-              "apps/docs/src/styles.scss"
-            ]
+            "styles": ["dist/tokens/css/variables.css", "apps/docs/src/styles.scss"]
           }
         }
       }

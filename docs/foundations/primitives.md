@@ -6,7 +6,7 @@ Este primer lote establece la base visual de Nightcall UI para los próximos com
 
 Fuente de verdad: `tokens/color.json`
 
-- Paleta primitiva retro-futurista: pink, cyan, violet, amber, mint y slate.
+- Paleta oficial Nightcall UI: background, surface, surfaceSecondary, primary, secondary, info, warning y text.
 - Tokens semánticos: background, text, border, accent, state.
 - Objetivo: separar el color de marca (primitivo) del color de uso (semántico).
 

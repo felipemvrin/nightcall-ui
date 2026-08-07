@@ -1,0 +1,102 @@
+@use '../styles/form-control' as form;
+
+:host {
+  @include form.nc-form-host;
+}
+
+:host([data-variant='filled']) {
+  --nc-field-bg: color-mix(in srgb, var(--color-background-surface-elevated) 94%, transparent);
+  --nc-field-shadow: var(--elevation-shadow-2);
+}
+
+:host([data-variant='outline']) {
+  --nc-field-bg: transparent;
+  --nc-field-border: color-mix(
+    in srgb,
+    var(--color-border-strong) 66%,
+    var(--color-state-focus-ring)
+  );
+}
+
+.nc-input__label {
+  @include form.nc-form-label;
+}
+
+.nc-input__control {
+  @include form.nc-control-shell;
+}
+
+.nc-input__native {
+  inline-size: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+
+  font-family: var(--nc-field-font-family);
+  font-weight: var(--nc-field-font-weight);
+  font-size: var(--font-size-md);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing-normal);
+}
+
+.nc-input__native::placeholder {
+  color: var(--nc-field-placeholder);
+  opacity: 1;
+}
+
+.nc-input__slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nc-field-slot-color);
+  transition: color var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+.nc-input__slot:empty {
+  display: none;
+}
+
+.nc-input__support {
+  @include form.nc-form-helper;
+}
+
+:host([data-state='error']) .nc-input__control {
+  @include form.nc-control-shell-error;
+}
+
+:host([data-state='error']) .nc-input__support {
+  color: var(--nc-field-error);
+}
+
+:host([data-state='success']) .nc-input__control {
+  @include form.nc-control-shell-success;
+}
+
+:host([data-state='success']) .nc-input__support {
+  color: var(--nc-field-success);
+}
+
+.nc-input__control:hover {
+  @include form.nc-control-shell-hover;
+}
+
+:host(:focus-within) .nc-input__control {
+  @include form.nc-control-shell-focus;
+}
+
+:host(:focus-within) .nc-input__slot {
+  color: var(--nc-field-slot-color-focus);
+}
+
+.nc-input__control:active {
+  @include form.nc-control-shell-active;
+}
+
+:host(.nc-input-host--readonly) .nc-input__control {
+  background: color-mix(in srgb, var(--color-background-surface) 75%, transparent);
+}
+
+:host(.nc-input-host--disabled) .nc-input__control {
+  @include form.nc-control-shell-disabled;
+}

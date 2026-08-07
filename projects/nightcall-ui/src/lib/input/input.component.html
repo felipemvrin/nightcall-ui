@@ -1,0 +1,22 @@
+@if (label()) {
+<label class="nc-input__label" [attr.for]="inputId()">{{ label() }}</label>
+}
+
+<div class="nc-input__control">
+    <span class="nc-input__slot" aria-hidden="true">
+        <ng-content select="[ncInputPrefix]" />
+    </span>
+
+    <input class="nc-input__native" [id]="inputId()" [type]="type()" [value]="value()" [placeholder]="placeholder()"
+        [required]="required()" [readonly]="readonly()" [disabled]="disabled()"
+        [attr.aria-invalid]="isInvalid() ? 'true' : null" [attr.aria-describedby]="describedById()"
+        (input)="onInput($event)" />
+
+    <span class="nc-input__slot" aria-hidden="true">
+        <ng-content select="[ncInputSuffix]" />
+    </span>
+</div>
+
+@if (supportingText()) {
+<p class="nc-input__support" [attr.id]="describedById()">{{ supportingText() }}</p>
+}

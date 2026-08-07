@@ -20,10 +20,10 @@
     },
     "glow": {
       "pink": {
-        "value": "0 0 0 1px rgb(255 0 217 / 0.35), 0 0 24px rgb(255 0 217 / 0.4)"
+        "value": "0 0 0 1px color-mix(in srgb, {color.accent.secondary} 35%, transparent), 0 0 24px color-mix(in srgb, {color.accent.secondary} 40%, transparent)"
       },
       "cyan": {
-        "value": "0 0 0 1px rgb(0 240 255 / 0.35), 0 0 24px rgb(0 240 255 / 0.4)"
+        "value": "0 0 0 1px color-mix(in srgb, {color.state.focusRing} 35%, transparent), 0 0 24px color-mix(in srgb, {color.state.focusRing} 40%, transparent)"
       }
     }
   }

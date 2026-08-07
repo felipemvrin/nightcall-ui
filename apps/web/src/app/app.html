@@ -1,0 +1,32 @@
+<main class="shell">
+  <section class="hero">
+    <p class="eyebrow">
+      <span class="uppercase font-[Oxanium] text-[var(--nc-color-primary)]">Design system</span> •
+      <span class="uppercase font-[Oxanium] text-[var(--nc-color-secondary)]">Angular</span> •
+      <span class="uppercase font-[Oxanium] text-[var(--nc-color-info)]">Storybook</span>
+    </p>
+    <h1 class="brand">
+      <img ngSrc="/assets/brand/logo-nc-ui.svg" [alt]="title()" width="570" height="95" class="brand-logo" priority />
+    </h1>
+    <p class="lead">{{ subtitle() }}</p>
+
+    <div class="actions">
+      <nc-button variant="primary" (click)="openDocs()">Explore docs</nc-button>
+      <nc-button variant="outline" (click)="openStorybook()">Open Storybook</nc-button>
+    </div>
+    <div class="nc-player">
+      <nc-music-player-pattern trackTitle="Nightcall" artistName="Kavinsky" audioSrc="/assets/audio/kavinsky-song.mp3"
+        eyebrow="Live pattern preview"></nc-music-player-pattern>
+    </div>
+
+  </section>
+
+  <section class="features" aria-label="Value propositions">
+    @for (feature of features; track feature.title) {
+    <article class="card">
+      <h2>{{ feature.title }}</h2>
+      <p>{{ feature.description }}</p>
+    </article>
+    }
+  </section>
+</main>

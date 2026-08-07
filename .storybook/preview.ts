@@ -10,8 +10,8 @@ const preview: Preview = {
     backgrounds: {
       default: 'Nightcall',
       values: [
-        { name: 'Nightcall', value: '#050816' },
-        { name: 'Surface', value: '#0f172a' },
+        { name: 'Nightcall', value: 'var(--nc-color-background)' },
+        { name: 'Surface', value: 'var(--nc-color-surface)' },
       ],
     },
     viewport: {

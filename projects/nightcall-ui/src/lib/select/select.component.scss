@@ -1,0 +1,100 @@
+@use '../styles/form-control' as form;
+
+:host {
+  @include form.nc-form-host;
+  --nc-select-chevron-focus-scale: var(--nc-control-focus-scale, 1.04);
+}
+
+:host([data-variant='filled']) {
+  --nc-field-bg: color-mix(in srgb, var(--color-background-surface-elevated) 94%, transparent);
+  --nc-field-shadow: var(--elevation-shadow-2);
+}
+
+:host([data-variant='outline']) {
+  --nc-field-bg: transparent;
+  --nc-field-border: color-mix(
+    in srgb,
+    var(--color-border-strong) 66%,
+    var(--color-state-focus-ring)
+  );
+}
+
+.nc-select__label {
+  @include form.nc-form-label;
+}
+
+.nc-select__control {
+  @include form.nc-control-shell;
+  position: relative;
+  padding-inline-end: calc(var(--component-padding-inline-lg) + var(--space-5));
+}
+
+.nc-select__native {
+  inline-size: 100%;
+  border: 0;
+  outline: 0;
+  appearance: none;
+  background: transparent;
+  color: inherit;
+
+  font-family: var(--nc-field-font-family);
+  font-weight: var(--nc-field-font-weight);
+  font-size: var(--font-size-md);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing-normal);
+}
+
+.nc-select__chevron {
+  position: absolute;
+  inset-inline-end: var(--component-padding-inline-md);
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  color: var(--nc-field-slot-color);
+  pointer-events: none;
+  font-size: var(--font-size-lg);
+  line-height: 1;
+  transition:
+    color var(--motion-duration-fast) var(--motion-easing-standard),
+    transform var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+.nc-select__support {
+  @include form.nc-form-helper;
+}
+
+:host([data-state='error']) .nc-select__control {
+  @include form.nc-control-shell-error;
+}
+
+:host([data-state='error']) .nc-select__support {
+  color: var(--color-state-danger);
+}
+
+:host([data-state='success']) .nc-select__control {
+  @include form.nc-control-shell-success;
+}
+
+:host([data-state='success']) .nc-select__support {
+  color: var(--color-state-success);
+}
+
+.nc-select__control:hover {
+  @include form.nc-control-shell-hover;
+}
+
+:host(:focus-within) .nc-select__control {
+  @include form.nc-control-shell-focus;
+}
+
+:host(:focus-within) .nc-select__chevron {
+  color: var(--nc-field-slot-color-focus);
+  transform: translateY(-50%) scale(var(--nc-select-chevron-focus-scale));
+}
+
+.nc-select__control:active {
+  @include form.nc-control-shell-active;
+}
+
+:host(.nc-select-host--disabled) .nc-select__control {
+  @include form.nc-control-shell-disabled;
+}

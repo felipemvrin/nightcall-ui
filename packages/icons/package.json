@@ -1,0 +1,12 @@
+{
+  "name": "@nightcall-ui/icons",
+  "version": "0.0.1",
+  "private": false,
+  "peerDependencies": {
+    "@angular/core": "^20.3.27"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

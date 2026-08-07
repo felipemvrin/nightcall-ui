@@ -8,12 +8,10 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "paths": {
-      "@nightcall-ui/components": [
-        "./projects/nightcall-ui/src/public-api.ts"
-      ],
-      "nightcall-ui": [
-        "./projects/nightcall-ui/src/public-api.ts"
-      ]
+      "@nightcall-ui/components": ["./projects/nightcall-ui/src/public-api.ts"],
+      "@nightcall-ui/icons": ["./packages/icons/src/public-api.ts"],
+      "@nightcall-ui/patterns": ["./libs/patterns/src/public-api.ts"],
+      "nightcall-ui": ["./projects/nightcall-ui/src/public-api.ts"]
     },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
@@ -32,11 +30,18 @@
   },
   "include": [
     ".storybook/preview.ts",
+    "apps/docs/src/**/*.d.ts",
     "apps/docs/src/**/*.stories.ts",
     "apps/docs/src/**/*.stories.mdx"
   ],
   "files": [],
   "references": [
+    {
+      "path": "./apps/web/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/web/tsconfig.spec.json"
+    },
     {
       "path": "./apps/docs/tsconfig.app.json"
     },
