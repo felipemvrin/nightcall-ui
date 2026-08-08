@@ -29,7 +29,7 @@
   border-radius: 0 0 1.25rem 1.25rem;
   overflow: hidden;
   background: color-mix(in srgb, var(--nc-color-surface) 85%, black);
-  box-shadow: var(--nc-shadow-elevation-2, 0 8px 24px rgb(3 7 18 / 0.25));
+  box-shadow: var(--nc-shadow-elevation-2, 0 6.4px 19.2px rgb(3 7 18 / 0.25));
 }
 
 .hero-media img {
@@ -112,14 +112,14 @@ h1 {
   border-radius: 1.25rem;
   background: var(--nc-surface-2);
   border: 1px solid var(--nc-border-elevation-1);
-  box-shadow: var(--nc-shadow-elevation-2, 0 8px 24px rgb(3 7 18 / 0.25));
+  box-shadow: var(--nc-shadow-elevation-2, 0 6.4px 19.2px rgb(3 7 18 / 0.25));
   display: grid;
   gap: var(--nc-space-3);
 }
 
 .card.is-active {
   border-color: var(--nc-color-primary);
-  box-shadow: var(--nc-shadow-elevation-3, 0 12px 30px rgb(3 7 18 / 0.3));
+  box-shadow: var(--nc-shadow-elevation-3, 0 9.6px 24px rgb(3 7 18 / 0.3));
 }
 
 .card-kicker {
@@ -175,7 +175,7 @@ h1 {
   border: 0;
   border-radius: 0.75rem;
   background: color-mix(in srgb, var(--nc-color-surface) 92%, transparent);
-  box-shadow: var(--nc-shadow-elevation-1, 0 4px 12px rgb(3 7 18 / 0.2));
+  box-shadow: var(--nc-shadow-elevation-1, 0 3.2px 9.6px rgb(3 7 18 / 0.2));
 }
 
 .mb-4 {

@@ -4,26 +4,26 @@
       "value": "none"
     },
     "xs": {
-      "value": "0 4px 12px rgb(3 7 18 / 0.2)"
+      "value": "0 3.2px 9.6px rgb(3 7 18 / 0.2)"
     },
     "sm": {
-      "value": "0 8px 24px rgb(3 7 18 / 0.25)"
+      "value": "0 6.4px 19.2px rgb(3 7 18 / 0.25)"
     },
     "md": {
-      "value": "0 16px 48px rgb(3 7 18 / 0.3)"
+      "value": "0 12.8px 38.4px rgb(3 7 18 / 0.3)"
     },
     "lg": {
-      "value": "0 32px 96px rgb(3 7 18 / 0.4)"
+      "value": "0 25.6px 76.8px rgb(3 7 18 / 0.4)"
     },
     "xl": {
-      "value": "0 40px 120px rgb(3 7 18 / 0.45)"
+      "value": "0 32px 96px rgb(3 7 18 / 0.45)"
     },
     "glow": {
       "pink": {
-        "value": "0 0 0 1px color-mix(in srgb, {color.accent.secondary} 35%, transparent), 0 0 24px color-mix(in srgb, {color.accent.secondary} 40%, transparent)"
+        "value": "0 0 0 0.8px color-mix(in srgb, {color.accent.secondary} 35%, transparent), 0 0 19.2px color-mix(in srgb, {color.accent.secondary} 40%, transparent)"
       },
       "cyan": {
-        "value": "0 0 0 1px color-mix(in srgb, {color.state.focusRing} 35%, transparent), 0 0 24px color-mix(in srgb, {color.state.focusRing} 40%, transparent)"
+        "value": "0 0 0 0.8px color-mix(in srgb, {color.state.focusRing} 35%, transparent), 0 0 19.2px color-mix(in srgb, {color.state.focusRing} 40%, transparent)"
       }
     }
   }
