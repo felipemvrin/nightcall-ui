@@ -8,7 +8,7 @@
   margin-inline: auto;
   padding: clamp(var(--space-4), 3vw, var(--space-6));
   border: 1px solid color-mix(in srgb, var(--color-border-subtle) 82%, var(--color-border-strong));
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   background:
     radial-gradient(
       circle at top right,
@@ -64,7 +64,7 @@
   aspect-ratio: 1;
   inline-size: min(100%, 14rem);
   padding: var(--space-4);
-  border-radius: calc(var(--radius-lg) + var(--space-1));
+  border-radius: calc(var(--radius-md) + var(--space-1));
   border: 1px solid
     color-mix(in srgb, var(--color-border-accent) 42%, var(--color-state-focus-ring));
   background: linear-gradient(
@@ -274,12 +274,8 @@
   }
 
   .nc-music-player__shell:hover {
-    box-shadow: var(--elevation-shadow-3), var(--nc-shadow-neon-md);
-    transform: translateY(-2px);
-  }
-
-  .nc-music-player__artwork:hover {
-    transform: translateY(-2px) scale(1.01);
+    box-shadow: var(--elevation-shadow-3), var(--nc-shadow-neon-sm);
+    transform: translateY(-1px);
   }
 }
 
