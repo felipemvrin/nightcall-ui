@@ -87,10 +87,12 @@
 }
 
 .nc-button__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
+  align-self: center;
+  flex: 0 0 auto;
+  line-height: 0;
+  min-block-size: 1em;
 }
 
 .nc-button__icon:empty {
