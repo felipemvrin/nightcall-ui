@@ -1,10 +1,10 @@
 <main class="shell">
   <section class="hero">
-    <p class="eyebrow">
+    <h2 class="eyebrow">
       <span class="uppercase font-[Oxanium] text-[var(--nc-color-primary)]">Design system</span> •
       <span class="uppercase font-[Oxanium] text-[var(--nc-color-secondary)]">Angular</span> •
       <span class="uppercase font-[Oxanium] text-[var(--nc-color-info)]">Storybook</span>
-    </p>
+    </h2>
     <h1 class="brand">
       <img ngSrc="/assets/brand/logo-nc-ui.svg" [alt]="title()" width="570" height="95" class="brand-logo" priority />
     </h1>
@@ -28,5 +28,39 @@
       <p>{{ feature.description }}</p>
     </article>
     }
+  </section>
+
+  <section class="components-card" aria-labelledby="components-title">
+    <h2 id="components-title">Components</h2>
+    <div class="components-grid">
+      <div class="component-example">
+        <span>Button</span>
+        <nc-button>Action</nc-button>
+      </div>
+      <div class="component-example">
+        <span>Input</span>
+        <nc-input label="Email" placeholder="name@example.com" />
+      </div>
+      <div class="component-example">
+        <span>Select</span>
+        <nc-select label="Genre" [options]="selectOptions" value="synthwave" />
+      </div>
+      <div class="component-example">
+        <span>Checkbox</span>
+        <nc-checkbox label="Notifications" [checked]="true" />
+      </div>
+      <div class="component-example">
+        <span>Radio</span>
+        <nc-radio-group label="Theme" [options]="radioOptions" value="night" />
+      </div>
+      <div class="component-example">
+        <span>Progress</span>
+        <nc-progress-bar label="Upload" [value]="64" />
+      </div>
+      <div class="component-example component-example--wide">
+        <span>Tabs</span>
+        <nc-tabs [items]="tabItems" activeId="overview" />
+      </div>
+    </div>
   </section>
 </main>

@@ -1,6 +1,14 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { NcButtonComponent } from '@nightcall-ui/components';
+import {
+  NcButtonComponent,
+  NcCheckboxComponent,
+  NcInputComponent,
+  NcProgressBarComponent,
+  NcRadioGroupComponent,
+  NcSelectComponent,
+  NcTabsComponent,
+} from '@nightcall-ui/components';
 import { NcMusicPlayerPatternComponent } from '@nightcall-ui/patterns';
 
 type Feature = {
@@ -10,7 +18,17 @@ type Feature = {
 
 @Component({
   selector: 'nc-root',
-  imports: [NgOptimizedImage, NcButtonComponent, NcMusicPlayerPatternComponent],
+  imports: [
+    NgOptimizedImage,
+    NcButtonComponent,
+    NcCheckboxComponent,
+    NcInputComponent,
+    NcMusicPlayerPatternComponent,
+    NcProgressBarComponent,
+    NcRadioGroupComponent,
+    NcSelectComponent,
+    NcTabsComponent,
+  ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
@@ -19,6 +37,18 @@ export class App {
   protected readonly subtitle = signal(
     'A scalable Angular design system with tokens, components, and Storybook documentation.',
   );
+  protected readonly selectOptions = [
+    { value: 'synthwave', label: 'Synthwave' },
+    { value: 'electronic', label: 'Electronic' },
+  ];
+  protected readonly radioOptions = [
+    { value: 'night', label: 'Night' },
+    { value: 'dawn', label: 'Dawn' },
+  ];
+  protected readonly tabItems = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'details', label: 'Details' },
+  ];
 
   protected readonly features: Feature[] = [
     {

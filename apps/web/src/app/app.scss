@@ -25,7 +25,7 @@
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   color: #94a3b8;
 }
 
@@ -86,4 +86,49 @@
   margin: 0;
   line-height: 1.6;
   color: #cbd5e1;
+}
+
+.components-card {
+  width: 100%;
+  max-width: 72rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 0.5rem;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.components-card h2 {
+  margin: 0 0 1.25rem;
+  font-family: 'Oxanium', sans-serif;
+  font-size: 1.25rem;
+}
+
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.component-example {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.component-example > span {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.component-example--wide {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 40rem) {
+  .components-card {
+    padding: 1rem;
+  }
 }
