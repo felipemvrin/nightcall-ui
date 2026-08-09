@@ -12,7 +12,6 @@ import {
   storyPanel,
   storyStack,
   storyStrong,
-  storyTextMuted,
   storyTextMutedSm,
 } from './shared/story-styles';
 
