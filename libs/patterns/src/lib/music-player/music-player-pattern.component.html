@@ -21,73 +21,23 @@
         </span>
       </header>
 
-      <div class="nc-music-player__timeline">
-        <label class="nc-music-player__sr-only" [attr.for]="scrubberId"
-          >Seek playback position</label
-        >
 
-        <div class="nc-music-player__scrubber">
-          <nc-progress-bar
-            label="Playback progress"
-            [value]="progressValue()"
-            [max]="duration() || 1"
-            [animated]="isPlaying()"
-            [showPercentage]="false"
-          ></nc-progress-bar>
-
-          <input
-            class="nc-music-player__scrubber-input"
-            [id]="scrubberId"
-            type="range"
-            min="0"
-            [max]="duration() || 0"
-            [value]="currentTime()"
-            step="0.1"
-            [disabled]="!isReady()"
-            aria-label="Seek playback position"
-            (input)="onScrubInput($event)"
-            (change)="onScrubCommit($event)"
-          />
-        </div>
-
-        <div class="nc-music-player__times" aria-label="Track time information">
-          <span>{{ currentTimeLabel() }}</span>
-          <span>{{ durationLabel() }}</span>
-        </div>
-      </div>
 
       <div class="nc-music-player__controls" role="group" aria-label="Playback controls">
-        <nc-button
-          variant="ghost"
-          [iconOnly]="true"
-          ariaLabel="Skip back 10 seconds"
-          (click)="skipBy(-10)"
-        >
+        <nc-button variant="ghost" [iconOnly]="true" ariaLabel="Skip back 10 seconds" (click)="skipBy(-10)">
           <span ncButtonIconStart>
             <nc-icon name="skip-back"></nc-icon>
           </span>
         </nc-button>
 
-        <nc-button
-          variant="primary"
-          [iconOnly]="true"
-          [ariaLabel]="isPlaying() ? 'Pause' : 'Play'"
-          (click)="togglePlayback()"
-        >
+        <nc-button variant="primary" [iconOnly]="true" [ariaLabel]="isPlaying() ? 'Pause' : 'Play'"
+          (click)="togglePlayback()">
           <span ncButtonIconStart>
-            <nc-icon
-              class="nc-music-player__icon"
-              [name]="isPlaying() ? 'pause' : 'play'"
-            ></nc-icon>
+            <nc-icon class="nc-music-player__icon" [name]="isPlaying() ? 'pause' : 'play'"></nc-icon>
           </span>
         </nc-button>
 
-        <nc-button
-          variant="ghost"
-          [iconOnly]="true"
-          ariaLabel="Skip forward 10 seconds"
-          (click)="skipBy(10)"
-        >
+        <nc-button variant="ghost" [iconOnly]="true" ariaLabel="Skip forward 10 seconds" (click)="skipBy(10)">
           <span ncButtonIconStart>
             <nc-icon name="skip-forward"></nc-icon>
           </span>
@@ -99,52 +49,34 @@
 
         <span class="nc-music-player__control-divider" aria-hidden="true"></span>
 
-        <nc-button
-          variant="ghost"
-          [iconOnly]="true"
-          [ariaLabel]="isMuted() ? 'Unmute' : 'Mute'"
-          [ariaPressed]="isMuted()"
-          (click)="toggleMute()"
-        >
-          <span ncButtonIconStart
-            ><nc-icon [name]="isMuted() ? 'volume-x' : 'volume-2'"></nc-icon
-          ></span>
-        </nc-button>
+        <label class="nc-music-player__volume">
+          <nc-icon name="volume" size="sm"></nc-icon>
+          <span class="nc-music-player__sr-only">Volume</span>
+          <input type="range" min="0" max="1" step="0.05" [value]="volume()" aria-label="Volume"
+            (input)="onVolumeInput($event)" />
+        </label>
 
-        <nc-button
-          variant="ghost"
-          [iconOnly]="true"
-          ariaLabel="Repeat"
-          [ariaPressed]="repeatEnabled()"
-          (click)="toggleRepeat()"
-        >
-          <span ncButtonIconStart><nc-icon name="repeat"></nc-icon></span>
-        </nc-button>
-
-        <nc-button
-          variant="ghost"
-          [iconOnly]="true"
-          ariaLabel="Shuffle"
-          [ariaPressed]="shuffleEnabled()"
-          (click)="toggleShuffle()"
-        >
-          <span ncButtonIconStart><nc-icon name="shuffle"></nc-icon></span>
-        </nc-button>
       </div>
 
-      <label class="nc-music-player__volume">
-        <nc-icon name="volume" size="sm"></nc-icon>
-        <span class="nc-music-player__sr-only">Volume</span>
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.05"
-          [value]="volume()"
-          aria-label="Volume"
-          (input)="onVolumeInput($event)"
-        />
-      </label>
+
+
+      <div class="nc-music-player__timeline">
+        <label class="nc-music-player__sr-only" [attr.for]="scrubberId">Seek playback position</label>
+
+        <div class="nc-music-player__scrubber">
+          <nc-progress-bar [value]="progressValue()" [max]="duration() || 1" [animated]="isPlaying()"
+            [showPercentage]="false"></nc-progress-bar>
+
+          <input class="nc-music-player__scrubber-input" [id]="scrubberId" type="range" min="0" [max]="duration() || 0"
+            [value]="currentTime()" step="0.1" [disabled]="!isReady()" aria-label="Seek playback position"
+            (input)="onScrubInput($event)" (change)="onScrubCommit($event)" />
+        </div>
+
+        <div class="nc-music-player__times" aria-label="Track time information">
+          <span>{{ currentTimeLabel() }}</span>
+          <span>{{ durationLabel() }}</span>
+        </div>
+      </div>
     </div>
   </div>
 
