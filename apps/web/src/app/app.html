@@ -6,7 +6,14 @@
       <span class="uppercase font-[Oxanium] text-[var(--nc-color-info)]">Storybook</span>
     </h2>
     <h1 class="brand">
-      <img ngSrc="/assets/brand/logo-nc-ui.svg" [alt]="title()" width="570" height="95" class="brand-logo" priority />
+      <img
+        ngSrc="/assets/brand/logo-nc-ui.svg"
+        [alt]="title()"
+        width="570"
+        height="95"
+        class="brand-logo"
+        priority
+      />
     </h1>
     <p class="lead">{{ subtitle() }}</p>
 
@@ -15,18 +22,25 @@
       <nc-button variant="outline" (click)="openStorybook()">Open Storybook</nc-button>
     </div>
     <div class="nc-player">
-      <nc-music-player-pattern trackTitle="Nightcall" artistName="Kavinsky" audioSrc="/assets/audio/kavinsky-song.mp3"
-        eyebrow="Live pattern preview"></nc-music-player-pattern>
+      @defer (on viewport) {
+        <nc-music-player-pattern
+          trackTitle="Nightcall"
+          artistName="Kavinsky"
+          audioSrc="/assets/audio/kavinsky-song.mp3"
+          eyebrow="Live pattern preview"
+        ></nc-music-player-pattern>
+      } @placeholder {
+        <div class="nc-player__placeholder" aria-hidden="true"></div>
+      }
     </div>
-
   </section>
 
   <section class="features" aria-label="Value propositions">
     @for (feature of features; track feature.title) {
-    <article class="card">
-      <h2>{{ feature.title }}</h2>
-      <p>{{ feature.description }}</p>
-    </article>
+      <article class="card">
+        <h2>{{ feature.title }}</h2>
+        <p>{{ feature.description }}</p>
+      </article>
     }
   </section>
 

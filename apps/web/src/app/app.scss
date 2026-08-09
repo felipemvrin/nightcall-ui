@@ -62,6 +62,10 @@
   inline-size: min(100%, 44rem);
 }
 
+.nc-player__placeholder {
+  min-block-size: var(--space-24);
+}
+
 .features {
   width: 100%;
   max-width: 72rem;
