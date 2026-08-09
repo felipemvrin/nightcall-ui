@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/vitest",
+    "types": ["vitest/globals", "node"]
+  },
+  "include": [
+    "tests/**/*.ts",
+    "packages/**/*.ts",
+    "libs/**/*.ts",
+    "projects/nightcall-ui/src/**/*.ts"
+  ],
+  "references": []
+}
