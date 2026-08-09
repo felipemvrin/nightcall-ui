@@ -254,3 +254,49 @@ export const Usage: Story = {
     `),
   }),
 };
+
+export const SizesWithStyles: Story = {
+  render: () => ({
+    template: `
+      <main style="${storyFullscreenMain()}">
+        <section style="${storyFullscreenSection()}">
+          <h1 style="${storyHeadingFoundation}">Sizes with Styles</h1>
+          <p style="${storyTextMuted}">The supported names form the stable Nightcall icon contract.</p>
+          @for (group of iconGroups; track group.label) {
+            <section style="margin-block-start: var(--space-6);">
+              <h2 style="${storyHeadingSection}">{{ group.label }}</h2>
+              <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)); gap: var(--space-2);">
+                @for (name of group.icons; track name) {
+                  <div style="${storySurfaceCard}; display:grid; place-items:center; gap:var(--space-2); min-block-size:6.5rem; text-align:center;">
+                    <nc-icon [name]="name" size="lg"></nc-icon>
+                    <code style="font-size:var(--font-size-xs); color:var(--nc-color-text-secondary);">{{ name }}</code>
+                  </div>
+                }
+              </div>
+            </section>
+          }
+        </section>
+      </main>
+    `,
+    styles: [
+      `
+      .token-card {
+        display: grid;
+        /* ... */
+      }
+
+      @media (max-width: 48rem) {
+        .token-layers {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .token-card__action {
+          transition: none;
+        }
+      }
+    `,
+    ],
+  }),
+};

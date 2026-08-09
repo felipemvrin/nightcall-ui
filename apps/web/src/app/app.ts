@@ -35,7 +35,7 @@ type Feature = {
 export class App {
   protected readonly title = signal('Nightcall UI');
   protected readonly subtitle = signal(
-    'A scalable Angular design system with tokens, components, and Storybook documentation.',
+    'In 2084, a signal from the edge of the galaxy arrived. It carried a new way to build digital interfaces — Angular, tokens, components, and Storybook.',
   );
   protected readonly selectOptions = [
     { value: 'synthwave', label: 'Synthwave' },
