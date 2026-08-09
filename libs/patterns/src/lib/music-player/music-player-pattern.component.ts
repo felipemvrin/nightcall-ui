@@ -1,5 +1,3 @@
-/// <reference path="./howler.d.ts" />
-
 import { ChangeDetectionStrategy, Component, computed, effect, input, signal } from '@angular/core';
 import type { OnDestroy, OnInit } from '@angular/core';
 import { Howl } from 'howler';
@@ -30,6 +28,9 @@ export class NcMusicPlayerPatternComponent implements OnInit, OnDestroy {
   protected readonly isReady = signal(false);
   protected readonly isPlaying = signal(false);
   protected readonly isMuted = signal(false);
+  protected readonly volume = signal(0.9);
+  protected readonly repeatEnabled = signal(false);
+  protected readonly shuffleEnabled = signal(false);
   protected readonly currentTime = signal(0);
   protected readonly duration = signal(0);
   protected readonly statusMessage = signal('Player ready.');
@@ -163,6 +164,43 @@ export class NcMusicPlayerPatternComponent implements OnInit, OnDestroy {
     this.player?.mute(nextMutedState);
     this.isMuted.set(nextMutedState);
     this.statusMessage.set(nextMutedState ? 'Audio muted.' : 'Audio unmuted.');
+  }
+
+  protected skipBy(seconds: number): void {
+    const nextTime = Math.min(this.duration(), Math.max(0, this.currentTime() + seconds));
+    this.player?.seek(nextTime);
+    this.currentTime.set(nextTime);
+    this.statusMessage.set(`Playback moved to ${this.formatTime(nextTime)}.`);
+  }
+
+  protected onVolumeInput(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const nextVolume = Number(input.value);
+
+    if (!Number.isFinite(nextVolume)) {
+      return;
+    }
+
+    this.player?.volume(nextVolume);
+    this.volume.set(nextVolume);
+
+    if (this.isMuted() && nextVolume > 0) {
+      this.player?.mute(false);
+      this.isMuted.set(false);
+    }
+  }
+
+  protected toggleRepeat(): void {
+    const nextRepeatState = !this.repeatEnabled();
+    this.player?.loop(nextRepeatState);
+    this.repeatEnabled.set(nextRepeatState);
+    this.statusMessage.set(nextRepeatState ? 'Repeat enabled.' : 'Repeat disabled.');
+  }
+
+  protected toggleShuffle(): void {
+    const nextShuffleState = !this.shuffleEnabled();
+    this.shuffleEnabled.set(nextShuffleState);
+    this.statusMessage.set(nextShuffleState ? 'Shuffle enabled.' : 'Shuffle disabled.');
   }
 
   protected onScrubInput(event: Event): void {

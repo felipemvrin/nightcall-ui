@@ -26,6 +26,7 @@ export class NcButtonComponent {
   readonly fullWidth = input(false);
   readonly iconOnly = input(false);
   readonly ariaLabel = input<string | null>(null);
+  readonly ariaPressed = input<boolean | null>(null);
 
   protected readonly resolvedAriaLabel = computed(() => {
     if (!this.iconOnly()) {
