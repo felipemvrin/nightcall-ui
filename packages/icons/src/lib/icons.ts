@@ -1,123 +1,147 @@
-export type NcIconName =
-  | 'arrow-right'
-  | 'pause'
-  | 'play'
-  | 'settings'
-  | 'stop'
-  | 'volume'
-  | 'volume-muted';
+import {
+  LucideArrowDown,
+  LucideArrowLeft,
+  LucideArrowRight,
+  LucideArrowUp,
+  LucideBell,
+  LucideBookmark,
+  LucideBraces,
+  LucideCalendar,
+  LucideCheck,
+  LucideChevronDown,
+  LucideChevronLeft,
+  LucideChevronRight,
+  LucideChevronUp,
+  LucideCircleAlert,
+  LucideCircleCheck,
+  LucideCircleHelp,
+  LucideClock,
+  LucideCode,
+  LucideComponent,
+  LucideDisc,
+  LucideDownload,
+  LucideExternalLink,
+  LucideEye,
+  LucideEyeOff,
+  LucideFastForward,
+  LucideGitBranch,
+  LucideHeart,
+  LucideHome,
+  LucideInfo,
+  LucideLayers,
+  LucideListMusic,
+  LucideLock,
+  LucideMail,
+  LucideMenu,
+  LucideMinus,
+  LucideMusic,
+  LucidePackage,
+  LucidePalette,
+  LucidePause,
+  LucidePencil,
+  LucidePlay,
+  LucidePlus,
+  LucideRepeat,
+  LucideRewind,
+  LucideSearch,
+  LucideSettings,
+  LucideSettings2,
+  LucideShuffle,
+  LucideSkipBack,
+  LucideSkipForward,
+  LucideSquare,
+  LucideStar,
+  LucideTerminal,
+  LucideTrash,
+  LucideTriangleAlert,
+  LucideUnlock,
+  LucideUpload,
+  LucideUser,
+  LucideUsers,
+  LucideVolume,
+  LucideVolume1,
+  LucideVolume2,
+  LucideVolumeX,
+  LucideX,
+  type LucideIcon,
+} from '@lucide/angular';
 
-export type NcIconPath = {
-  d: string;
-  fill?: string;
-  stroke?: string;
-  strokeWidth?: string;
-  strokeLinecap?: 'round' | 'square' | 'butt';
-  strokeLinejoin?: 'round' | 'miter' | 'bevel';
-};
+export const NC_ICONS = {
+  play: LucidePlay,
+  pause: LucidePause,
+  stop: LucideSquare,
+  'skip-back': LucideSkipBack,
+  'skip-forward': LucideSkipForward,
+  rewind: LucideRewind,
+  'fast-forward': LucideFastForward,
+  volume: LucideVolume,
+  'volume-1': LucideVolume1,
+  'volume-2': LucideVolume2,
+  'volume-x': LucideVolumeX,
+  'volume-muted': LucideVolumeX,
+  repeat: LucideRepeat,
+  shuffle: LucideShuffle,
+  music: LucideMusic,
+  disc: LucideDisc,
+  'list-music': LucideListMusic,
+  'arrow-left': LucideArrowLeft,
+  'arrow-right': LucideArrowRight,
+  'arrow-up': LucideArrowUp,
+  'arrow-down': LucideArrowDown,
+  'chevron-left': LucideChevronLeft,
+  'chevron-right': LucideChevronRight,
+  'chevron-up': LucideChevronUp,
+  'chevron-down': LucideChevronDown,
+  menu: LucideMenu,
+  x: LucideX,
+  plus: LucidePlus,
+  minus: LucideMinus,
+  search: LucideSearch,
+  settings: LucideSettings,
+  edit: LucidePencil,
+  trash: LucideTrash,
+  download: LucideDownload,
+  upload: LucideUpload,
+  'external-link': LucideExternalLink,
+  check: LucideCheck,
+  'check-circle': LucideCircleCheck,
+  info: LucideInfo,
+  'alert-circle': LucideCircleAlert,
+  'alert-triangle': LucideTriangleAlert,
+  'help-circle': LucideCircleHelp,
+  home: LucideHome,
+  user: LucideUser,
+  users: LucideUsers,
+  calendar: LucideCalendar,
+  clock: LucideClock,
+  heart: LucideHeart,
+  star: LucideStar,
+  bookmark: LucideBookmark,
+  mail: LucideMail,
+  bell: LucideBell,
+  lock: LucideLock,
+  unlock: LucideUnlock,
+  eye: LucideEye,
+  'eye-off': LucideEyeOff,
+  code: LucideCode,
+  terminal: LucideTerminal,
+  package: LucidePackage,
+  layers: LucideLayers,
+  component: LucideComponent,
+  palette: LucidePalette,
+  'settings-2': LucideSettings2,
+  braces: LucideBraces,
+  'git-branch': LucideGitBranch,
+} as const satisfies Record<string, LucideIcon>;
 
-export type NcIconRect = {
-  x: string;
-  y: string;
-  width: string;
-  height: string;
-  rx?: string;
-  fill?: string;
-  stroke?: string;
-  strokeWidth?: string;
-};
+export type NcIconName = keyof typeof NC_ICONS;
 
-export type NcIconDefinition = {
-  viewBox: string;
-  paths: readonly NcIconPath[];
-  rects?: readonly NcIconRect[];
-};
+export const NC_ICON_NAMES = Object.keys(NC_ICONS) as NcIconName[];
 
-const currentColor = 'currentColor';
+export function isNcIconName(name: string): name is NcIconName {
+  return Object.hasOwn(NC_ICONS, name);
+}
 
-export const NC_ICONS: Record<NcIconName, NcIconDefinition> = {
-  'arrow-right': {
-    viewBox: '0 0 24 24',
-    paths: [
-      {
-        d: 'M5 12h14m-6-6 6 6-6 6',
-        stroke: currentColor,
-        strokeWidth: '1.8',
-        strokeLinecap: 'round',
-        strokeLinejoin: 'round',
-      },
-    ],
-  },
-  pause: {
-    viewBox: '0 0 24 24',
-    paths: [
-      { d: 'M8 5h3v14H8V5Z', fill: currentColor },
-      { d: 'M13 5h3v14h-3V5Z', fill: currentColor },
-    ],
-  },
-  play: {
-    viewBox: '0 0 24 24',
-    paths: [{ d: 'm8 5 10 7-10 7V5Z', fill: currentColor }],
-  },
-  settings: {
-    viewBox: '0 0 24 24',
-    paths: [
-      {
-        d: 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm8 4-1.8.7a7.9 7.9 0 0 1-.5 1.3l.9 1.7-1.4 1.4-1.7-.9c-.4.2-.9.4-1.3.5L12 20l-1.2-1.8c-.4-.1-.9-.3-1.3-.5l-1.7.9-1.4-1.4.9-1.7c-.2-.4-.4-.9-.5-1.3L4 12l1.8-1.2c.1-.4.3-.9.5-1.3l-.9-1.7 1.4-1.4 1.7.9c.4-.2.9-.4 1.3-.5L12 4l1.2 1.8c.4.1.9.3 1.3.5l1.7-.9 1.4 1.4-.9 1.7c.2.4.4.9.5 1.3L20 12Z',
-        stroke: currentColor,
-        strokeWidth: '1.4',
-        strokeLinecap: 'round',
-        strokeLinejoin: 'round',
-      },
-    ],
-  },
-  stop: {
-    viewBox: '0 0 24 24',
-    paths: [],
-    rects: [{ x: '7', y: '7', width: '10', height: '10', rx: '2', fill: currentColor }],
-  },
-  volume: {
-    viewBox: '0 0 24 24',
-    paths: [
-      {
-        d: 'M5 10h4l5-4v12l-5-4H5v-4Z',
-        stroke: currentColor,
-        strokeWidth: '1.8',
-        strokeLinejoin: 'round',
-      },
-      {
-        d: 'M17 9.5a4.5 4.5 0 0 1 0 5',
-        stroke: currentColor,
-        strokeWidth: '1.8',
-        strokeLinecap: 'round',
-      },
-      {
-        d: 'M19.5 7a8 8 0 0 1 0 10',
-        stroke: currentColor,
-        strokeWidth: '1.8',
-        strokeLinecap: 'round',
-      },
-    ],
-  },
-  'volume-muted': {
-    viewBox: '0 0 24 24',
-    paths: [
-      {
-        d: 'M5 10h4l5-4v12l-5-4H5v-4Z',
-        stroke: currentColor,
-        strokeWidth: '1.8',
-        strokeLinejoin: 'round',
-      },
-      {
-        d: 'm17 9 4 6m0-6-4 6',
-        stroke: currentColor,
-        strokeWidth: '1.8',
-        strokeLinecap: 'round',
-      },
-    ],
-  },
-};
-
-export function getNcIcon(name: NcIconName): NcIconDefinition {
-  return NC_ICONS[name];
+export function getNcIcon(name: string): LucideIcon | null {
+  return isNcIconName(name) ? NC_ICONS[name] : null;
 }
