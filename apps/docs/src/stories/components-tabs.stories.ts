@@ -11,6 +11,7 @@ import {
 type TabsStoryArgs = {
   activeId: string;
   scrollable: boolean;
+  ariaLabel: string;
 };
 
 const items: NcTabItem[] = [
@@ -29,10 +30,12 @@ const meta: Meta<TabsStoryArgs> = {
   args: {
     activeId: 'tab-1',
     scrollable: false,
+    ariaLabel: 'Demo sections',
   },
   argTypes: {
     activeId: { control: 'text' },
     scrollable: { control: 'boolean' },
+    ariaLabel: { control: 'text' },
   },
 };
 
@@ -58,6 +61,7 @@ export const Playground: Story = {
           [items]="items"
           [activeId]="activeId"
           [scrollable]="scrollable"
+          [ariaLabel]="ariaLabel"
           (activeIdChange)="activeId = $event"
         ></nc-tabs>
         <p style="${storyTextMuted}">Active tab: {{ activeId }}</p>

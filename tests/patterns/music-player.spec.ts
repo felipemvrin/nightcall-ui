@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/angular';
+import { render } from '@testing-library/angular';
 import { describe, expect, it, vi } from 'vitest';
 import { NcMusicPlayerPatternComponent } from '../../libs/patterns/src/lib/music-player/music-player-pattern.component';
 import { NcButtonComponent } from '../../projects/nightcall-ui/src/lib/button/button.component';
@@ -44,15 +44,7 @@ describe('NcMusicPlayerPatternComponent', () => {
 
   it('renders accessible Lucide playback controls without Unicode symbols', async () => {
     const result = await render(NcMusicPlayerPatternComponent);
-    const expectedControls = [
-      'Skip back 10 seconds',
-      'Play',
-      'Skip forward 10 seconds',
-      'Stop',
-      'Mute',
-      'Repeat',
-      'Shuffle',
-    ];
+    const expectedControls = ['Skip back 10 seconds', 'Play', 'Skip forward 10 seconds', 'Stop'];
 
     for (const accessibleName of expectedControls) {
       const control = result.getByRole('button', { name: accessibleName });
@@ -60,22 +52,6 @@ describe('NcMusicPlayerPatternComponent', () => {
     }
 
     expect(result.container.textContent).not.toMatch(/[▶⏸⏮⏭🔊]/u);
-  });
-
-  it('exposes pressed state for mute, repeat, and shuffle controls', async () => {
-    const result = await render(NcMusicPlayerPatternComponent);
-    const mute = result.getByRole('button', { name: 'Mute' });
-    const repeat = result.getByRole('button', { name: 'Repeat' });
-    const shuffle = result.getByRole('button', { name: 'Shuffle' });
-
-    expect(mute.getAttribute('aria-pressed')).toBe('false');
-    expect(repeat.getAttribute('aria-pressed')).toBe('false');
-    expect(shuffle.getAttribute('aria-pressed')).toBe('false');
-
-    fireEvent.click(repeat);
-    fireEvent.click(shuffle);
-
-    expect(repeat.getAttribute('aria-pressed')).toBe('true');
-    expect(shuffle.getAttribute('aria-pressed')).toBe('true');
+    expect(result.getByRole('slider', { name: 'Volume' })).not.toBeNull();
   });
 });

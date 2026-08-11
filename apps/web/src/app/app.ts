@@ -1,14 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, signal } from '@angular/core';
-import {
-  NcButtonComponent,
-  NcCheckboxComponent,
-  NcInputComponent,
-  NcProgressBarComponent,
-  NcRadioGroupComponent,
-  NcSelectComponent,
-  NcTabsComponent,
-} from '@nightcall-ui/components';
+import { Component } from '@angular/core';
+import { NcButtonComponent } from '@nightcall-ui/components';
 import { NcMusicPlayerPatternComponent } from '@nightcall-ui/patterns';
 
 type Feature = {
@@ -18,40 +10,15 @@ type Feature = {
 
 @Component({
   selector: 'nc-root',
-  imports: [
-    NgOptimizedImage,
-    NcButtonComponent,
-    NcCheckboxComponent,
-    NcInputComponent,
-    NcMusicPlayerPatternComponent,
-    NcProgressBarComponent,
-    NcRadioGroupComponent,
-    NcSelectComponent,
-    NcTabsComponent,
-  ],
+  imports: [NgOptimizedImage, NcButtonComponent, NcMusicPlayerPatternComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('Nightcall UI');
-  protected readonly subtitle = signal(
-    'In 2084, a signal from the edge of the galaxy arrived. It carried a new way to build digital interfaces.',
-  );
-  protected readonly description = signal(
-    'Angular ⚡, tokens 🎨, components 🧩, and Storybook 📚.',
-  );
-  protected readonly selectOptions = [
-    { value: 'synthwave', label: 'Synthwave' },
-    { value: 'electronic', label: 'Electronic' },
-  ];
-  protected readonly radioOptions = [
-    { value: 'night', label: 'Night' },
-    { value: 'dawn', label: 'Dawn' },
-  ];
-  protected readonly tabItems = [
-    { id: 'overview', label: 'Overview' },
-    { id: 'details', label: 'Details' },
-  ];
+  protected readonly title = 'Nightcall UI';
+  protected readonly subtitle =
+    'In 2084, a signal from the edge of the galaxy arrived. It carried a new way to build digital interfaces.';
+  protected readonly description = 'Angular ⚡, tokens 🎨, components 🧩, and Storybook 📚.';
 
   protected readonly features: Feature[] = [
     {

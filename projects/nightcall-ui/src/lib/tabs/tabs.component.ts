@@ -30,6 +30,7 @@ export class NcTabsComponent {
   readonly items = input<readonly NcTabItem[]>([]);
   readonly activeId = input<string | null>(null);
   readonly scrollable = input(false);
+  readonly ariaLabel = input('Tabs');
 
   readonly activeIdChange = output<string>();
 

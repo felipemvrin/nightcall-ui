@@ -15,7 +15,7 @@ type Section = {
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('Design System Docs');
+  protected readonly title = 'Design System Docs';
 
   protected readonly sections: Section[] = [
     {

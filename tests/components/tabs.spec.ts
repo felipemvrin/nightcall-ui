@@ -14,5 +14,6 @@ describe('NcTabsComponent', () => {
     expect(component.items()).toEqual([]);
     expect(component.activeId()).toBeNull();
     expect(component.scrollable()).toBe(false);
+    expect(component.ariaLabel()).toBe('Tabs');
   });
 });

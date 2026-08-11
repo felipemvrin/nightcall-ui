@@ -1,5 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/angular';
-import { NcIconComponent, type NcIconName } from '@nightcall-ui/icons';
+import {
+  NcIconComponent,
+  type NcIconColor,
+  type NcIconName,
+  type NcIconSize,
+} from '@nightcall-ui/icons';
 import {
   storyCodeLine,
   storyFullscreenMain,
@@ -116,6 +121,17 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
+const iconSizes: readonly NcIconSize[] = ['xs', 'sm', 'md', 'lg', 'xl'];
+const iconColors: readonly NcIconColor[] = [
+  'primary',
+  'secondary',
+  'info',
+  'text',
+  'disabled',
+  'danger',
+  'success',
+];
+
 const storyShell = (content: string) => `
   <main style="${storyFullscreenMain()}">
     <section style="${storyFullscreenSection()}">${content}</section>
@@ -165,12 +181,13 @@ export const IconSet: Story = {
 export const Sizes: Story = {
   render: () => ({
     imports: [NcIconComponent],
+    props: { iconSizes },
     template: storyShell(`
       <h1 style="${storyHeadingFoundation}">Sizes</h1>
       <div style="${storyInlineWrap}; align-items:end; margin-block-start:var(--space-5);">
-        @for (size of ['xs', 'sm', 'md', 'lg', 'xl']; track size) {
+        @for (size of iconSizes; track size) {
           <div style="display:grid; justify-items:center; gap:var(--space-2);">
-            <nc-icon name="music" [size]="$any(size)"></nc-icon><code>{{ size }}</code>
+            <nc-icon name="music" [size]="size"></nc-icon><code>{{ size }}</code>
           </div>
         }
       </div>
@@ -181,13 +198,14 @@ export const Sizes: Story = {
 export const Colors: Story = {
   render: () => ({
     imports: [NcIconComponent],
+    props: { iconColors },
     template: storyShell(`
       <h1 style="${storyHeadingFoundation}">Colors</h1>
       <p style="${storyTextMuted}">Icon colors resolve through existing Nightcall semantic tokens.</p>
       <div style="${storyInlineWrap}; margin-block-start:var(--space-5);">
-        @for (color of ['primary', 'secondary', 'info', 'text', 'disabled', 'danger', 'success']; track color) {
+        @for (color of iconColors; track color) {
           <div style="display:grid; justify-items:center; gap:var(--space-2);">
-            <nc-icon name="disc" size="lg" [color]="$any(color)"></nc-icon><code>{{ color }}</code>
+            <nc-icon name="disc" size="lg" [color]="color"></nc-icon><code>{{ color }}</code>
           </div>
         }
       </div>
