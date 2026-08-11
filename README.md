@@ -1,14 +1,20 @@
 # Nightcall UI
 
-Nightcall UI is an Angular 20 design system workspace for building consistent, accessible, and scalable interfaces. The repository brings together a publishable component library, shared design tokens and themes, Storybook documentation, and example apps so teams can explore, test, and consume the system from one place.
+Nightcall UI is an Angular 20 design system workspace. It contains a publishable component library, design tokens, themes, icons, shared patterns, Storybook stories, and two Angular applications.
 
 ## What is included
 
 - A publishable Angular library under `projects/nightcall-ui`
 - Shared foundations for colors, typography, motion, shadows, icons, and textures
 - Reusable UI patterns for the web app and Storybook
-- Documentation and demo experiences for designers and developers
+- Documentation and demo applications
 - Automated validation with Vitest, Playwright, ESLint, and Storybook builds
+
+## Preview
+
+<p align="center">
+  <img src="./apps/shared-assets/image/screenshot-01.png" alt="Nightcall UI preview" width="900">
+</p>
 
 ## Stack
 
@@ -34,13 +40,29 @@ Nightcall UI is an Angular 20 design system workspace for building consistent, a
 
 1. Install dependencies with `npm install`
 2. Generate tokens with `npm run tokens`
-3. Start the docs app with `npm run start`
+3. Start the web app with `npm run start`
 4. Start Storybook with `npm run storybook`
+
+## Using the component library
+
+Components are exported from `@nightcall-ui/components` as standalone Angular components:
+
+```typescript
+import { Component } from '@angular/core';
+import { NcButtonComponent } from '@nightcall-ui/components';
+
+@Component({
+  selector: 'app-example',
+  imports: [NcButtonComponent],
+  template: '<nc-button>Save</nc-button>',
+})
+export class ExampleComponent {}
+```
 
 ## Useful scripts
 
-- `npm run start` – run the docs app
-- `npm run build` – build the docs app and the component library
+- `npm run start` – run the web app
+- `npm run build` – build the web app and component library
 - `npm run test` – run Vitest
 - `npm run lint` – run ESLint
 - `npm run storybook` – start Storybook
@@ -60,4 +82,3 @@ Nightcall UI is an Angular 20 design system workspace for building consistent, a
 - `packages/themes` – shared theme primitives
 - `packages/icons` – shared icon package
 - `docs` – additional documentation
-- `examples` – usage examples

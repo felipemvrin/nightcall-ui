@@ -1,21 +1,14 @@
 # Icons Package
 
-Shared Nightcall icon primitives live here.
+Shared Nightcall icon primitives backed by `@lucide/angular` live here.
 
 Current exports:
 
 - `NcIconComponent` standalone Angular component
-- token-aligned icon definitions for shared UI patterns and stories
+- semantic size and color tokens
+- a typed, tree-shakable catalog of individually imported Lucide icons
 
-Current icon set:
-
-- `arrow-right`
-- `pause`
-- `play`
-- `settings`
-- `stop`
-- `volume`
-- `volume-muted`
+Use `NC_ICON_NAMES` for the complete supported catalog.
 
 Usage example:
 
@@ -24,5 +17,6 @@ import { NcIconComponent } from '@nightcall-ui/icons';
 ```
 
 ```html
-<nc-icon name="play" ariaLabel="Play" />
+<nc-icon name="play" size="md" />
+<nc-icon name="info" [decorative]="false" ariaLabel="Information" />
 ```

@@ -1,20 +1,34 @@
-<button class="nc-button" [class.nc-button--loading]="loading()" [disabled]="isDisabled()" [type]="type()"
-    [attr.aria-busy]="loading() ? 'true' : null" [attr.aria-label]="resolvedAriaLabel()">
-    <span class="nc-button__icon" aria-hidden="true">
-        <ng-content select="[ncButtonIconStart]" />
-    </span>
+<button
+  class="nc-button"
+  [class.nc-button--loading]="loading()"
+  [disabled]="isDisabled()"
+  [type]="type()"
+  [attr.aria-busy]="loading() ? 'true' : null"
+  [attr.aria-label]="resolvedAriaLabel()"
+  [attr.aria-pressed]="ariaPressed()"
+>
+  <span class="nc-button__icon" aria-hidden="true">
+    <ng-content select="[ncButtonIconStart]" />
+  </span>
 
-    @if (!iconOnly()) {
+  @if (!iconOnly()) {
     <span class="nc-button__label">
-        <ng-content />
+      <ng-content />
     </span>
-    }
+  }
 
-    <span class="nc-button__icon" aria-hidden="true">
-        <ng-content select="[ncButtonIconEnd]" />
-    </span>
+  <span class="nc-button__icon" aria-hidden="true">
+    <ng-content select="[ncButtonIconEnd]" />
+  </span>
 
-    @if (loading()) {
+  @if (loading()) {
     <span class="nc-button__spinner" aria-hidden="true"></span>
-    }
+  }
+
+  @if (glowTrace()) {
+    <svg class="nc-button__glow" aria-hidden="true" focusable="false">
+      <rect pathLength="100" stroke-linecap="round" class="nc-button__glow-blur"></rect>
+      <rect pathLength="100" stroke-linecap="round" class="nc-button__glow-line"></rect>
+    </svg>
+  }
 </button>

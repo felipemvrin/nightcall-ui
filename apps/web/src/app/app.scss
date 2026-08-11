@@ -7,14 +7,17 @@
   min-height: 100vh;
   padding: 4rem 1.5rem;
   display: grid;
-  gap: 2rem;
+  gap: 2.5rem;
   align-content: center;
   justify-items: center;
-  background: linear-gradient(135deg, #050816 0%, #0f172a 100%);
-  color: #f8fafc;
+  background:
+    linear-gradient(to bottom, transparent 20rem, var(--nc-color-background) 45rem),
+    url('/assets/images/bg-nc.png') center top / 100% auto no-repeat,
+    var(--nc-color-background);
 }
 
 .hero {
+  padding-top: 30rem;
   max-width: 48rem;
   display: grid;
   gap: 1rem;
@@ -25,8 +28,8 @@
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-size: 0.8rem;
-  color: #94a3b8;
+  font-size: 1rem;
+  color: #cbd5e1;
 }
 
 .brand {
@@ -44,8 +47,10 @@
 
 .lead {
   margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.9;
+  font-weight: 300;
+  text-align: center;
   color: #cbd5e1;
 }
 
@@ -58,8 +63,12 @@
 }
 
 .nc-player {
-  margin-top: 1.5rem;
-  inline-size: min(100%, 44rem);
+  margin-block-start: 2.3rem;
+  margin-inline: auto;
+}
+
+.nc-player__placeholder {
+  min-block-size: var(--space-24);
 }
 
 .features {

@@ -23,6 +23,7 @@
             "browser": "apps/web/src/main.ts",
             "tsConfig": "apps/web/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": ["howler"],
             "stylePreprocessorOptions": {
               "includePaths": ["packages/themes/src"]
             },

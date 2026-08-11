@@ -114,8 +114,7 @@
 }
 
 .nc-tabs__icon {
-  font-size: var(--font-size-sm);
-  line-height: 1;
+  color: currentcolor;
 }
 
 :host(.nc-tabs-host--scrollable) .nc-tabs::-webkit-scrollbar {

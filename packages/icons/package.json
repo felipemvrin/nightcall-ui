@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": false,
   "peerDependencies": {
-    "@angular/core": "^20.3.27"
+    "@angular/core": "^20.3.27",
+    "@lucide/angular": "^1.30.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

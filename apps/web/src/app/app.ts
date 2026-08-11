@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { NcButtonComponent } from '@nightcall-ui/components';
 import { NcMusicPlayerPatternComponent } from '@nightcall-ui/patterns';
 
@@ -15,10 +15,10 @@ type Feature = {
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('Nightcall UI');
-  protected readonly subtitle = signal(
-    'A scalable Angular design system with tokens, components, and Storybook documentation.',
-  );
+  protected readonly title = 'Nightcall UI';
+  protected readonly subtitle =
+    'In 2084, a signal from the edge of the galaxy arrived. It carried a new way to build digital interfaces.';
+  protected readonly description = 'Angular ⚡, tokens 🎨, components 🧩, and Storybook 📚.';
 
   protected readonly features: Feature[] = [
     {

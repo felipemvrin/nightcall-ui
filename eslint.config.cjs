@@ -9,6 +9,8 @@ module.exports = [
   {
     ignores: [
       '**/dist/**',
+      '**/.angular/**',
+      '**/out-tsc/**',
       '**/coverage/**',
       '**/storybook-static/**',
       '**/playwright-report/**',
@@ -31,7 +33,10 @@ module.exports = [
       ...tsPlugin.configs.recommended.rules,
       ...angularPlugin.configs.recommended.rules,
       '@typescript-eslint/consistent-type-imports': 'error',
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
     },
   },
   {
