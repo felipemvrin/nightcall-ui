@@ -12,8 +12,13 @@
     <p class="lead">{{ description() }}</p>
 
     <div class="actions">
-      <nc-button variant="primary" (click)="openDocs()">Explore docs</nc-button>
-      <nc-button variant="outline" (click)="openStorybook()">Open Storybook</nc-button>
+      <nc-button variant="primary" [glowTrace]="true" (click)="openDocs()">
+        Explore docs
+      </nc-button>
+
+      <nc-button variant="outline" [glowTrace]="true" (click)="openStorybook()">
+        Open Storybook
+      </nc-button>
     </div>
     <div class="nc-player">
       @defer (on viewport) {

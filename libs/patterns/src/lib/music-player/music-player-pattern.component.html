@@ -30,7 +30,7 @@
           </span>
         </nc-button>
 
-        <nc-button variant="primary" [iconOnly]="true" [ariaLabel]="isPlaying() ? 'Pause' : 'Play'"
+        <nc-button variant="primary" [glowTrace]="true" [iconOnly]="true" [ariaLabel]="isPlaying() ? 'Pause' : 'Play'"
           (click)="togglePlayback()">
           <span ncButtonIconStart>
             <nc-icon class="nc-music-player__icon" [name]="isPlaying() ? 'pause' : 'play'"></nc-icon>
