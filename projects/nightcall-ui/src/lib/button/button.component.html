@@ -24,4 +24,11 @@
   @if (loading()) {
     <span class="nc-button__spinner" aria-hidden="true"></span>
   }
+
+  @if (glowTrace()) {
+    <svg class="nc-button__glow" aria-hidden="true" focusable="false">
+      <rect pathLength="100" stroke-linecap="round" class="nc-button__glow-blur"></rect>
+      <rect pathLength="100" stroke-linecap="round" class="nc-button__glow-line"></rect>
+    </svg>
+  }
 </button>

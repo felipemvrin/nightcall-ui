@@ -24,6 +24,7 @@ type ButtonStoryArgs = {
   loading: boolean;
   fullWidth: boolean;
   iconOnly: boolean;
+  glowTrace: boolean;
   icon: IconPosition;
   label: string;
 };
@@ -55,6 +56,7 @@ Retro-futuristic action button for dark surfaces in Nightcall UI. It is token-dr
 # States
 - Default: baseline elevation and contrast.
 - Hover: cyan accent and slightly stronger glow.
+- Glow trace: optional animated border highlight on hover and keyboard focus.
 - Focus: visible focus ring (not glow-only).
 - Active: darker press state and reduced glow.
 - Disabled: lower opacity, no glow.
@@ -97,6 +99,7 @@ Retro-futuristic action button for dark surfaces in Nightcall UI. It is token-dr
     loading: false,
     fullWidth: false,
     iconOnly: false,
+    glowTrace: false,
     icon: 'none',
     label: 'Button',
   },
@@ -117,6 +120,7 @@ Retro-futuristic action button for dark surfaces in Nightcall UI. It is token-dr
     loading: { control: 'boolean' },
     fullWidth: { control: 'boolean' },
     iconOnly: { control: 'boolean' },
+    glowTrace: { control: 'boolean' },
     label: { control: 'text' },
   },
 };
@@ -142,6 +146,7 @@ function buildButtonTemplate(width = 'auto'): string {
         [loading]="loading"
         [fullWidth]="fullWidth"
         [iconOnly]="iconOnly"
+        [glowTrace]="glowTrace"
         [ariaLabel]="iconOnly ? label : null"
       >
         @if (icon === 'start') {
@@ -244,6 +249,7 @@ export const States: Story = {
       <div style="${storyStack('min(56rem, 92vw)', 'var(--space-4)')}">
         <div style="${storyInlineWrap}">
           <nc-button variant="primary">Default</nc-button>
+          <nc-button variant="primary" [glowTrace]="true">Glow Trace</nc-button>
           <nc-button variant="primary" [loading]="true">Loading</nc-button>
           <nc-button variant="primary" [disabled]="true">Disabled</nc-button>
         </div>

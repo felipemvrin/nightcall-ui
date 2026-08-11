@@ -32,6 +32,9 @@
   --nc-button-shadow: var(--nc-shadow-neon-sm);
   --nc-button-shadow-hover: var(--nc-shadow-neon-md);
   --nc-button-shadow-active: var(--elevation-shadow-1);
+  --nc-button-glow-color: var(--color-state-focus-ring);
+  --nc-button-glow-duration: 1200ms;
+  --nc-button-glow-offset: 6rem;
 
   display: inline-flex;
 }
@@ -214,8 +217,76 @@
   animation: nc-button-spin var(--motion-duration-slow) linear infinite;
 }
 
+.nc-button__glow {
+  position: absolute;
+  inset: calc(var(--nc-button-glow-offset) / -2);
+  inline-size: calc(100% + var(--nc-button-glow-offset));
+  block-size: calc(100% + var(--nc-button-glow-offset));
+  overflow: visible;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nc-button__glow-blur,
+.nc-button__glow-line {
+  x: calc(var(--nc-button-glow-offset) / 2);
+  y: calc(var(--nc-button-glow-offset) / 2);
+  width: calc(100% - var(--nc-button-glow-offset));
+  height: calc(100% - var(--nc-button-glow-offset));
+  rx: var(--nc-button-radius);
+  fill: transparent;
+  stroke: var(--nc-button-glow-color);
+  stroke-dasharray: 20 30;
+}
+
+.nc-button__glow-line {
+  stroke-width: 2px;
+}
+
+.nc-button__glow-blur {
+  filter: blur(10px);
+  stroke-width: 10px;
+}
+
+.nc-button:not(:disabled):is(:hover, :focus-visible) .nc-button__glow {
+  animation: nc-button-glow-visibility var(--nc-button-glow-duration) ease-in;
+}
+
+.nc-button:not(:disabled):is(:hover, :focus-visible)
+  :is(.nc-button__glow-blur, .nc-button__glow-line) {
+  stroke-dashoffset: -80px;
+  transition:
+    stroke-dashoffset var(--nc-button-glow-duration) ease-in,
+    stroke-dasharray var(--nc-button-glow-duration) ease-in;
+}
+
 @keyframes nc-button-spin {
   to {
     transform: rotate(1turn);
+  }
+}
+
+@keyframes nc-button-glow-visibility {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-button__glow,
+  .nc-button__glow-blur,
+  .nc-button__glow-line {
+    animation: none;
+    transition: none;
+  }
+
+  .nc-button:not(:disabled):is(:hover, :focus-visible) .nc-button__glow {
+    opacity: 1;
   }
 }
