@@ -6,7 +6,6 @@
       type="button"
       role="tab"
       [id]="'nc-tab-' + item.id"
-      [attr.aria-controls]="'nc-tab-panel-' + item.id"
       [attr.aria-selected]="isActive(item.id)"
       [attr.tabindex]="isActive(item.id) ? 0 : -1"
       [disabled]="!!item.disabled"
@@ -15,7 +14,7 @@
       (keydown)="onKeydown($event, index)"
     >
       @if (item.icon) {
-        <span class="nc-tabs__icon" aria-hidden="true">{{ item.icon }}</span>
+        <nc-icon class="nc-tabs__icon" [name]="item.icon" size="sm"></nc-icon>
       }
 
       <span class="nc-tabs__label">{{ item.label }}</span>

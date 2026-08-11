@@ -53,5 +53,6 @@ describe('NcMusicPlayerPatternComponent', () => {
 
     expect(result.container.textContent).not.toMatch(/[▶⏸⏮⏭🔊]/u);
     expect(result.getByRole('slider', { name: 'Volume' })).not.toBeNull();
+    expect(result.getByText('Pattern • Media playback')).not.toBeNull();
   });
 });

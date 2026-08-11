@@ -15,11 +15,11 @@ type TabsStoryArgs = {
 };
 
 const items: NcTabItem[] = [
-  { id: 'tab-1', label: 'Tab 01', icon: '◈' },
-  { id: 'tab-2', label: 'Tab 02', icon: '◌' },
-  { id: 'tab-3', label: 'Tab 03', icon: '◉' },
-  { id: 'tab-4', label: 'Tab 04', disabled: true, icon: '◍' },
-  { id: 'tab-5', label: 'Tab 05', icon: '◎' },
+  { id: 'tab-1', label: 'Tab 01', icon: 'home' },
+  { id: 'tab-2', label: 'Tab 02', icon: 'music' },
+  { id: 'tab-3', label: 'Tab 03', icon: 'layers' },
+  { id: 'tab-4', label: 'Tab 04', disabled: true, icon: 'lock' },
+  { id: 'tab-5', label: 'Tab 05', icon: 'settings' },
 ];
 
 const meta: Meta<TabsStoryArgs> = {
@@ -44,11 +44,11 @@ type Story = StoryObj<TabsStoryArgs>;
 
 export const Overview: Story = {
   render: () => ({
-    props: { items },
+    props: { items, activeId: 'tab-1' },
     template:
       '<div style="' +
       storyStack('min(44rem,92vw)') +
-      '"><nc-tabs [items]="items" activeId="tab-1"></nc-tabs></div>',
+      '"><nc-tabs [items]="items" [activeId]="activeId" (activeIdChange)="activeId = $event"></nc-tabs></div>',
   }),
 };
 

@@ -1,4 +1,8 @@
 <section class="nc-music-player__shell" aria-label="Music player pattern">
+  @if (eyebrow(); as eyebrow) {
+    <p class="nc-music-player__eyebrow">{{ eyebrow }}</p>
+  }
+
   <div class="nc-music-player__layout">
     <div class="nc-music-player__artwork" role="img" [attr.aria-label]="artworkLabel()">
       <div class="nc-music-player__artwork-glow" aria-hidden="true"></div>

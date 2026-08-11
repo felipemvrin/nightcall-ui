@@ -8,16 +8,18 @@ import {
   type ElementRef,
   type QueryList,
 } from '@angular/core';
+import { NcIconComponent, type NcIconName } from '@nightcall-ui/icons';
 
 export type NcTabItem = {
   readonly id: string;
   readonly label: string;
-  readonly icon?: string;
+  readonly icon?: NcIconName;
   readonly disabled?: boolean;
 };
 
 @Component({
   selector: 'nc-tabs',
+  imports: [NcIconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'nc-tabs-host',
