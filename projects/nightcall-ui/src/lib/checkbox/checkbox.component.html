@@ -1,19 +1,27 @@
 <label class="nc-checkbox" [attr.for]="checkboxId()">
-    <input class="nc-checkbox__native" [id]="checkboxId()" type="checkbox" [checked]="checked()"
-        [indeterminate]="indeterminate()" [disabled]="disabled()" [attr.aria-invalid]="error() ? 'true' : null"
-        [attr.aria-describedby]="supportId()" (change)="onToggle($event)" />
+  <input
+    class="nc-checkbox__native"
+    [id]="checkboxId()"
+    type="checkbox"
+    [checked]="checked()"
+    [indeterminate]="indeterminate()"
+    [disabled]="disabled()"
+    [attr.aria-invalid]="error() ? 'true' : null"
+    [attr.aria-describedby]="supportId()"
+    (change)="onToggle($event)"
+  />
 
-    <span class="nc-checkbox__control" aria-hidden="true">
-        @if (indeterminate()) {
-        <span class="nc-checkbox__mark nc-checkbox__mark--indeterminate"></span>
-        } @else if (checked()) {
-        <span class="nc-checkbox__mark nc-checkbox__mark--checked">✓</span>
-        }
-    </span>
+  <span class="nc-checkbox__control" aria-hidden="true">
+    @if (indeterminate()) {
+      <span class="nc-checkbox__mark nc-checkbox__mark--indeterminate"></span>
+    } @else if (checked()) {
+      <span class="nc-checkbox__mark nc-checkbox__mark--checked">✓</span>
+    }
+  </span>
 
-    <span class="nc-checkbox__label">{{ label() }}</span>
+  <span class="nc-checkbox__label">{{ label() }}</span>
 </label>
 
 @if (helperText()) {
-<p class="nc-checkbox__support" [attr.id]="supportId()">{{ helperText() }}</p>
+  <p class="nc-checkbox__support" [attr.id]="supportId()">{{ helperText() }}</p>
 }
