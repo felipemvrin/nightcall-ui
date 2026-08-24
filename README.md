@@ -13,7 +13,8 @@ Nightcall UI is an Angular 20 design system workspace. It contains a publishable
 ## Preview
 
 <p align="center">
-  <img src="./apps/shared-assets/image/screenshot-01.png" alt="Nightcall UI preview" width="900">
+  <img src="./apps/shared-assets/image/screenshot-01.png" alt="Nightcall UI preview" width="45%">
+  <img src="./apps/shared-assets/image/screenshot-02.png" alt="Nightcall UI preview" width="45%">
 </p>
 
 ## Stack
