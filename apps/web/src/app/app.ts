@@ -1,6 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
-import { NcButtonComponent } from '@nightcall-ui/components';
+import { NcButtonComponent, NcGlitchTextComponent } from '@nightcall-ui/components';
 import { NcMusicPlayerPatternComponent } from '@nightcall-ui/patterns';
 
 type Feature = {
@@ -10,7 +10,12 @@ type Feature = {
 
 @Component({
   selector: 'nc-root',
-  imports: [NgOptimizedImage, NcButtonComponent, NcMusicPlayerPatternComponent],
+  imports: [
+    NgOptimizedImage,
+    NcButtonComponent,
+    NcGlitchTextComponent,
+    NcMusicPlayerPatternComponent,
+  ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
