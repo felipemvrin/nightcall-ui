@@ -97,4 +97,14 @@ describe('NcTabsIconComponent', () => {
 
     expect(result.container.querySelector('svg')).toBeNull();
   });
+
+  it('renders nothing for an unsupported icon name', async () => {
+    const result = await render(NcTabsIconComponent, {
+      inputs: {
+        name: 'not-real' as never,
+      },
+    });
+
+    expect(result.container.querySelector('svg')).toBeNull();
+  });
 });
