@@ -45,6 +45,10 @@ jobs:
         run: |
           npx http-server storybook-static --port 6006 --silent &
           SERVER_PID=$!
-          trap 'kill $SERVER_PID' EXIT
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          sleep 1
+          if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+            wait "$SERVER_PID"
+          fi
           npx wait-on http://127.0.0.1:6006
           npm run test-storybook

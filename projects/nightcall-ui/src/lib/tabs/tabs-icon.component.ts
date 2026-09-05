@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { LucideDynamicIcon } from '@lucide/angular';
-import { getNcTabIcon } from './tab-icons';
+import { getNcTabIcon, isNcTabIconName } from './tab-icons';
 
 @Component({
   selector: 'nc-tab-icon',
@@ -37,5 +37,8 @@ import { getNcTabIcon } from './tab-icons';
 export class NcTabsIconComponent {
   readonly name = input<string | null>(null);
 
-  protected readonly icon = computed(() => getNcTabIcon(this.name()));
+  protected readonly icon = computed(() => {
+    const name = this.name();
+    return isNcTabIconName(name) ? getNcTabIcon(name) : null;
+  });
 }
