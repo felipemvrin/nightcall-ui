@@ -119,3 +119,9 @@
 :host(.nc-radio-host--disabled) .nc-radio__option {
   cursor: not-allowed;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-radio__control {
+    transition: none;
+  }
+}

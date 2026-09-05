@@ -98,3 +98,9 @@
 :host(.nc-select-host--disabled) .nc-select__control {
   @include form.nc-control-shell-disabled;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-select__chevron {
+    transition: none;
+  }
+}

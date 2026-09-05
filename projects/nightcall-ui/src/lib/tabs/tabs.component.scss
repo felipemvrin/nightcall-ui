@@ -129,3 +129,10 @@
   border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--color-state-focus-ring) 55%, transparent);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-tabs__tab,
+  .nc-tabs__tab::after {
+    transition: none;
+  }
+}
