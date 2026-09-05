@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "storybook": "npm run tokens && ng run docs:storybook",
     "build-storybook": "npm run tokens && ng run docs:build-storybook",
+    "test-storybook": "test-storybook --url http://127.0.0.1:6006",
     "tokens": "style-dictionary build --config style-dictionary.config.js",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
@@ -49,6 +50,7 @@
     "@playwright/test": "^1.62.1",
     "@storybook/addon-a11y": "^9.1.20",
     "@storybook/angular": "^9.1.20",
+    "@storybook/test-runner": "^0.22.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@testing-library/angular": "^18.1.1",
     "@types/howler": "^2.2.13",
@@ -57,9 +59,11 @@
     "@typescript-eslint/eslint-plugin": "^8.65.0",
     "@typescript-eslint/parser": "^8.65.0",
     "@vitest/coverage-v8": "^3.2.7",
+    "axe-playwright": "^2.2.2",
     "eslint": "^9.39.5",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
+    "http-server": "^14.1.1",
     "husky": "^9.1.7",
     "jasmine-core": "~5.9.0",
     "jsdom": "^30.0.1",
@@ -76,6 +80,7 @@
     "style-dictionary": "^5.5.0",
     "tailwindcss": "^4.3.3",
     "typescript": "~5.9.2",
-    "vitest": "^3.2.7"
+    "vitest": "^3.2.7",
+    "wait-on": "^9.1.0"
   }
 }
