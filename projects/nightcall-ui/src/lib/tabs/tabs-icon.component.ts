@@ -35,7 +35,10 @@ import { getNcTabIcon, type NcIconName } from './tab-icons';
   `,
 })
 export class NcTabsIconComponent {
-  readonly name = input<NcIconName>('arrow-right');
+  readonly name = input<NcIconName | null>(null);
 
-  protected readonly icon = computed(() => getNcTabIcon(this.name()));
+  protected readonly icon = computed(() => {
+    const name = this.name();
+    return name ? getNcTabIcon(name) : null;
+  });
 }

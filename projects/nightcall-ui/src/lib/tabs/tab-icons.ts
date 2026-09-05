@@ -136,6 +136,6 @@ const NC_TAB_ICONS = {
 
 export type NcIconName = keyof typeof NC_TAB_ICONS;
 
-export function getNcTabIcon(name: string): LucideIcon | null {
-  return Object.hasOwn(NC_TAB_ICONS, name) ? NC_TAB_ICONS[name as NcIconName] : null;
+export function getNcTabIcon(name: NcIconName): LucideIcon {
+  return NC_TAB_ICONS[name];
 }

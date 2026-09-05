@@ -44,5 +44,7 @@ jobs:
       - name: Serve Storybook and run a11y tests
         run: |
           npx http-server storybook-static --port 6006 --silent &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID' EXIT
           npx wait-on http://127.0.0.1:6006
           npm run test-storybook
