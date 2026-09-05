@@ -37,6 +37,11 @@ Nightcall UI is an Angular 20 design system workspace. It contains a publishable
 - GitHub Actions
 - ng-packagr
 
+> **Fonts:** `@nightcall-ui/components` no longer imports Google Fonts itself (avoids a
+> render-blocking `@import` and a third-party request on every load). Consumers of the
+> published package are responsible for loading Inter, IBM Plex Mono, Michroma, Oxanium and
+> Rajdhani themselves, e.g. via `<link rel="preconnect">` + stylesheet tags in their app shell.
+
 ## Quick start
 
 1. Install dependencies with `npm install`

@@ -40,3 +40,18 @@ jobs:
 
       - name: Build Storybook
         run: npm run build-storybook
+
+      - name: Install Playwright browser for Storybook tests
+        run: npx playwright install --with-deps chromium chromium-headless-shell
+
+      - name: Serve Storybook and run a11y tests
+        run: |
+          npx http-server storybook-static --port 6006 --silent &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          sleep 1
+          if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+            wait "$SERVER_PID"
+          fi
+          npx wait-on http://127.0.0.1:6006
+          npm run test-storybook

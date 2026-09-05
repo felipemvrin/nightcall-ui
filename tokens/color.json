@@ -10,6 +10,9 @@
       "surfaceSecondary": {
         "value": "#3B215E"
       },
+      "borderMuted": {
+        "value": "#75649E"
+      },
       "primary": {
         "value": "#6A2CFF"
       },
@@ -21,6 +24,9 @@
       },
       "warning": {
         "value": "#FFB000"
+      },
+      "danger": {
+        "value": "#FF5C3D"
       },
       "text": {
         "value": "#EAEAEA"
@@ -45,7 +51,7 @@
     },
     "border": {
       "subtle": {
-        "value": "{color.primitive.surfaceSecondary}"
+        "value": "{color.primitive.borderMuted}"
       },
       "strong": {
         "value": "{color.primitive.primary}"
@@ -96,7 +102,7 @@
         "value": "{color.primitive.warning}"
       },
       "danger": {
-        "value": "{color.primitive.secondary}"
+        "value": "{color.primitive.danger}"
       }
     }
   }

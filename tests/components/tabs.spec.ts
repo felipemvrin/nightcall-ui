@@ -1,6 +1,7 @@
 import { fireEvent, render } from '@testing-library/angular';
 import { describe, expect, it } from 'vitest';
 import { Injector, runInInjectionContext } from '@angular/core';
+import { NcTabsIconComponent } from '../../projects/nightcall-ui/src/lib/tabs/tabs-icon.component';
 import { NcTabsComponent } from '../../projects/nightcall-ui/src/lib/tabs/tabs.component';
 
 function createTabsComponent(): NcTabsComponent {
@@ -33,7 +34,7 @@ describe('NcTabsComponent', () => {
     const buttons = result.getAllByRole('tab');
     expect(buttons[1]?.getAttribute('aria-selected')).toBe('true');
     expect(buttons[1]?.getAttribute('tabindex')).toBe('0');
-    expect(buttons[1]?.querySelector('nc-icon')).not.toBeNull();
+    expect(buttons[1]?.querySelector('nc-tab-icon')).not.toBeNull();
     expect(buttons[1]?.hasAttribute('aria-controls')).toBe(false);
   });
 
@@ -77,5 +78,33 @@ describe('NcTabsComponent', () => {
     const buttons = result.getAllByRole('tab');
     expect(buttons[0]?.getAttribute('aria-selected')).toBe('true');
     expect(buttons[1]?.getAttribute('aria-selected')).toBe('false');
+  });
+});
+
+describe('NcTabsIconComponent', () => {
+  it('renders an svg for a valid icon name', async () => {
+    const result = await render(NcTabsIconComponent, {
+      inputs: {
+        name: 'music',
+      },
+    });
+
+    expect(result.container.querySelector('svg')).not.toBeNull();
+  });
+
+  it('renders nothing when no icon name is provided', async () => {
+    const result = await render(NcTabsIconComponent);
+
+    expect(result.container.querySelector('svg')).toBeNull();
+  });
+
+  it('renders nothing for an unsupported icon name', async () => {
+    const result = await render(NcTabsIconComponent, {
+      inputs: {
+        name: 'not-real',
+      },
+    });
+
+    expect(result.container.querySelector('svg')).toBeNull();
   });
 });

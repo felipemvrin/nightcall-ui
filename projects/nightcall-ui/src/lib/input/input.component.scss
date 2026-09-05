@@ -100,3 +100,9 @@
 :host(.nc-input-host--disabled) .nc-input__control {
   @include form.nc-control-shell-disabled;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-input__slot {
+    transition: none;
+  }
+}

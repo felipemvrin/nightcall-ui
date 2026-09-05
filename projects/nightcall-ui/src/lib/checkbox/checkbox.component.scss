@@ -118,3 +118,9 @@
 :host(.nc-checkbox-host--disabled) .nc-checkbox {
   cursor: not-allowed;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .nc-checkbox__control {
+    transition: none;
+  }
+}
