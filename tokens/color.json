@@ -25,6 +25,9 @@
       "warning": {
         "value": "#FFB000"
       },
+      "danger": {
+        "value": "#FF5C3D"
+      },
       "text": {
         "value": "#EAEAEA"
       },
@@ -99,7 +102,7 @@
         "value": "{color.primitive.warning}"
       },
       "danger": {
-        "value": "{color.primitive.secondary}"
+        "value": "{color.primitive.danger}"
       }
     }
   }
