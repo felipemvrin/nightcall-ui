@@ -41,6 +41,9 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
+      - name: Install Playwright browser for Storybook tests
+        run: npx playwright install chromium
+
       - name: Serve Storybook and run a11y tests
         run: |
           npx http-server storybook-static --port 6006 --silent &
