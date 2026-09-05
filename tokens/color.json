@@ -10,6 +10,9 @@
       "surfaceSecondary": {
         "value": "#3B215E"
       },
+      "borderMuted": {
+        "value": "#75649E"
+      },
       "primary": {
         "value": "#6A2CFF"
       },
@@ -45,7 +48,7 @@
     },
     "border": {
       "subtle": {
-        "value": "{color.primitive.surfaceSecondary}"
+        "value": "{color.primitive.borderMuted}"
       },
       "strong": {
         "value": "{color.primitive.primary}"
