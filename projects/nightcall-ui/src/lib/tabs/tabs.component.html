@@ -14,7 +14,7 @@
       (keydown)="onKeydown($event, index)"
     >
       @if (item.icon) {
-        <nc-icon class="nc-tabs__icon" [name]="item.icon" size="sm"></nc-icon>
+        <nc-tab-icon [name]="item.icon"></nc-tab-icon>
       }
 
       <span class="nc-tabs__label">{{ item.label }}</span>

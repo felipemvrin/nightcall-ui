@@ -33,7 +33,7 @@ describe('NcTabsComponent', () => {
     const buttons = result.getAllByRole('tab');
     expect(buttons[1]?.getAttribute('aria-selected')).toBe('true');
     expect(buttons[1]?.getAttribute('tabindex')).toBe('0');
-    expect(buttons[1]?.querySelector('nc-icon')).not.toBeNull();
+    expect(buttons[1]?.querySelector('nc-tab-icon')).not.toBeNull();
     expect(buttons[1]?.hasAttribute('aria-controls')).toBe(false);
   });
 
