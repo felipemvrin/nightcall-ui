@@ -75,7 +75,7 @@
   color: color-mix(in srgb, var(--color-state-focus-ring) 70%, var(--color-accent-secondary));
   text-shadow: var(--shadow-glow-cyan);
   font-weight: var(--font-weight-bold);
-  transform: translateY(-1px);
+  transform: translateY(2px);
 }
 
 .nc-checkbox__native:is(:checked, :indeterminate) + .nc-checkbox__control {

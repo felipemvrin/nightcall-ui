@@ -48,7 +48,7 @@
   position: absolute;
   inset-inline-end: var(--component-padding-inline-md);
   inset-block-start: 50%;
-  transform: translateY(-50%);
+  transform: translateY(calc(-50% - 2px));
   color: var(--nc-field-slot-color);
   pointer-events: none;
   font-size: var(--font-size-lg);
@@ -88,7 +88,7 @@
 
 :host(:focus-within) .nc-select__chevron {
   color: var(--nc-field-slot-color-focus);
-  transform: translateY(-50%) scale(var(--nc-select-chevron-focus-scale));
+  transform: translateY(calc(-50% - 2px)) scale(var(--nc-select-chevron-focus-scale));
 }
 
 .nc-select__control:active {
