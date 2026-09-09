@@ -222,7 +222,7 @@ export const States: Story = {
       <div class="icon-state-grid">
         @for (state of ['Default', 'Hover', 'Active', 'Focus', 'Disabled', 'Selected']; track state) {
           <button type="button" class="icon-state" [class]="'icon-state icon-state--' + state.toLowerCase()" [disabled]="state === 'Disabled'">
-            <nc-icon name="play"></nc-icon><span>{{ state }}</span>
+            <span class="icon-state__icon"><nc-icon name="play"></nc-icon></span><span>{{ state }}</span>
           </button>
         }
       </div>
@@ -231,8 +231,9 @@ export const States: Story = {
       `
       .icon-state-grid { display:flex; flex-wrap:wrap; gap:var(--space-3); margin-block-start:var(--space-5); }
       .icon-state { display:inline-flex; align-items:center; gap:var(--space-2); padding:var(--space-3); border:1px solid var(--nc-color-border); border-radius:var(--nc-radius-sm); background:var(--nc-color-surface); color:var(--nc-color-text); }
-      .icon-state--hover { color:var(--nc-color-hover); }
-      .icon-state--active { color:var(--nc-color-active); }
+      .icon-state__icon { display:inline-grid; place-items:center; line-height:0; }
+      .icon-state--hover .icon-state__icon { color:var(--nc-color-hover); }
+      .icon-state--active .icon-state__icon { color:var(--nc-color-active); }
       .icon-state--focus { outline:2px solid var(--nc-color-focus); outline-offset:2px; }
       .icon-state--disabled { color:var(--nc-color-disabled); opacity:var(--nc-opacity-disabled); }
       .icon-state--selected { border-color:var(--nc-color-secondary); color:var(--nc-color-secondary); }
