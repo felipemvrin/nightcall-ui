@@ -34,7 +34,7 @@ const usageCssExample = `.token-card {
 }
 
 .token-card__action {
-  color: var(--nc-color-text-inverse);
+  color: var(--nc-color-text-primary);
   background: var(--nc-color-primary);
   border-radius: var(--nc-radius-pill);
   transition: transform var(--nc-motion-fast)
@@ -153,7 +153,7 @@ export const UsageExample: Story = {
         .token-card__action {
           justify-self: start;
           padding: var(--nc-space-2) var(--nc-space-4);
-          color: var(--nc-color-text-inverse);
+          color: var(--nc-color-text-primary);
           font-family: var(--nc-font-button);
           font-weight: var(--nc-font-weight-button);
           background: var(--nc-color-primary);
