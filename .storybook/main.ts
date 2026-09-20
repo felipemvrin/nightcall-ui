@@ -16,7 +16,15 @@ const fonts = `
 />`;
 
 const config: StorybookConfig = {
-  stories: ['../apps/docs/src/**/*.stories.@(ts|mdx)'],
+  stories: [
+    '../apps/docs/src/stories/welcome.stories.ts',
+    '../apps/docs/src/stories/foundations-*.stories.ts',
+    '../apps/docs/src/stories/components-button.stories.ts',
+    '../apps/docs/src/stories/components-glitch-text.stories.ts',
+    '../apps/docs/src/stories/components-progress-bar.stories.ts',
+    '../apps/docs/src/stories/components-tabs.stories.ts',
+    '../apps/docs/src/stories/patterns-*.stories.ts',
+  ],
   addons: ['@storybook/addon-a11y', 'storybook/viewport'],
 
   managerHead: (head) =>
