@@ -10,6 +10,8 @@ type MusicPlayerStoryArgs = {
   progress: number;
 };
 
+const STORY_AUDIO_SRC = 'data:audio/mp3;base64,';
+
 const meta: Meta<MusicPlayerStoryArgs> = {
   title: 'Patterns/Music Player',
   component: NcMusicPlayerPatternComponent,
@@ -53,7 +55,7 @@ Use this Pattern when you want to document or prototype a complete media interac
   args: {
     trackTitle: 'Nightcall',
     artistName: 'Kavinsky',
-    audioSrc: '/assets/audio/kavinsky-song.mp3',
+    audioSrc: STORY_AUDIO_SRC,
     playbackState: 'pause',
     muted: false,
     progress: 12,
@@ -87,7 +89,7 @@ export const Overview: Story = {
     props: {
       trackTitle: 'Nightcall',
       artistName: 'Kavinsky',
-      audioSrc: '/assets/audio/kavinsky-song.mp3',
+      audioSrc: STORY_AUDIO_SRC,
       playbackState: 'pause',
       muted: false,
       progress: 12,
