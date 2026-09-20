@@ -6,7 +6,7 @@ addons.setConfig({
     base: 'dark',
     brandTitle: 'Nightcall UI',
     brandUrl: './',
-    brandImage: '/assets/brand/logo-sb.svg',
+    brandImage: './assets/brand/logo-sb.svg',
     brandTarget: '_self',
   }),
 });
